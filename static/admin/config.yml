@@ -6,8 +6,8 @@ backend:
 media_folder: "static/images/uploads"
 media_folder_relative: true
 public_folder: "/images/uploads"
-display_url: https://nomads-cms.netlify.app/
-site_url: https://nomads-cms.netlify.app/
+display_url: https://liquid-theme.netlify.app/
+site_url: https://liquid-theme.netlify.app/
 
 collections:
   - name: "works"

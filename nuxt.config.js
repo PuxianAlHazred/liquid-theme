@@ -77,7 +77,7 @@ module.exports = {
   /*** Sitemap configuration */
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://nomads-cms.netlify.app/',
+    hostname: 'https://liquid-theme.netlify.app/',
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     generate: false, // Génère une version statique du sitemap quand activé. À utiliser avec nuxt generate.
