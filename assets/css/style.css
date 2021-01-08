@@ -1,0 +1,199 @@
+/*
+NOMADS CMS
+*/
+:root {
+  --universal-margin: 25px;
+  --universal-padding: 25px;
+  --universal-border-radius: 0;
+  --swiper-theme-color:#007aff;
+  --swiper-navigation-size:44px;
+}
+
+body {
+    margin: 0;
+    background: #cecece;
+}
+input[type="text"] {
+    width: calc(100% - 30px);
+    border: none;
+    margin-bottom: 15px;
+    padding: 15px;
+    cursor: help;
+}
+button {
+    outline: none;
+}
+
+.main {
+    background:#cecece;
+    display: grid;
+    min-height: 100vh;
+    padding: 0;
+}
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    background: #fff;
+    width: 100%;
+    padding: 50px;
+}
+.page-blog {
+    background: none;
+}
+/*
+Tricks & Snippets css
+*/
+h1, .h1{ font-size: 70px; }
+h2, .h2{ font-size: 60px; }
+h3, .h3{ font-size: 50px; }
+h4, .h4{ font-size: 40px; }
+h5, .h5{ font-size: 30px; }
+h6, .h6{ font-size: 20px; }
+.text-left{ text-align: left; }
+.text-center{ text-align: center; }
+.text-right{ text-align: right; }
+.text-justify{ text-align: justify; }
+.sticky{ position: sticky; }
+.saturate{ filter: saturate(0); }
+/*
+BLOG
+*/
+.page-actu{
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-top: 25px;
+}
+.right-sidebar{
+  grid-template-columns: 1fr 360px;
+  grid-template-rows: 1fr;
+}
+.left-sidebar{
+  grid-template-columns: 360px 1fr;
+  grid-template-rows: 1fr;
+}
+.no-sidebar{
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+article {
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  color: #333;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+article .content-article {
+    padding: 25px;
+}
+article .content-article .h6 {
+    margin: 0 0 10px;
+}
+article .content-article .meta {
+    color: gray;
+}
+article .content-article .meta button {
+    border: none;
+    font-weight: bold;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;
+    padding: 0;
+    text-decoration: underline;
+    background: transparent;
+}
+article .content-article .meta button,
+article .content-article .meta b{
+    color: #333;
+}
+article .link {
+    background: #333;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+}
+.thumb {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.addMore button, .addMore a {
+    display: block;
+    color: #333;
+    border: none;
+    background: #fff;
+    width: 100%;
+    padding: 20px 15px;
+    font-weight: bold;
+}
+.addMore button span {
+    color: gray;
+}
+.info {
+    text-align: center;
+    color: gray;
+}
+
+.last-posts {
+    padding-top: 15px;
+}
+.last-post {
+    margin-bottom: 15px;
+}
+.last-post a {
+    display: block;
+    text-decoration: none;
+}
+.last-post-title {
+    background: #fff;
+    padding: 10px;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+.last-post .thumb {
+    height: 150px;
+}
+.last-post-date {
+    background: #fff;
+    padding: 10px;
+    color: #555;
+    margin: 0;
+    position: relative;
+}
+.last-post-date i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #333;
+}
+
+.sidebar{
+  padding: 0px
+}
+.sidebar.sticky {
+
+}
+.right-sidebar .sidebar {
+  margin-left: 25px;
+}
+.left-sidebar .grid {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.left-sidebar .sidebar {
+  grid-area: 1 / 1 / 2 / 2;
+  margin-right: 25px;
+}
+.sidebar span {
+    color: #555;
+    margin: 15px 0;
+    display: block;
+    font-weight: bold;
+}

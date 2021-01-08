@@ -1,0 +1,21 @@
+{
+  "title": "Nomads CMS",
+  "thumbnail": "/images/uploads/logo-500px.png",
+  "favicon": "/images/uploads/logo-40px.png",
+  "colorUn": "#FF0000",
+  "colorDeux": "#00FF00",
+  "reseauxsociaux": [
+    {
+      "name": "Github",
+      "icons": "fab fa-github",
+      "url": "https://github.com/PuxianAlHazred",
+      "id": "rs-XTbUmCu-W"
+    },
+    {
+      "name": "Codepen",
+      "icons": "fas fa-codepen",
+      "url": "https://codepen.io/piksl",
+      "id": "rs-IKFh-BIH6"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Nomads CMS",
+  "logo": "/images/uploads/logo-40px.png",
+  "menuList": [
+    {
+      "nomdepage": "Accueil",
+      "url": "/"
+    },
+    {
+      "nomdepage": "Nos actualités",
+      "url": "/blog/"
+    },
+    {
+      "nomdepage": "Nos travaux",
+      "url": "/works/"
+    },
+    {
+      "nomdepage": "Contact",
+      "url": "/contact/"
+    }
+  ],
+  "hamburgerActive": true,
+  "sticky": true,
+  "MenuPosition": "center",
+  "rs": [
+    {
+      "value": "https://github.com/PuxianAlHazred",
+      "label": "fab fa-github"
+    }
+  ]
+}

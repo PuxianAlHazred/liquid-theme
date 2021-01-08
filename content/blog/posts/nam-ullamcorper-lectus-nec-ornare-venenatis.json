@@ -1,0 +1,18 @@
+{
+  "date": "2020/11/14",
+  "thumbnail": "/images/uploads/010.jpg",
+  "title": "Nam ullamcorper lectus nec ornare venenatis",
+  "description": "In hac habitasse platea dictumst. In pulvinar ligula risus, sit amet pharetra erat lacinia at. In felis tortor, accumsan ut augue a, semper venenatis mi",
+  "body": "<!--StartFragment-->\n\nSed molestie molestie porta. Nulla facilisi. Donec suscipit, quam id interdum laoreet, ex purus vestibulum tortor, ut condimentum orci turpis quis tortor. Fusce rhoncus velit at lectus pellentesque, quis ultrices neque dignissim. Aliquam volutpat venenatis neque in pretium. Sed bibendum dui id vestibulum blandit. Vestibulum volutpat lectus vitae massa convallis, sed ullamcorper nisl pulvinar. Nullam finibus mi mauris, a mattis eros tempor tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer egestas enim non lectus malesuada interdum.\n\n<!--EndFragment-->",
+  "tgs": [
+    {
+      "label": "Tag 2"
+    }
+  ],
+  "cts": [
+    {
+      "value": "cts-FRnUk26sJw",
+      "label": "Catégories 3"
+    }
+  ]
+}

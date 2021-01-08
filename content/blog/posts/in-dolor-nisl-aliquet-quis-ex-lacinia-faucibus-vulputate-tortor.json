@@ -1,0 +1,18 @@
+{
+  "date": "2020/11/12",
+  "thumbnail": "/images/uploads/d41a628ba5c21fa80fb7d466ac6b3d2e.jpg",
+  "body": "Cras bibendum urna eget pharetra commodo. Donec quis hendrerit erat, vitae pulvinar neque. Morbi pretium tincidunt tellus vitae maximus. Nam ligula erat, vehicula sit amet turpis vel, facilisis maximus lacus. Quisque ullamcorper enim nisi, et pulvinar arcu fermentum ut. Integer pulvinar rutrum lectus eget elementum. Aenean tincidunt metus erat, in viverra quam blandit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis magna luctus lacus vehicula, vitae dapibus mauris placerat. Vivamus velit ante, ornare sed facilisis vel, varius quis nibh.",
+  "title": "In dolor nisl aliquet quis ex lacinia faucibus vulputate tortor",
+  "description": "Nulla tellus sem, auctor quis eros sed, convallis cursus erat. Phasellus pharetra imperdiet eros quis porta. Nam metus nulla, mattis scelerisque est sed, efficitur facilisis turpis.",
+  "tgs": [
+    {
+      "label": "Tag 1"
+    }
+  ],
+  "cts": [
+    {
+      "value": "cts-XTbUmCu-W",
+      "label": "Catégories 1"
+    }
+  ]
+}

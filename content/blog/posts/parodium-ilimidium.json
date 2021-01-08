@@ -1,0 +1,18 @@
+{
+  "date": "2020/11/09",
+  "title": "Parodium ilimidium",
+  "description": "In pellentesque leo vitae elit aliquet, ac dignissim turpis tristique. Cras dignissim nisl ligula, vitae dignissim purus venenatis id. Curabitur luctus fermentum felis, in interdum erat ultricies porttitor. ",
+  "body": "Morbi massa magna, placerat ut hendrerit consequat, malesuada ac eros. Donec feugiat ipsum lacus. In hac habitasse platea dictumst. Aenean et sagittis ligula. Fusce ullamcorper felis in nunc posuere, ac tincidunt dolor pulvinar. Vivamus pretium sagittis metus, sed vehicula felis tempor ut. Sed nec neque lacinia, pellentesque eros id, cursus magna. Vivamus luctus placerat dui. Proin finibus elementum tincidunt.",
+  "thumbnail": "/images/uploads/berserk_01.jpg",
+  "tgs": [
+    {
+      "label": "Tag 1"
+    }
+  ],
+  "cts": [
+    {
+      "value": "cts-FRnUk26sJw",
+      "label": "Catégories 3"
+    }
+  ]
+}
