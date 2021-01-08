@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@ncwidgets/file-relation": "^0.8.0",
-    "@nuxtjs/axios": "^5.3.1",
+    "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "babel-runtime": "^6.26.0",
