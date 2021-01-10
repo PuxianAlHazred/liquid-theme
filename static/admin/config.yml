@@ -10,33 +10,69 @@ display_url: https://liquid-theme.netlify.app/
 site_url: https://liquid-theme.netlify.app/
 
 collections:
-  - name: "works"
-    label: "📚 Travaux"
-    folder: "content/works/posts"
+  - name: "agenda"
+    label: "📚 Agenda"
+    folder: "content/agenda/posts"
     create: true
     editor:
       preview: true
-    slug: "{{slug}}"
+    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
     show_preview_links: true
-    preview_path: "{{slug}}"
+    preview_path: "blog/{{day}}-{{month}}-{{year}}-{{slug}}"
     format: 'json'
     sort: 'date'
     fields:
-      - {label: Titre, name: title, widget: string, required: true}
-      - {label: Couverture, name: thumbnail, widget: image, required: true}
-      - label: "Galeries"
-        name: "galeries"
+      - label: "Événement"
+        name: "lieu"
         widget: "object"
         fields:
-          - label: "Images"
-            name: "images"
+          - {label: Titre de l'événement, name: title, widget: string, required: true}
+          - {label: Date de l'événement, name: dateEvent, widget: "datetime", format: "DD/MM/YYYY", required: true}
+          - {label: Heure de l'événement, name: hourEvent, widget: "datetime", format: "DD/MM/YYYY", required: true}
+          - {label: Lien vers la billeterie, name: ticketLink, widget: string }
+          - {label: Couverture de l'événement, name: thumbnail, widget: image, required: true}
+      - label: "Artistes"
+        name: "artistes"
+        widget: "object"
+        fields:
+          - label: "Artiste"
+            name: "artiste"
             widget: "list"
             required: false
             fields:
-              - { label: Titre, name: title, widget: string}
-              - { label: image, name: href, widget: image }
+              - { label: Nom, name: title, widget: string}
+              - { label: Image, name: href, widget: image }
               - { label: Description, name: description, widget: string }
-      - {label: Article, name: body, widget: "markdown", required: true}
+              - { label: Lien vers le site, name: website, widget: string }
+      - label: "Lieu"
+        name: "lieu"
+        widget: "object"
+        fields:
+          - { label: Nom, name: title, widget: string}
+          - { label: Image, name: href, widget: image }
+          - { label: Description, name: description, widget: string }
+          - { label: Lien vers le site, name: website, widget: string }
+          - { label: Lien google map, name: gmaps, widget: string }
+      - label: "Tags"
+        name: "tgs"
+        slug: "{{slug}}"
+        widget: "ncw-file-relation"
+        collection: "configurations"
+        file: "blog"
+        target_field: "tags"
+        id_field: id
+        display_fields: tag
+        multiple: true
+      - label: "Catégories"
+        name: "cts"
+        slug: "{{slug}}"
+        widget: "ncw-file-relation"
+        collection: "configurations"
+        file: "blog"
+        target_field: "categories"
+        id_field: id
+        display_fields: categorie
+        multiple: false
       - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD", required: true}
   - name: "pages"
     label: "📃 Pages"
