@@ -40,19 +40,19 @@ collections:
             widget: "list"
             required: false
             fields:
-              - { label: Nom, name: title, widget: string}
-              - { label: Image, name: href, widget: image }
-              - { label: Description, name: description, widget: string }
-              - { label: Lien vers le site, name: website, widget: string }
+              - { label: Nom, name: titleArtiste, widget: string}
+              - { label: Image, name: thumbnailArtiste, widget: image }
+              - { label: Description, name: descriptionArtiste, widget: markdown }
+              - { label: Lien vers le site, name: linkArtiste, widget: string }
       - label: "Lieu"
         name: "lieu"
         widget: "object"
         fields:
-          - { label: Nom, name: title, widget: string}
-          - { label: Image, name: href, widget: image }
-          - { label: Description, name: description, widget: string }
-          - { label: Lien vers le site, name: website, widget: string }
-          - { label: Lien google map, name: gmaps, widget: string }
+          - { label: Nom, name: titleLieu, widget: string}
+          - { label: Image, name: thumbnailLieu, widget: image }
+          - { label: Description, name: descriptionLieu, widget: markdown }
+          - { label: Lien vers le site, name: linkLieu, widget: string }
+          - { label: Lien google map, name: gmapsLieu, widget: string }
       - label: "Tags"
         name: "tgs"
         slug: "{{slug}}"
