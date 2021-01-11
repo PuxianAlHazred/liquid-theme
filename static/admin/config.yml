@@ -54,7 +54,7 @@ collections:
         slug: "{{slug}}"
         widget: "ncw-file-relation"
         collection: "configurations"
-        file: "generales"
+        file: "agenda"
         target_field: "tags"
         id_field: id
         display_fields: tag
@@ -64,7 +64,7 @@ collections:
         slug: "{{slug}}"
         widget: "ncw-file-relation"
         collection: "configurations"
-        file: "generales"
+        file: "agenda"
         target_field: "categories"
         id_field: id
         display_fields: categorie
