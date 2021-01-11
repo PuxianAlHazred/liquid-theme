@@ -1,8 +1,6 @@
 backend:
   name: git-gateway
   branch: main
-#backend:
-  #name: test-repo
 media_folder: "static/images/uploads"
 media_folder_relative: true
 public_folder: "/images/uploads"
@@ -22,15 +20,15 @@ collections:
     format: 'json'
     sort: 'date'
     fields:
+      - {label: Titre de l'événement, name: title, widget: string, required: true}
+      - {label: Couverture de l'événement, name: thumbnail, widget: image, required: true}
       - label: "Événement"
         name: "lieu"
         widget: "object"
         fields:
-          - {label: Titre de l'événement, name: title, widget: string, required: true}
           - {label: Date de l'événement, name: dateEvent, widget: "datetime", format: "DD/MM/YYYY", required: true}
-          - {label: Heure de l'événement, name: hourEvent, widget: "datetime", format: "DD/MM/YYYY", required: true}
+          - {label: Heure de l'événement, name: hourEvent, widget: string, required: true}
           - {label: Lien vers la billeterie, name: ticketLink, widget: string }
-          - {label: Couverture de l'événement, name: thumbnail, widget: image, required: true}
       - label: "Artistes"
         name: "artistes"
         widget: "object"
