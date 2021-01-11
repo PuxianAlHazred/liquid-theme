@@ -1,14 +1,10 @@
-import header from '~/content/configuration/header.json';
+import menu from '~/content/configuration/menu.json';
 import generales from '~/content/configuration/generales.json';
-import agenda from '~/content/configuration/agenda.json';
-import sidebar from '~/content/configuration/sidebar.json';
 import footer from '~/content/configuration/footer.json';
 export const state = () => ({
   footer: footer,
-  header: header,
-  agenda_options: agenda,
+  menu: menu,
   generales: generales,
-  sidebar: sidebar,
   agenda_posts: [],
   agenda_cat: [],
   agenda_tag: [],
@@ -52,9 +48,9 @@ export const actions = {
       _path: `/agenda/${key.replace('.json', '').replace('./', '')}`
     })).sort( ( a, b) => {return new Date(b.date) - new Date(a.date);});
     commit("setPosts", agenda_posts);
-    const blog_cat = Array.from(new Set(agenda_posts.map(e => e.cts[0].label).sort()));
+    const agenda_cat = Array.from(new Set(agenda_posts.map(e => e.cts[0].label).sort()));
     commit("setCat", agenda_cat);
-    const blog_tag = Array.from(new Set(agenda_posts.map(e => e.tgs[0].label).sort()));
+    const agenda_tag = Array.from(new Set(agenda_posts.map(e => e.tgs[0].label).sort()));
     commit("setTag", agenda_tag);
   }
 };

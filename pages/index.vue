@@ -1,18 +1,5 @@
 <template>
-
   <div>
-    <section class="section">
-      <div class="container is-fluid">
-        <div class="swiper" v-swiper:myDirectiveSwiper="optionsSW">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="index in 6" :key="index">
-              <span>Slide {{ index }}</span>
-            </div>
-          </div>
-          <div class="swiper-pagination swiper-pagination-bullets"></div>
-        </div>
-      </div>
-    </section>
     <section class="section">
       <div class="container">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -46,81 +33,5 @@
 
       </div>
     </section>
-    <section class="section">
-      <div class="container">
-
-      </div>
-    </section>
-    <section class="section">
-      <Accordion name="Accordion Name 1">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
-      </Accordion>
-      <Accordion name="Accordion Name 2"><p>mon zbi</p></Accordion>
-      <Accordion name="Accordion Name 3"><p>your zbi</p></Accordion>
-    </section>
   </div>
-
 </template>
-<style>
-.tabs {
-  position: relative;
-  min-height: 200px;
-  width: 500px;
-  margin: 25px 0;
-}
-.tab {
-  float: left;
-}
-.tab label {
-  background: #ddd;
-  padding: 10px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  margin-left: -1px;
-}
-.tab:first-child label {
-  margin-left: 0;
-}
-.tab input[type=radio] {
-  display: none;
-}
-.tab-content {
-  position: absolute;
-  top: 28px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: white;
-  padding: 20px;
-  border: 1px solid #ccc;
-  display: none;
-}
-input[type=radio]:checked ~ label {
-  background: white;
-  border-bottom: 1px solid white;
-}
-input[type=radio]:checked ~ label ~ .tab-content {
-  display: block;
-}
-</style>
-<script>
-  import Accordion from "~/components/plugins/accordion.vue";
-  import tabs from "~/components/plugins/tabs.vue";
-  import tab from "~/components/plugins/tab.vue";
-  export default {
-    data () {
-      return {
-        optionsSW : this.$store.state.swiperOptions
-      }
-    },
-    components: {
-      Accordion, tab, tabs
-    },
-    methods: {
-    }
-  }
-</script>

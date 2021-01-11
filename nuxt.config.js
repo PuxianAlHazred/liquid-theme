@@ -2,9 +2,7 @@ var webpack = require('webpack');
 var glob = require('glob');
 var path = require('path');
 var dynamicRoutes = getDynamicPaths({
-  '/blog': 'blog/posts/*.json',
-  '/': 'pages/page/*.json',
-  '/works': 'works/posts/*.json'
+  '/agenda': 'agenda/posts/*.json'
 });
 module.exports = {
   env: { BASE_URL: process.env.BASE_URL || 'http://localhost:3000' },
@@ -34,7 +32,7 @@ module.exports = {
       }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: "/uploads/favicon.png" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" },
       { rel: "stylesheet", href: "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" },
       { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" },

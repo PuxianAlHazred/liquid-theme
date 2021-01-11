@@ -1,26 +1,28 @@
 <template>
   <div>
-    <ui-header></ui-header>
+    <ui-menu></ui-menu>
     <div class="main">
-      <transition  name="animate__fadeInUp" mode="out-in">
+      <ui-slider></ui-slider>
+      <transition name="animate__fadeInUp" mode="out-in">
         <nuxt/>
       </transition>
+      <ui-footer></ui-footer>
     </div>
-    <ui-footer></ui-footer>
+
   </div>
 </template>
 
 <style>
 </style>
 <script>
-  import uiHeader from '~/components/ui/header.vue'
+  import uiMenu from '~/components/ui/menu.vue'
+  import uiSlider from '~/components/ui/slider.vue'
   import uiFooter from '~/components/ui/footer.vue'
-  import TransitionPage from '~/components/ui/transition-page.vue';
   export default {
     components: {
-        uiHeader,
-        uiFooter,
-        TransitionPage
+        uiMenu,
+        uiSlider,
+        uiFooter
     },
     mounted () {
     }

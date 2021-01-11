@@ -1,27 +1,16 @@
 {
   "title": "LIQUID THEME",
-  "logo": "/images/uploads/logo-40px.png",
+  "logo": "/images/uploads/liquid-theme-logo.png",
   "menuList": [
     {
       "nomdepage": "Accueil",
       "url": "/"
     },
     {
-      "nomdepage": "Nos actualités",
-      "url": "/blog/"
-    },
-    {
-      "nomdepage": "Nos travaux",
-      "url": "/works/"
-    },
-    {
-      "nomdepage": "Contact",
-      "url": "/contact/"
+      "nomdepage": "Agenda",
+      "url": "/agenda/"
     }
   ],
-  "hamburgerActive": true,
-  "sticky": true,
-  "MenuPosition": "center",
   "rs": [
     {
       "value": "https://github.com/PuxianAlHazred",
