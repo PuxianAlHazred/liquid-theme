@@ -5,17 +5,15 @@
       "url": "https://votreurl.com/"
     }
   ],
-  "thumbnail": "/images/uploads/logo-500px.png",
   "copyright": "Piks-L.fr",
   "rs": [
     {
       "value": "https://github.com/PuxianAlHazred",
-      "label": "fab fa-github"
+      "label": "lab la-github"
     },
     {
       "value": "https://codepen.io/piksl",
-      "label": "fas fa-codepen"
+      "label": "las la-codepen"
     }
-  ],
-  "scrollTop": true
+  ]
 }

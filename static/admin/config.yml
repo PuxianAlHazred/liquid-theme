@@ -54,7 +54,7 @@ collections:
         slug: "{{slug}}"
         widget: "ncw-file-relation"
         collection: "configurations"
-        file: "blog"
+        file: "generales"
         target_field: "tags"
         id_field: id
         display_fields: tag
@@ -64,7 +64,7 @@ collections:
         slug: "{{slug}}"
         widget: "ncw-file-relation"
         collection: "configurations"
-        file: "blog"
+        file: "generales"
         target_field: "categories"
         id_field: id
         display_fields: categorie
@@ -134,7 +134,6 @@ collections:
             fields:
               - {label: Nom de la page, name: nomdepage, widget: string, default: "Mon example"}
               - {label: Url, name: url, widget: string, default: "https://votreurl.com/"}
-          - {label: Logo, name: thumbnail, widget: image}
           - {label: Copyright, name: copyright, widget: string}
           - label: "Réseaux sociaux"
             name: "rs"
@@ -145,3 +144,30 @@ collections:
             id_field: url
             display_fields: icons
             multiple: true
+      - label: "Agenda"
+        name: "agenda"
+        file: "content/configuration/agenda.json"
+        fields:
+          - label: "Slider"
+            name: "highlight"
+            widget: "number"
+            default: 2
+            value_type: "int"
+            min: 1
+            max: 5
+            step: 1
+            hint: "Nombre d'article à mettre en avant dans le slider (Maximum 5)"
+          - label: "Catégories"
+            name: "categories"
+            allow_add: true
+            widget: "list"
+            fields:
+              - {label: Nom de la catégories, name: categorie, widget: string, default: "Ma catégorie"}
+              - {label: ID, name: id, widget: ncw-id, prefix: "cts"}
+          - label: "Tags"
+            name: "tags"
+            allow_add: true
+            widget: "list"
+            fields:
+              - {label: Nom du tag, name: tag, widget: string, default: "Mon tag"}
+              - {label: ID, name: id, widget: ncw-id, prefix: "tgs"}

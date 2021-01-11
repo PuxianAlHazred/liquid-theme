@@ -1,0 +1,31 @@
+{
+  "highlight": 5,
+  "tags": [
+    {
+      "tag": "Tag 1",
+      "id": "tgs-GzMHuyG2m"
+    },
+    {
+      "tag": "Tag 2",
+      "id": "tgs-Icuvv9s9m"
+    },
+    {
+      "tag": "Tag 3",
+      "id": "tgs-AdGEGzM1g"
+    }
+  ],
+  "categories": [
+    {
+      "categorie": "Catégories 1",
+      "id": "cts-XTbUmCu-W"
+    },
+    {
+      "categorie": "Catégories 2",
+      "id": "cts-IJfhGCu-f"
+    },
+    {
+      "categorie": "Catégories 3",
+      "id": "cts-FRnUk26sJw"
+    }
+  ],
+}
