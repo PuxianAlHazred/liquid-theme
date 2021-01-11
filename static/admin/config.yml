@@ -25,6 +25,8 @@ collections:
       - label: "Événement"
         name: "lieu"
         widget: "object"
+        summary: '{{fields.dateEvent}} : {{fields.hourEvent}}'
+        collapsed: true
         fields:
           - {label: Date de l'événement, name: dateEvent, widget: "datetime", format: "DD/MM/YYYY", required: true}
           - {label: Heure de l'événement, name: hourEvent, widget: string, required: true}
@@ -68,73 +70,15 @@ collections:
         display_fields: categorie
         multiple: false
       - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD", required: true}
-  - name: "pages"
-    label: "📃 Pages"
-    folder: "content/pages/page"
-    create: true
-    editor:
-      preview: true
-    slug: "{{slug}}"
-    show_preview_links: true
-    preview_path: "{{slug}}"
-    format: 'json'
-    sort: 'date'
-    fields:
-      - {label: Titre, name: title, widget: string, required: true}
-      - label: "Section"
-        name: "section"
-        collapsed: true
-        allow_add: true
-        widget: "list"
-        fields:
-          - {label: CSS, name: css, widget: string, required: true}
-          - {label: Article, name: body, widget: "markdown", required: true}
-  - name: "blog"
-    label: "📰 Blog"
-    folder: "content/blog/posts"
-    create: true
-    editor:
-      preview: true
-    slug: "{{slug}}"
-    show_preview_links: true
-    preview_path: "blog/{{slug}}"
-    format: 'json'
-    sort: 'date'
-    fields:
-      - {label: Titre, name: title, widget: string, required: true}
-      - {label: Description, name: description, widget: text, required: true}
-      - {label: Couverture, name: thumbnail, widget: image, required: true}
-      - {label: Article, name: body, widget: "markdown", required: true}
-      - label: "Tags"
-        name: "tgs"
-        slug: "{{slug}}"
-        widget: "ncw-file-relation"
-        collection: "configurations"
-        file: "blog"
-        target_field: "tags"
-        id_field: id
-        display_fields: tag
-        multiple: true
-      - label: "Catégories"
-        name: "cts"
-        slug: "{{slug}}"
-        widget: "ncw-file-relation"
-        collection: "configurations"
-        file: "blog"
-        target_field: "categories"
-        id_field: id
-        display_fields: categorie
-        multiple: false
-      - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD", required: true}
   - name: "configurations"
     label: "⚙️ Configurations"
     files:
-      - label: "Header"
-        name: "header"
-        file: "content/configuration/header.json"
+      - label: "Menu"
+        name: "menu"
+        file: "content/configuration/menu.json"
         fields:
-          - {label: Titre, name: title, widget: string, required: true, hint: "Votre titre qui apparait dans le Header"}
-          - {label: Logo, name: logo, widget: image}
+          - {label: Logo, name: logo, widget: image, hint: "Votre logo en image"}
+          - {label: Billeterie, name: ticketLink, widget: string, hint: "Lien vers votre billeterie"}
           - label: "Liste des pages dans le menu"
             name: "menuList"
             allow_add: true
@@ -142,16 +86,6 @@ collections:
             fields:
               - {label: Nom de la page, name: nomdepage, widget: string, default: "Mon example"}
               - {label: Url, name: url, widget: string, default: "https://votreurl.com/"}
-          - {label: "Hamburger Menu ?", name: "hamburgerActive", widget: "boolean", default: true}
-          - {label: "Sticky Header ?", name: "sticky", widget: "boolean", default: true}
-          - label: "Alignement du menu"
-            hint: "Choisir l'alignement de votre menu"
-            name: "MenuPosition"
-            widget: "select"
-            options:
-              - { label: "Gauche", value: "left" }
-              - { label: "Droite", value: "right" }
-              - { label: "Centrer", value: "center" }
           - label: "Réseaux sociaux"
             name: "rs"
             widget: "ncw-file-relation"
@@ -165,18 +99,28 @@ collections:
         name: "generales"
         file: "content/configuration/generales.json"
         fields:
-          - {label: Titre du projet (SEO), name: title, widget: string, required: true}
-          - {label: Logo du projet (SEO), name: thumbnail, widget: image}
-          - {label: Favicon, name: favicon, widget: image}
-          - {label: Couleur principal, name: colorUn, widget: string}
-          - {label: Couleur secondaire, name: colorDeux, widget: string}
+          - label: "Seo"
+            name: "seo"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: Titre du projet (SEO), name: title, widget: string, required: true}
+              - {label: Logo du projet (SEO), name: thumbnail, widget: image}
+              - {label: Favicon, name: favicon, widget: image}
+          - label: "Theme"
+            name: "theme"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: Couleur principal, name: colorOne, widget: string}
+              - {label: Couleur secondaire, name: colorTwo, widget: string}
           - label: "Réseaux sociaux"
             name: "reseauxsociaux"
             allow_add: true
             widget: "list"
             fields:
               - {label: Nom, name: name, widget: string, default: "Github"}
-              - {label: Icones class ( font-awesome ), name: icons, widget: string, default: "fas fa-bookmark"}
+              - {label: Icones ( line-awesome ), name: icons, widget: string, default: "las la-bookmark"}
               - {label: Url, name: url, widget: string, default: "https://votreurl.com/"}
               - {label: ID, name: id, widget: ncw-id, prefix: "rs"}
       - label: "Footer"
@@ -201,67 +145,3 @@ collections:
             id_field: url
             display_fields: icons
             multiple: true
-          - {label: "Sticky Footer ?", name: "footerSticky", widget: "boolean", default: true}
-          - {label: "Scroll to top ?", name: "scrollTop", widget: "boolean", default: true}
-      - label: "Blog"
-        name: "blog"
-        file: "content/configuration/blog.json"
-        fields:
-          - label: "Tags"
-            name: "tags"
-            allow_add: true
-            widget: "list"
-            fields:
-              - {label: Nom du tag, name: tag, widget: string, default: "Mon tag"}
-              - {label: ID, name: id, widget: ncw-id, prefix: "tgs"}
-          - label: "Catégories"
-            name: "categories"
-            allow_add: true
-            widget: "list"
-            fields:
-              - {label: Nom de la catégories, name: categorie, widget: string, default: "Ma catégorie"}
-              - {label: ID, name: id, widget: ncw-id, prefix: "cts"}
-          - label: "Slider"
-            name: "highlight"
-            widget: "number"
-            default: 2
-            value_type: "int"
-            min: 1
-            max: 5
-            step: 1
-            hint: "Nombre d'article à mettre en avant dans le slider (Maximum 5)"
-          - label: "Nombre d'article par page"
-            name: "totalArticle"
-            widget: "number"
-            default: 5
-            value_type: "int"
-            min: 5
-            max: 15
-            step: 1
-            hint: "Nombre d'article par page dans votre page blog"
-          - label: "Sidebar"
-            name: "sidebar"
-            file: "content/configuration/sidebar.json"
-            collapsed: false
-            allow_add: false
-            widget: "list"
-            fields:
-              - label: "Position de la sidebar"
-                hint: "Choisir l'emplacement de votre sidebar"
-                name: "sidebarPosition"
-                widget: "select"
-                options:
-                  - { label: "Gauche", value: "left" }
-                  - { label: "Droite", value: "right" }
-                  - { label: "Aucune", value: "none" }
-              - {label: "Articles récents ?", name: "lastArticles", widget: "boolean", default: true}
-              - {label: "Zone de recherche ?", name: "zoneRecherche", widget: "boolean", default: true}
-              - {label: "Sticky Sidebar ?", name: "sidebarSticky", widget: "boolean", default: true}
-              - label: "Contenue de la sidebar"
-                name: "sidebarWidget"
-                collapsed: false
-                allow_add: true
-                widget: "list"
-                fields:
-                  - {label: Titre, name: title, widget: string, default: "Everything is awesome!"}
-                  - {label: Code, name: code, widget: markdown}

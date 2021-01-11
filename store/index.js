@@ -1,17 +1,17 @@
 import header from '~/content/configuration/header.json';
 import generales from '~/content/configuration/generales.json';
-import blog from '~/content/configuration/blog.json';
+import agenda from '~/content/configuration/agenda.json';
 import sidebar from '~/content/configuration/sidebar.json';
 import footer from '~/content/configuration/footer.json';
 export const state = () => ({
   footer: footer,
   header: header,
-  blog_options: blog,
+  agenda_options: agenda,
   generales: generales,
   sidebar: sidebar,
-  blog_posts: [],
-  blog_cat: [],
-  blog_tag: [],
+  agenda_posts: [],
+  agenda_cat: [],
+  agenda_tag: [],
   optionsMarkdown: {
     markdownIt: {
       linkify: true,
@@ -46,26 +46,26 @@ export const state = () => ({
 
 export const actions = {
   async nuxtServerInit({ commit }) {
-    const context = require.context('~/content/blog/posts/', false, /\.json$/);
-    const blog_posts = context.keys().map(key => ({
+    const context = require.context('~/content/agenda/posts/', false, /\.json$/);
+    const agenda_posts = context.keys().map(key => ({
       ...context(key),
-      _path: `/blog/${key.replace('.json', '').replace('./', '')}`
+      _path: `/agenda/${key.replace('.json', '').replace('./', '')}`
     })).sort( ( a, b) => {return new Date(b.date) - new Date(a.date);});
-    commit("setPosts", blog_posts);
-    const blog_cat = Array.from(new Set(blog_posts.map(e => e.cts[0].label).sort()));
-    commit("setCat", blog_cat);
-    const blog_tag = Array.from(new Set(blog_posts.map(e => e.tgs[0].label).sort()));
-    commit("setTag", blog_tag);
+    commit("setPosts", agenda_posts);
+    const blog_cat = Array.from(new Set(agenda_posts.map(e => e.cts[0].label).sort()));
+    commit("setCat", agenda_cat);
+    const blog_tag = Array.from(new Set(agenda_posts.map(e => e.tgs[0].label).sort()));
+    commit("setTag", agenda_tag);
   }
 };
 export const mutations = {
-  setPosts(state, blog_posts) {
-    state.blog_posts = blog_posts;
+  setPosts(state, agenda_posts) {
+    state.agenda_posts = agenda_posts;
   },
-  setCat(state, blog_cat) {
-    state.blog_cat = blog_cat;
+  setCat(state, agenda_cat) {
+    state.agenda_cat = agenda_cat;
   },
-  setTag(state, blog_tag) {
-    state.blog_tag = blog_tag;
+  setTag(state, agenda_tag) {
+    state.agenda_tag = agenda_tag;
   }
 };
