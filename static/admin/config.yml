@@ -29,19 +29,15 @@ collections:
           - {label: Date de l'événement, name: dateEvent, widget: "datetime", format: "DD/MM/YYYY", required: true}
           - {label: Heure de l'événement, name: hourEvent, widget: string, required: true}
           - {label: Lien vers la billeterie, name: ticketLink, widget: string }
-      - label: "Artistes"
-        name: "artistes"
-        widget: "object"
+      - label: "Artiste"
+        name: "artiste"
+        widget: "list"
+        required: false
         fields:
-          - label: "Artiste"
-            name: "artiste"
-            widget: "list"
-            required: false
-            fields:
-              - { label: Nom, name: titleArtiste, widget: string}
-              - { label: Image, name: thumbnailArtiste, widget: image }
-              - { label: Description, name: descriptionArtiste, widget: markdown }
-              - { label: Lien vers le site, name: linkArtiste, widget: string }
+          - { label: Nom, name: titleArtiste, widget: string}
+          - { label: Image, name: thumbnailArtiste, widget: image }
+          - { label: Description, name: descriptionArtiste, widget: markdown }
+          - { label: Lien vers le site, name: linkArtiste, widget: string }
       - label: "Lieu"
         name: "lieu"
         widget: "object"
