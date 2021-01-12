@@ -1,6 +1,6 @@
 <template>
   <div class="menu-popup" >
-    MENU
+    MENU lol
   </div>
 </template>
 <script>
