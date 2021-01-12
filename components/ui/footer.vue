@@ -1,8 +1,8 @@
 <template>
-  <footer id="footer" class="footer parent" :class="{ sticky: this.$store.state.footer.sticky}">
+  <footer id="footer" class="footer parent">
 
       <div>
-        <p class="text-left"><i class="lar la-copyright"></i> All rights reserved by {{this.$store.state.footer.copyright}}</p>
+        <p class="text-left"><i class="lar la-copyright"></i> All rights reserved by</p>
       </div>
       <div>
         <p class="text-right"><a @click="scrollToTop">Scroll to top <i class="las la-caret-up"></i></a></p>
