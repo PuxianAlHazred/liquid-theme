@@ -2,15 +2,24 @@
   "reseauxsociaux": [
     {
       "name": "Github",
-      "icons": "fab fa-github",
+      "icons": "lab la-github",
       "url": "https://github.com/PuxianAlHazred",
       "id": "rs-XTbUmCu-W"
     },
     {
       "name": "Codepen",
-      "icons": "fas fa-codepen",
+      "icons": "las la-codepen",
       "url": "https://codepen.io/piksl",
       "id": "rs-IKFh-BIH6"
     }
-  ]
+  ],
+  "seo": {
+    "title": "LIQUID THEME",
+    "thumbnail": "/images/uploads/liquid-theme-logo.png",
+    "favicon": "/images/uploads/favicon.png"
+  },
+  "theme": {
+    "colorOne": "rgb(64,224,208)",
+    "colorTwo": "rgb(219,141,235)"
+  }
 }
