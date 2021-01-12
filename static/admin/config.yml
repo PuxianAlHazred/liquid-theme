@@ -113,7 +113,7 @@ collections:
           - label: "Theme"
             name: "theme"
             widget: "object"
-            summary: '{{fields.colorOne}} : summary: '{{fields.colorTwo}}'  '
+            summary: '{{fields.colorOne}} : {{fields.colorTwo}}' 
             collapsed: true
             fields:
               - {label: Couleur principal, name: colorOne, widget: string}
