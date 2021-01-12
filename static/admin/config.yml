@@ -59,6 +59,7 @@ collections:
         id_field: id
         display_fields: tag
         multiple: true
+        required: false
       - label: "Catégories"
         name: "cts"
         slug: "{{slug}}"
@@ -69,6 +70,7 @@ collections:
         id_field: id
         display_fields: categorie
         multiple: false
+        required: false
       - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD", required: true}
   - name: "configurations"
     label: "⚙️ Configurations"
