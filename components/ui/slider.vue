@@ -1,10 +1,10 @@
 <template>
-  <div id="slider" ref="slider" :class="this.$route.name">
+  <div id="slider" ref="slider" >
     <div class="swiper" ref="swiperTop"
       v-swiper:myDirectiveSwiper="this.$store.state.options.plugins.swiper"
-      @ready="onSwiperRedied"
-      @slide-change="onSwiperSlideChange"
-      @click-slide="onSwiperClickSlide">
+      @ready="swiperRedied"
+      @slide-change="slideChange"
+      @click-slide="clickSlide">
       <div class="swiper-wrapper" >
         <div class="swiper-slide" v-for="(e, i) in filtered" :key="i" :lazy-background="e.thumbnail">
           <NuxtLink :to="e._path+'/'">
@@ -15,20 +15,22 @@
       </div>
       <div class="swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-next" slot="button-next"></div>
-      <div class="swiper-thumbs">
-        <ul>
-          <li :ref="'thumbs'+i" class="swiper-thumbs-button"
-          v-for="(e, i) in filtered" :key="i"
-          @click="toSlide(i)">
-            {{ e.date }}
-          </li>
-        </ul>
-      </div>
-    </div>
 
+    </div>
+    <div class="swiper-thumbs" >
+      <ul>
+        <li v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button" @click="toSlideTop(i)">
+          {{ e.date }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <style>
+.swiper {
+    height: 70vh;
+    width: 100vw;
+}
 .swiper-thumbs {
     position: absolute;
     top: 0;
@@ -59,30 +61,39 @@
 .swiper-thumbs .swiper-thumbs-button.active {
     background: pink;
 }
-.agenda-slug .swiper{height:100vh;}
+.agenda-slug .swiper{
+  height:100vh;
+
+
+}
 </style>
 <script>
-
 export default {
   name: 'Slider',
   data() {
     return {
       active: false,
       filtered: this.$store.state.agenda.posts,
+      indexed: 0,
     }
   },
   methods: {
-    onSwiperRedied(swiper) {
-      console.log("Swiper ready")
+    swiperRedied(swiper) {
+      console.log("Swiper ready !")
     },
-    onSwiperSlideChange() {
-      console.log( "Slider change")
+    slideChange(i, reallyIndex) {
+      this.indexed = this.$refs.swiperTop.swiper.activeIndex;
+      console.log( "Slider change : "+ this.indexed )
+
     },
-    onSwiperClickSlide(i, reallyIndex) {
-      console.log( "Slider : "+ i)
+    clickSlide(i, reallyIndex) {
+      console.log( "Click on slider : "+ i)
+      this.indexed = i
     },
-    toSlide(i) {
+
+    toSlideTop(i) {
       this.$refs.swiperTop.swiper.slideTo(i);
+      this.indexed = i
       console.log( "To slider : "+ i)
     }
   }
