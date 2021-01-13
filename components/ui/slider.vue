@@ -1,7 +1,9 @@
 <template>
   <div id="slider">
     <div class="swiper"
-      v-swiper:myDirectiveSwiper="this.$store.state.options.plugins.swiper" @ready="onSwiperRedied" @click-slide="onSwiperClickSlide" @slide-change-transition-start="onSwiperSlideChangeTransitionStart">
+      v-swiper:myDirectiveSwiper="this.$store.state.options.plugins.swiper"
+      @ready="onSwiperRedied" @click-slide="onSwiperClickSlide"
+      @slide-change-transition-start="onSwiperSlideChangeTransitionStart">
       <div class="swiper-wrapper" >
         <div class="swiper-slide" v-for="(e, i) in this.$store.state.agenda.posts" :key="i" :lazy-background="e.thumbnail">
           <NuxtLink :to="e._path+'/'">
@@ -18,15 +20,14 @@
           </div>
         </div>
       </div>
-
     </div>
     <div class="swiper"
       v-swiper:myDirectiveSwiper="this.$store.state.options.plugins.swiper"
       @ready="onSwiperRedied"
       @click-slide="onSwiperClickSlide"
       @slide-change-transition-start="onSwiperSlideChangeTransitionStart">
-      <div class="swiper-wrapper" >
-        <div class="swiper-slide" v-for="(e, i) in this.$store.state.agenda.posts" :key="i" :lazy-background="e.thumbnail">
+      <div class="swiper-wrapper thumbs" >
+        <div class="swiper-slide" v-for="(e, i) in this.$store.state.agenda.posts" :key="i">
             <p>{{ e.date}}</p>
         </div>
       </div>
