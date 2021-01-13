@@ -5,7 +5,7 @@
       @ready="swiperRedied"
       @slide-change="slideChange"
       @click-slide="clickSlide">
-      <div class="swiper-wrapper" >
+      <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(e, i) in filtered" :key="i" :lazy-background="e.thumbnail">
           <NuxtLink :to="e._path+'/'">
             <span>{{ e.title }}</span>
@@ -15,9 +15,8 @@
       </div>
       <div class="swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-next" slot="button-next"></div>
-
     </div>
-    <div class="swiper-thumbs" >
+    <div class="swiper-thumbs">
       <ul>
         <li v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button" @click="toSlideTop(i)">
           {{ e.date }}
@@ -27,11 +26,17 @@
   </div>
 </template>
 <style>
+#slider{
+  transition:1s all ease;
+}
+/* INDEX */
 .swiper {
     height: 70vh;
     width: 100vw;
+    transition:0.5s all ease;
 }
 .swiper-thumbs {
+    transition:0.3s all ease;
     position: absolute;
     top: 0;
     width: 50px;
@@ -39,7 +44,7 @@
     z-index: 9;
     cursor: pointer;
     right: 0px;
-    background: red;
+    background: transparent;
 }
 .swiper-thumbs .swiper-thumbs-button {
     width: 30px;
@@ -61,11 +66,17 @@
 .swiper-thumbs .swiper-thumbs-button.active {
     background: pink;
 }
+/* SLUG ACTIVE */
 .agenda-slug .swiper{
   height:100vh;
 
 
 }
+.agenda-slug .swiper-thumbs {
+    height: 100vh;
+    right:-50px;
+}
+
 </style>
 <script>
 export default {

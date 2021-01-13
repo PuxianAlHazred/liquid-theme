@@ -41,24 +41,6 @@ export const state = () => ({
           el: '.swiper-pagination',
           dynamicBullets: true
         }
-      },
-      swiperThumbs: {
-        loop: false,
-        slidesPerView: '4',
-        centeredSlides: true,
-        parallax: true,
-        autoplay: {
-          delay: 10000,
-        },
-        spaceBetween: 0,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          dynamicBullets: true
-        }
       }
     },
   }
