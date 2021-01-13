@@ -25,6 +25,8 @@ export const state = () => ({
         }
       },
       swiper: {
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
         loop: false,
         slidesPerView: 'auto',
         centeredSlides: true,
@@ -42,7 +44,7 @@ export const state = () => ({
           dynamicBullets: true
         }
       }
-    },
+    }
   }
 });
 
