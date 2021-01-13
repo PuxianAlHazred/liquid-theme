@@ -6,7 +6,13 @@ html {
    font-family: 'Titillium Web', sans-serif;
 }
 
-
+.menu {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
 .black-col {
     position: fixed;
     top: 0;
@@ -33,6 +39,77 @@ html {
     -webkit-transition: width .5s ease,height .5s ease .5s;
     transition: width .5s ease,height .5s ease .5s;
     overflow: hidden;
+}
+.main-menu.active {
+   width:300px;
+   height:100%
+}
+#menu-select {
+ position:relative;
+ top:10px;
+ display:table;
+ left:10px
+}
+#menu-select p {
+ text-align:center;
+ font-size:34px;
+ font-weight:600;
+ font-family:Titillium Web,sans-serif;
+ line-height:34px;
+ margin:0;
+ color:#fff;
+ height:34px
+}
+#menu-select p:before {
+ content:"M";
+ opacity:1;
+ -webkit-transition:opacity .5s ease .5s;
+ transition:opacity .5s ease .5s
+}
+#menu-select p:after {
+ content:"x";
+ opacity:0;
+ left:7px;
+ position:absolute;
+ font-size:32px;
+ line-height:23px;
+ -webkit-transition:opacity .5s ease;
+ transition:opacity .5s ease
+}
+.main-menu.active #menu-select p:after {
+ opacity:1;
+ -webkit-transition:opacity .5s ease .5s;
+ transition:opacity .5s ease .5s
+}
+.main-menu.active #menu-select p:before {
+ opacity:0;
+ -webkit-transition:opacity .5s ease;
+ transition:opacity .5s ease
+}
+#menu-select span {
+ background-color:#fff;
+ display:block;
+ width:4px;
+ float:left;
+ transition:all .7s;
+}
+#menu-select span:nth-child(2) {
+ margin-left:2px;
+ color:#fff
+}
+#menu-select span:nth-child(3) {
+ margin-left:6px;
+ margin-right:6px
+}
+.nav-list {
+    background: 0 0;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 250px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .align-right {
