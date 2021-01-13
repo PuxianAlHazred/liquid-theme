@@ -2,7 +2,7 @@
   <div>
     <ui-menu></ui-menu>
     <div class="main">
-      <ui-slider></ui-slider>
+      <ui-slider :class="this.$route.name"></ui-slider>
       <transition name="animate__fadeInUp" mode="out-in">
         <nuxt/>
       </transition>
