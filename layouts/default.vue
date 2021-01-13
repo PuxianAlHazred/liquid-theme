@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div  :style="cssVars">
     <ui-menu></ui-menu>
     <div class="main">
       <ui-slider :class="this.$route.name"></ui-slider>
@@ -24,7 +24,15 @@
         uiSlider,
         uiFooter
     },
-    mounted () {
+    computed: {
+
+      cssVars() {
+        return {
+          "--gradient-one": this.$store.state.options.generales.theme.colorOne,
+          "--gradient-two": this.$store.state.options.generales.theme.colorTwo
+        }
+      }
+
     }
   }
 </script>
