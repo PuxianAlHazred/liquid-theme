@@ -28,8 +28,7 @@
 
       cssVars() {
         return {
-          "--gradient-one": this.$store.state.options.generales.theme.colorOne,
-          "--gradient-two": this.$store.state.options.generales.theme.colorTwo
+          "--gradient": this.$store.state.options.generales.theme.gradient
         }
       }
 

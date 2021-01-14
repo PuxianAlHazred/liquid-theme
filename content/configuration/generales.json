@@ -16,7 +16,7 @@
   "theme": {
     "title": "LIQUID THEME",
     "thumbnail": "/images/uploads/liquid-theme-logo.png",
-    "favicon": "/images/uploads/favicon.png"
+    "favicon": "/images/uploads/favicon.png",
     "gradient": "linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f)"
   }
 }

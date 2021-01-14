@@ -2,7 +2,7 @@
   <header class="menu">
     <div class="black-col" >
       <NuxtLink to="/" class="logo">
-        <img :src="this.$store.state.options.menu.logo" :alt="this.$store.state.options.generales.seo.title" />
+        <img :src="this.$store.state.options.menu.logo" :alt="this.$store.state.options.generales.theme.title" />
       </NuxtLink>
     </div>
     <div class="main-menu" :class="{active: MenuIsActive}" >
@@ -17,7 +17,7 @@
               <i class="las la-ticket-alt"/>
               Billeterie
           </a>
-          <h2>{{ this.$store.state.options.generales.seo.title }}</h2>
+          <h2>{{ this.$store.state.options.generales.theme.title }}</h2>
           <ul class="menu-list">
             <li v-for="item in this.$store.state.options.menu.menuList"><NuxtLink :to="item.url">{{ item.nomdepage }}</NuxtLink></li>
           </ul>
@@ -45,7 +45,6 @@
         openMenu: function (event) {
           this.MenuIsActive = !this.MenuIsActive;
         },
-
         equalizer(){
             const randomNumber = Math.floor(Math.random() * 50 + 20);
             const marg = (170 - randomNumber) / 2;
