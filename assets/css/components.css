@@ -2,9 +2,7 @@
 components > ui > header.vue
 */
 
-html {
-   font-family: 'Titillium Web', sans-serif;
-}
+
 
 .menu {
     z-index: 9999;
@@ -31,7 +29,7 @@ html {
     max-width: 100%;
 }
 .main-menu{
-    width: 50px;
+    width: 65px;
     height: 300px;
     left: 150px;
     position: absolute;
@@ -41,75 +39,145 @@ html {
     overflow: hidden;
 }
 .main-menu.active {
-   width:300px;
+   width:415px;
    height:100%
 }
 #menu-select {
- position:relative;
- top:10px;
- display:table;
- left:10px
+   position:relative;
+   top:20px;
+   display:table;
+   left:18px
 }
 #menu-select p {
- text-align:center;
- font-size:34px;
- font-weight:600;
- font-family:Titillium Web,sans-serif;
- line-height:34px;
- margin:0;
- color:#fff;
- height:34px
+   text-align:center;
+   font-size:34px;
+   font-weight:600;
+   font-family:Titillium Web,sans-serif;
+   line-height:34px;
+   margin:0;
+   color:#fff;
+   height:34px
 }
 #menu-select p:before {
- content:"M";
- opacity:1;
- -webkit-transition:opacity .5s ease .5s;
- transition:opacity .5s ease .5s
+   content:"M";
+   opacity:1;
+   -webkit-transition:opacity .5s ease .5s;
+   transition:opacity .5s ease .5s
 }
 #menu-select p:after {
- content:"x";
- opacity:0;
- left:7px;
- position:absolute;
- font-size:32px;
- line-height:23px;
- -webkit-transition:opacity .5s ease;
- transition:opacity .5s ease
+   content:"X";
+   opacity:0;
+   left:5.5px;
+   position:absolute;
+   font-size:32px;
+   line-height:34px;
+   -webkit-transition:opacity .5s ease;
+   transition:opacity .5s ease
 }
 .main-menu.active #menu-select p:after {
- opacity:1;
- -webkit-transition:opacity .5s ease .5s;
- transition:opacity .5s ease .5s
+   opacity:1;
+   -webkit-transition:opacity .5s ease .5s;
+   transition:opacity .5s ease .5s
 }
 .main-menu.active #menu-select p:before {
- opacity:0;
- -webkit-transition:opacity .5s ease;
- transition:opacity .5s ease
+   opacity:0;
+   -webkit-transition:opacity .5s ease;
+   transition:opacity .5s ease
 }
 #menu-select span {
- background-color:#fff;
- display:block;
- width:4px;
- float:left;
- transition:all .7s;
+   background-color:#fff;
+   display:block;
+   width:5px;
+   float:left;
+   transition:all .7s;
 }
 #menu-select span:nth-child(2) {
- margin-left:2px;
- color:#fff
+   margin-left:2px;
+   color:#fff
 }
 #menu-select span:nth-child(3) {
- margin-left:6px;
- margin-right:6px
+   margin-left:5px;
+   margin-right:5px
 }
 .nav-list {
     background: 0 0;
     position: absolute;
     top: 0;
-    left: 50px;
-    width: 250px;
+    left: 65px;
+    width: 350px;
     padding: 0;
     margin: 0;
     list-style: none;
+    height: 100%;
+}
+.ticket {
+    line-height: 75px;
+    display: block;
+    padding-right: 25px;
+    text-align: right;
+    background: #000;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Changa";
+}
+.ticket i {
+    float: left;
+    line-height: 75px;
+    font-size: 35px;
+    padding-left: 25px;
+}
+nav ul {
+    list-style: none;
+    text-align: right;
+    display: grid;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    margin-right: 25px;
+    line-height: 45px;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+.menu-list a {
+    font-size: 25px;
+    line-height: 50px;
+}
+.menu-list a:before {
+  content: "";
+  position: absolute;
+  background: #000000;
+  width: 0px;
+  height: 13px;
+  top: 50%;
+  transform: translate(0%, 0%);
+  transition: all .3s ease;
+  z-index: -1;
+}
+.menu-list li a:hover:before {
+  width: 100%;
+}
+.menu h2 {
+    font-size: 29px;
+    text-align: right;
+    padding-right: 25px;
+    margin: 20px 0 0;
+    line-height: 40px;
+}
+.rs-list {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
 }
 
 .align-right {

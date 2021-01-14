@@ -13,6 +13,11 @@
           <span :style="bar3"></span>
       </div>
       <nav class="nav-list">
+          <a class="ticket" :href="this.$store.state.options.menu.ticketLink" target="_blank">
+              <i class="las la-ticket-alt"/>
+              Billeterie
+          </a>
+          <h2>{{ this.$store.state.options.generales.seo.title }}</h2>
           <ul class="menu-list">
             <li v-for="item in this.$store.state.options.menu.menuList"><NuxtLink :to="item.url">{{ item.nomdepage }}</NuxtLink></li>
           </ul>
