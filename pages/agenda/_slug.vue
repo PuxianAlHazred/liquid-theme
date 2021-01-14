@@ -42,6 +42,7 @@
   background-position:center center;
   background-size:cover;
 }
+
 </style>
 <script>
 export default {
