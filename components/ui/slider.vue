@@ -16,6 +16,9 @@
             <ul class="artistes">
               <li v-for="(a, i) in e.artiste" :key="i" >{{ a.titleArtiste }}</li>
             </ul>
+            <div class="ticket">
+              <a target="_blank" :href="e.lieu.ticketLink">OBTENIR VOTRE BILLET</a>
+            </div>
           </div>
           <div v-else>
             <NuxtLink :to="e._path+'/'">
@@ -27,9 +30,7 @@
               <ul class="artistes">
                 <li v-for="(a, i) in e.artiste" :key="i" >{{ a.titleArtiste }}</li>
               </ul>
-              <div class="ticket">
-                <a target="_blank" :href="e.lieu.ticketLink">OBTENIR VOTRE BILLET lol</a>
-              </div>
+
             </NuxtLink>
           </div>
         </div>
