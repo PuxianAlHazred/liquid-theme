@@ -33,7 +33,7 @@ components > ui > header.vue
     height: 300px;
     left: 150px;
     position: absolute;
-    background: linear-gradient(45deg,var(--gradient-one),var(--gradient-one) 25%,var(--gradient-two) 51%,var(--gradient-two));
+    background:var(--gradient);
     -webkit-transition: width .5s ease,height .5s ease .5s;
     transition: width .5s ease,height .5s ease .5s;
     overflow: hidden;
@@ -153,7 +153,7 @@ nav a {
     font-size: 25px;
     line-height: 50px;
 }
-.menu-list a:before {
+.nav-list a:before {
   content: "";
   position: absolute;
   background: #000000;
@@ -164,7 +164,7 @@ nav a {
   transition: all .3s ease;
   z-index: -1;
 }
-.menu-list li a:hover:before {
+.nav-list li a:hover:before {
   width: 100%;
 }
 .menu h2 {
@@ -178,6 +178,9 @@ nav a {
     position: absolute;
     bottom: 25px;
     width: 100%;
+}
+.rs-list i {
+    font-size: 30px;
 }
 
 .align-right {
