@@ -183,14 +183,70 @@ nav a {
     font-size: 30px;
 }
 
-.align-right {
-    text-align: right;
+/****************SLIDER*****************/
+.swiper-slide .grid-content {
+    height: calc(100% - 50px);
+    max-width: 1180px;
+    padding: 25px 0;
 }
-.align-left {
+.swiper-slide a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide .grid-content p {
+    margin: 0;
+    display: inline-block;
+    font-size: 26px;
+    line-height: 50px;
+    font-weight: normal;
+}
+.swiper-slide .grid-content .date {
+    float: left;
+}
+.swiper-slide .grid-content .hour {
+    float: right;
+}
+.swiper-slide .grid-content .event {
+    display: block;
+    position: absolute;
+    top: 50px;
     text-align: left;
 }
-.align-center {
+.swiper-slide .artistes {
+    margin: 0;
+    position: relative;
+    top: 100px;
+    padding: 50px 0;
+    list-style: none;
+}
+.swiper-slide .artistes li {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 5px;
+    padding-right: 0;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    text-align: right;
+}
+.swiper-slide .artistes li:hover {
+    font-weight: 600;
+    padding-right: 50px;
+}
+.swiper-slide .artistes li::after {
+    content: "<";
+    position: absolute;
+    width: 50px;
+    line-height: 75px;
     text-align: center;
+    opacity: .5;
 }
 /*
 components > ui > footer.vue

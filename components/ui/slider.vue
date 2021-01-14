@@ -7,11 +7,11 @@
       >
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(e, i) in filtered" :key="i" :lazy-background="e.thumbnail">
-          <div v-if="['agenda', 'agenda-slug'].indexOf($route.name) > -1">
+          <div class="grid-content" v-if="['agenda', 'agenda-slug'].indexOf($route.name) > -1">
             <div class="meta">
-              <p>{{ e.lieu.dateEvent }}</p>
-              <p>{{ e.lieu.hourEvent }}</p>
-              <p>{{ e.title }}</p>
+              <p class="date">{{ e.lieu.dateEvent }}</p>
+              <p class="hour">{{ e.lieu.hourEvent }}</p>
+              <p class="event">{{ e.title }}</p>
             </div>
             <ul class="artistes">
               <li v-for="(a, i) in e.artiste" :key="i" >{{ a.titleArtiste }}</li>
@@ -20,12 +20,12 @@
               <a target="_blank" :href="e.lieu.ticketLink">OBTENIR VOTRE BILLET</a>
             </div>
           </div>
-          <div v-else>
+          <div class="grid-content" v-else>
             <NuxtLink :to="e._path+'/'">
               <div class="meta">
-                <p>{{ e.lieu.dateEvent }}</p>
-                <p>{{ e.lieu.hourEvent }}</p>
-                <p>{{ e.title }}</p>
+                <p class="date">{{ e.lieu.dateEvent }}</p>
+                <p class="hour">{{ e.lieu.hourEvent }}</p>
+                <p class="event">{{ e.title }}</p>
               </div>
               <ul class="artistes">
                 <li v-for="(a, i) in e.artiste" :key="i" >{{ a.titleArtiste }}</li>
