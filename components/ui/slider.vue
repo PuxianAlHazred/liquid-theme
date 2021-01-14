@@ -130,12 +130,22 @@ export default {
       console.log( "To slider : "+ i)
     }
   },
-  async mounted() {
+  beforeUpdate() {
     if ( this.$route.name === "agenda-slug" ) {
-      console.log('Sluggy')
-
+      console.log("beforeUpdate if")
+      this.filtered = this.$store.state.agenda.posts.filter(a => {return a._path+'/' === this.$route.path});
     } else {
-      console.log('Not sluggy')
+      console.log("beforeUpdate else")
+      this.filtered = this.$store.state.agenda.posts
+    }
+  },
+  async created() {
+    if ( this.$route.name === "agenda-slug" ) {
+      console.log("created else")
+      this.filtered = this.$store.state.agenda.posts.filter(a => {return a._path+'/' === this.$route.path});
+    } else {
+      console.log("created else")
+      this.filtered = this.$store.state.agenda.posts
     }
   },
 
