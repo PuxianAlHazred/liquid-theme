@@ -1,6 +1,13 @@
 /*
 NOMADS CMS
 */
+
+@font-face {
+    font-family: "Changa";
+    src: local("Changa"),
+    url(~assets/font/changaOne/ChangaOne-Regular.ttf) format("truetype");
+}
+
 :root {
   --universal-margin: 25px;
   --universal-padding: 25px;
@@ -10,6 +17,10 @@ NOMADS CMS
 
   --gradient-one: #cecece;
   --gradient-two: #555;
+}
+
+html {
+   font-family: 'Titillium Web', sans-serif;
 }
 
 body {
