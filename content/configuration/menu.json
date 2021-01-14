@@ -13,7 +13,11 @@
   "rs": [
     {
       "value": "https://github.com/PuxianAlHazred",
-      "label": "fab fa-github"
+      "label": "lab la-github"
+    },
+    {
+      "value": "https://codepen.io/piksl",
+      "label": "las la-codepen"
     }
   ],
   "ticketLink": "#"

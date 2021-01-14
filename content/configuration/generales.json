@@ -13,13 +13,10 @@
       "id": "rs-IKFh-BIH6"
     }
   ],
-  "seo": {
+  "theme": {
     "title": "LIQUID THEME",
     "thumbnail": "/images/uploads/liquid-theme-logo.png",
     "favicon": "/images/uploads/favicon.png"
-  },
-  "theme": {
-    "colorOne": "rgb(64,224,208)",
-    "colorTwo": "rgb(219,141,235)"
+    "gradient": "linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f)"
   }
 }

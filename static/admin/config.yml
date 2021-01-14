@@ -101,23 +101,16 @@ collections:
         name: "generales"
         file: "content/configuration/generales.json"
         fields:
-          - label: "Seo"
-            name: "seo"
-            widget: "object"
-            summary: '{{fields.title}}'
-            collapsed: true
-            fields:
-              - {label: Titre du projet (SEO), name: title, widget: string, required: true}
-              - {label: Logo du projet (SEO), name: thumbnail, widget: image}
-              - {label: Favicon, name: favicon, widget: image}
           - label: "Theme"
             name: "theme"
             widget: "object"
-            summary: '{{fields.colorOne}} : {{fields.colorTwo}}' 
+            summary: '{{fields.colorOne}} : {{fields.colorTwo}}'
             collapsed: true
             fields:
-              - {label: Couleur principal, name: colorOne, widget: string}
-              - {label: Couleur secondaire, name: colorTwo, widget: string}
+              - {label: Titre du projet, name: title, widget: string, required: true}
+              - {label: Logo du projet, name: thumbnail, widget: image, required: true}
+              - {label: Favicon, name: favicon, widget: image}
+              - {label: Dégrader, name: gradient, widget: string}
           - label: "Réseaux sociaux"
             name: "reseauxsociaux"
             allow_add: true
