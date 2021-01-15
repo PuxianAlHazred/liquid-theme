@@ -24,6 +24,18 @@ export const state = () => ({
           }
         }
       },
+      markdownne: {
+        markdownIt: {
+          linkify: true,
+          html: true
+        },
+        linkAttributes: {
+          attrs: {
+            target: '_blank',
+            rel: 'noopener'
+          }
+        }
+      },
       swiper: {
         loop: false,
         slidesPerView: '1',
