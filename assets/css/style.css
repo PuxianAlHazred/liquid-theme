@@ -185,6 +185,13 @@ AGENDA Slug
     top: 60px;
     right: 7px;
 }
+.agenda-thumbs{
+  width:200px;
+  height:200px;
+  background-position:center center;
+  background-size:cover;
+  margin-top: 10px;
+}
 .agenda-content {
     padding-right: 75px;
     padding-top: 20px;

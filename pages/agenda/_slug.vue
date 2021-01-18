@@ -46,14 +46,7 @@
     </ClientOnly>
   </div>
 </template>
-<style>
-  .agenda-thumbs{
-    width:200px;
-    height:200px;
-    background-position:center center;
-    background-size:cover;
-  }
-</style>
+
 <script>
 export default {
   layout: 'default',
