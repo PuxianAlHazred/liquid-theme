@@ -193,8 +193,6 @@ AGENDA Slug
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    align-items: center;
-    justify-items: center;
 }
 .artistes .agenda-content {
     position: relative;
