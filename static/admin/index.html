@@ -19,6 +19,20 @@
         import { Widget as FileRelationWidget } from '@ncwidgets/file-relation'
         cms.registerWidget(FileRelationWidget)
         cms.registerPreviewStyle("https://liquid-theme.netlify.app/admin/ui-panel.css");
+        var AgendaPreview = createClass({
+          render() {
+            var entry = this.props.entry;
+            var image = entry.getIn(['data', 'thumbnail']);
+            var bg = this.props.getAsset(image);
+            return h('div', {},
+              h('h1', {}, entry.getIn(['data', 'title'])),
+              h('img', {src: bg.toString()}),
+              h('div', {"className": "text"}, this.props.widgetFor('body'))
+            );
+          }
+        });
+        cms.registerPreviewTemplate("blockquote", BlockquotePreview);
+
         cms.init()
         </script>
     </body>
