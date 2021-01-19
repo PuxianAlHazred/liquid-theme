@@ -5,31 +5,7 @@ plugins > swiper.js
 .example {
   height: auto;
 }
-.swiper {
-  height: 70vh;
-  width: 100%;
-}
-.swiper-slide {
-  text-align: center;
-  font-size: 38px;
-  font-weight: 700;
-  background-color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-.swiper-pagination > .swiper-pagination-bullet {
-  background: white!important;
-  mix-blend-mode: difference!important;
-}
-.swiper-button-next, .swiper-button-prev{
-  color: white!important;
-  mix-blend-mode: difference!important;
-}
+
 /*
 pages > index.vue
 */
