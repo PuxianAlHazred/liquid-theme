@@ -125,3 +125,86 @@
 .css-12b66la-AppHeaderContent.e16dayda0 {
   height: 56px;
 }
+.css-ect4hj-CollectionTopContainer-card-cardTop.enajvhy0 {
+  background: linear-gradient(-45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
+  border-radius: 0px;
+  box-shadow: none !important;
+  height: 80px;
+  grid-area: 1 / 1 / 2 / 2;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  margin-bottom: 0px;
+}
+.css-1f7nhiq-CollectionMain.e1yhfkro1 {
+  padding-left: 250px;
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.css-v758ki-AppMainContainer.e1ghgnen0 {
+  min-width: 800px;
+  max-width: 100%;
+}
+.css-37khcc-CollectionTopHeading-cardTopHeading.enajvhy2 {
+  color: white;
+  font-weight: 900;
+}
+.css-1qfk5ut-CollectionTopNewButton-button-default-gray.enajvhy3 {
+  border-radius: 0px;
+  background: white;
+  color: black;
+  font-weight: 700;
+  box-shadow: none;
+}
+.css-p5sjac-CollectionControlsContainer.e17kb5zm0 {
+  grid-area: 1 / 2 / 2 / 3;
+  width: 100%;
+  margin-top: 0px;
+  height: 80px;
+  max-width: 100%;
+  background: white;
+}
+.css-1f7nhiq-CollectionMain.e1yhfkro1 div:nth-child(3) {
+  width: calc(100% - 250px);
+  top: 136px;
+  position: absolute;
+}
+.css-5wgw3f-ListCard-card.eab48an0 {
+  width: 100%;
+  margin: 12px 12px 0px 12px;
+  box-shadow: none;
+  border-radius: 0px;
+  background: black;
+}
+.css-1iwq7gj-GridCard-card.eab48an2 {
+  flex: auto;
+  border-radius: 0px;
+  margin: 12px;
+}
+.css-1l7q1fc-CardsGrid.e1hbvtjf0 {
+  margin-top: 0px;
+}
+.css-lhgdwk-CardImage.eab48an8 {
+  height: 190px;
+}
+.css-tshc3d-GridCardLink.eab48an3 {
+  color: black;
+  font-weight: 900;
+}
+.css-17fei3e-CardHeading.eab48an6 {
+  font-weight: 900;
+  color: white;
+}
+.css-uzzveo-CardBody::after {
+  box-shadow: none !important;
+}
+.css-1t9i08i-ListCardLink.eab48an1 {
+  color: white!i;
+}
+.css-1mtos59-ListCardTitle.eab48an5 {
+  color: white;
+  font-weight: 800;
+}
