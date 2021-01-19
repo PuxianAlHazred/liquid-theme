@@ -332,7 +332,7 @@
   /*! margin-top: 50px; */
 }
 .css-pcief1-FieldLabel-fieldLabel::after {
-  background: none;
+  background: none!important;
 }
 .css-pcief1-FieldLabel-fieldLabel::before {
   background: transparent;
@@ -377,4 +377,22 @@
 }
 .css-182avcw .css-1c858j3-ControlContainer.ei073ck0 {
   margin-top: 0px;
+}
+.css-188efjc {
+  background: white;
+  border-radius: 0px;
+  border:0px;
+  font-weight:900;
+}
+.css-1vur7zs-FieldLabel-fieldLabel.e1j7dp4t0 {
+  color: white;
+  font-weight: 900;
+  padding: 8px;
+  width: 100%;
+  border-radius: 0px;
+  border:0px;
+  background: #000000;
+}
+.css-1vur7zs-FieldLabel-fieldLabel.e1j7dp4t0:after {
+  background: none;
 }
