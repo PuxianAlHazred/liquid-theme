@@ -1,4 +1,4 @@
-
+/*menu right*/
 .css-v758ki-AppMainContainer.e1ghgnen0 {
   margin: 0px;
 }
@@ -27,8 +27,6 @@
 .css-1blbyw7-SearchInput.el9l68m3 {
   border-radius: 0;
 }
-path {
-}
 .ei6fm2r1.css-1u8x1er-IconWrapper.ei6fm2r0 svg path {
   fill: black;
 }
@@ -53,4 +51,77 @@ path {
   display: none;
 }
 .ei6fm2r1.css-tg1x8v-IconWrapper.ei6fm2r0 {
+}
+
+/*Header*/
+.css-y7r3-AppHeader {
+  box-shadow: none;
+  background: black;
+}
+.css-12b66la-AppHeaderContent.e16dayda0 {
+  width: 100%;
+  max-width: 100%;
+  padding: 0px;
+}
+.css-e9z4u8-AppHeaderSiteLink.e1cy7qi03 {
+  color: white;
+}
+.e1cy7qi02.css-15yst2y-IconWrapper-AvatarPlaceholderIcon-avatarImage.ei6fm2r0 {
+  background: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
+  color: white;
+  border-radius: ;
+}
+.css-gkrpnu-StyledDropdownButton-button-default-caretDown-AppHeaderQuickNewButton-button-medium-gray.e16dayda3 {
+  background: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
+  border-radius: 0;
+}
+.css-aygmkc-button-dropdownItem-StyledMenuItem {
+}
+.css-pp9jk1-DropdownList-dropdownList-DropdownList.e1d27pw02 {
+  border-radius: 0px;
+  box-shadow: none;
+  color: black;
+  font-weight: 600;
+}
+.css-pp9jk1-DropdownList-dropdownList-DropdownList.e1d27pw02:hover {
+}
+.css-aygmkc-button-dropdownItem-StyledMenuItem:hover {
+  background: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
+  color: white;
+  font-weight: 600;
+}
+.css-skl0o-AppHeaderNavLink-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton.e16dayda5.header-link-active {
+  color: white;
+  height: 56px;
+}
+.ei6fm2r1.css-tg1x8v-IconWrapper.ei6fm2r0 {
+  transform: rotate(0deg);
+  border-radius: 32px;
+  background: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
+  width: 34px;
+  height: 34px;
+  margin-right: 13px;
+}
+.css-skl0o-AppHeaderNavLink-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton.header-link-active .ei6fm2r1 {
+  color: white;
+}
+.css-tg1x8v-IconWrapper svg {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+}
+.css-1dol16j-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton .ei6fm2r1 {
+  color: black;
+}
+.css-1dol16j-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton:hover .ei6fm2r1, .css-1dol16j-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton:active .ei6fm2r1, .css-1dol16j-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton:focus .ei6fm2r1 {
+  color: white;
+}
+.css-1dol16j-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton.e16dayda1 {
+  color: white;
+  height: 56px;
+  background: #151515;
+  border-radius: 0px;
+}
+.css-12b66la-AppHeaderContent.e16dayda0 {
+  height: 56px;
 }
