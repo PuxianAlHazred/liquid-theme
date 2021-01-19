@@ -15,9 +15,6 @@
           import { Widget as FileRelationWidget } from '@ncwidgets/file-relation';
           cms.registerWidget(FileRelationWidget);
           cms.registerPreviewStyle("https://liquid-theme.netlify.app/admin/ui-panel.css");
-          cms.init();
-        </script>
-        <script>
           var AgendaPreview = createClass({
             render: function() {
               var entry = this.props.entry;
@@ -30,8 +27,8 @@
               );
             }
           });
-          CMS.registerPreviewTemplate("agenda", AgendaPreview);
+          cms.registerPreviewTemplate("agenda", AgendaPreview);
+          cms.init();
         </script>
-      </script>
     </body>
 </html>
