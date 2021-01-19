@@ -5,33 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Content Manager</title>
         <link rel="stylesheet" href="https://liquid-theme.netlify.app/admin/ui-cms.css"/>
-        <!-- Include the styles for the Netlify CMS UI, after your own styles -->
         <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.css"/>
-
     </head>
     <body>
         <script src="https://unpkg.com/@ncwidgets/netlify-cms@^0.7.0/dist/netlify-cms.js"></script>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <script>
+          import cms from 'netlify-cms-app'
+          import { Widget as FileRelationWidget } from '@ncwidgets/file-relation'
+          cms.registerWidget(FileRelationWidget)
+          cms.registerPreviewStyle("https://liquid-theme.netlify.app/admin/ui-panel.css");
+          cms.init()
         </script>
-        <script>
-        import cms from 'netlify-cms-app'
-        import { Widget as FileRelationWidget } from '@ncwidgets/file-relation'
-        cms.registerWidget(FileRelationWidget)
-        cms.registerPreviewStyle("https://liquid-theme.netlify.app/admin/ui-panel.css");
-        var AgendaPreview = createClass({
-          render: function () {
-            return(`
-              <div>
-                <h1 className='title'>${entry.getIn(['data', 'title'])}</h1>
-                <img className='cover' src='${${entry.getIn(['data', 'thumbnail'])}}' />
-              </div>
-            `);
-          }
-        });
-        cms.registerPreviewTemplate("agenda", AgendaPreview);
+        <script type="module">
+          import htm from 'https://unpkg.com/htm?module'
+          const html = htm.bind(h);
+          const AgendaPreview = createClass({
+            render: function() {
+              return (
+                html`
+                  <div>
+                    <h1 className='blogTitle'>${entry.getIn(['data', 'title'])}</h1>
+                    <caption className='blogSubTitle'>${entry.getIn(['data', 'thumbnail'])}</caption>
 
-        cms.init()
-        </script>
+                  </div>
+                `
+              );
+            }
+          });
+          cms.registerPreviewTemplate("agenda", AgendaPreview);
+      </script>
     </body>
 </html>
