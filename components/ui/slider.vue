@@ -15,6 +15,7 @@
                   <div class="meta">
                     <p class="date">{{ e.lieu.dateEvent }}</p>
                     <p class="hour">{{ e.lieu.hourEvent }}</p>
+                    <p class="author"><span>author</span> présente :</p>
                     <p class="event">{{ e.title }}</p>
                   </div>
                   <ul class="artistes">

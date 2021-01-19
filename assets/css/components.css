@@ -189,7 +189,7 @@ nav a {
   width: 100%;
 }
 .swiper-slide {
-  text-align: center;
+  text-align: right;
   font-size: 38px;
   font-weight: 700;
   background-color: #000;
@@ -246,18 +246,39 @@ nav a {
 }
 .content-right {
     position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .swiper-slide a .meta {
     display: block;
 }
 .swiper-slide .grid-content p {
     margin: 0;
-    font-size: 26px;
-    line-height: 50px;
+    font-size: 24px;
+    line-height: 35px;
     font-weight: normal;
     text-align: right;
 }
-
+.swiper-slide .grid-content p.hour {
+    font-size: 34px;
+    padding-bottom: 15px;
+    display: inline-block;
+    border-bottom: 8px solid #fff;
+}
+.swiper-slide .grid-content p.date {
+    margin-bottom: -10px;
+}
+.swiper-slide .grid-content p.author {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 10px 0 0;
+}
+.swiper-slide .grid-content p.author span{
+    font-weight: bold;
+}
+.swiper-slide .grid-content p.event {
+    font-weight: bold;
+}
 .swiper-slide .artistes {
     margin: 0;
     position: relative;
