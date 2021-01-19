@@ -136,12 +136,12 @@ AGENDA Slug
     background: transparent;
 }
 .map-link p {
-    padding: 10px 0;
+    padding: 12.5px 0;
     margin: 0;
 }
 .artistes .map-link p {
     display: inline-block;
-    padding: 5px;
+    padding: 4px 5px;
     position: relative;
     font-size: 40px;
 }
@@ -178,12 +178,12 @@ AGENDA Slug
     display: block;
     height: 0;
     width: 0;
-    border-right: 22px solid transparent;
+    border-right: 25px solid transparent;
     border-bottom: 23px solid #000;
-    border-left: 23px solid transparent;
+    border-left: 25px solid transparent;
     position: absolute;
     top: 60px;
-    right: 7px;
+    right: 4px;
 }
 .agenda-thumbs{
   width:200px;
@@ -213,7 +213,7 @@ AGENDA Slug
 }
 .artistes .agenda-content h4 {
     font-size: 33px;
-    margin: 0;
+    margin: 0 0 15px;
 }
 .artiste-link {
     color: #000;
