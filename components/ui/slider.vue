@@ -8,25 +8,7 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(e, i) in filtered" :key="i">
           <div class="fontblur" :lazy-background="e.thumbnail"></div>
-          <div class="grid-content" v-if="['agenda', 'agenda-slug'].indexOf($route.name) > -1">    
-            <div class="slider-content">
-                <div class="flyer" :lazy-background="e.thumbnail"></div>
-                <div class="content-right">
-                    <div class="meta">
-                      <p class="date">{{ e.lieu.dateEvent }}</p>
-                      <p class="hour">{{ e.lieu.hourEvent }}</p>
-                      <p class="event">{{ e.title }}</p>
-                    </div>
-                    <ul class="artistes">
-                      <li v-for="(a, i) in e.artiste" :key="i" >{{ a.titleArtiste }}</li>
-                    </ul>
-                    <div class="ticket">
-                      <a target="_blank" :href="e.lieu.ticketLink">OBTENIR VOTRE BILLET</a>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div class="grid-content" v-else>
+          <div class="grid-content">
             <NuxtLink class="slider-content" :to="e._path+'/'">
               <div class="flyer" :lazy-background="e.thumbnail"></div>
               <div class="content-right">
