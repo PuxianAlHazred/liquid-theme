@@ -30,7 +30,7 @@
         <p class="h5">Je suis un paragraphe de style H5</p>
         <h6>Je suis un H6</h6>
         <p class="h6">Je suis un paragraphe de style H6</p>
-
+        <div id="pixi"></div>
       </div>
     </section>
   </div>

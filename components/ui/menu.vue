@@ -32,7 +32,6 @@
 <script>
   export default {
     data() {
-
       return {
         bar1: [],
         bar2: [],
@@ -50,6 +49,11 @@
             const marg = (170 - randomNumber) / 2;
             return 'height:'+ randomNumber +'px;margin-bottom:'+ marg +'px; overflow:hidden;'
         },
+        updateBars() {
+          this.bars1 = this.equalizer();
+          this.bars2 = this.equalizer();
+          this.bars3 = this.equalizer();
+        },
         updateBars1() {
           this.bar1 = this.equalizer();
         },
@@ -62,11 +66,6 @@
         getDelay() {
           return Math.floor(Math.random() * 50 + 20) * 7.5;
         }
-
-
-    },
-    computed: {
-
     },
     mounted() {
         this.updateBars1();
