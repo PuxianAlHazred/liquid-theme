@@ -1,4 +1,4 @@
-/*menu right*/
+/*menu collections*/
 .css-v758ki-AppMainContainer.e1ghgnen0 {
   margin: 0px;
 }
@@ -52,8 +52,7 @@
 }
 .ei6fm2r1.css-tg1x8v-IconWrapper.ei6fm2r0 {
 }
-
-/*Header*/
+/*header collections*/
 .css-y7r3-AppHeader {
   box-shadow:    none !important;
   background-color: black !important;
@@ -125,6 +124,7 @@
 .css-12b66la-AppHeaderContent.e16dayda0 {
   height: 56px;
 }
+/*container collections*/
 .css-ect4hj-CollectionTopContainer-card-cardTop.enajvhy0 {
   background: linear-gradient(-45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
   border-radius: 0px;
@@ -203,7 +203,7 @@
   box-shadow: none !important;
 }
 .css-1t9i08i-ListCardLink.eab48an1 {
-  color: white!i;
+  color: white!important;
 }
 .css-1mtos59-ListCardTitle.eab48an5 {
   color: white;
@@ -217,4 +217,164 @@
 }
 .css-1qfk5ut-CollectionTopNewButton-button-default-gray.enajvhy3:hover {
   background: transparent;
+}
+/*header toolbar post edit*/
+.css-hn3jn7-EditorContainer.e1pxf6c43 {
+    padding-top: 56px;
+}
+.css-2oej7z-ToolbarContainer.evqrzhe1 {
+  height: 56px;
+  box-shadow: none;
+  background: black;
+}
+.css-16b5p1f-ToolbarSectionMain-toolbarSection.evqrzhe2 {
+  background: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
+  border: 0px !important;
+}
+.css-abwcjt-ToolbarSectionBackLink-toolbarSection.evqrzhe5 {
+  border-right: 0px;
+}
+.css-1whurdv-BackCollection.evqrzhe9 {
+  font-weight: 600;
+  color: white;
+}
+.css-f78fim-BackStatus-BackStatusUnchanged-badge-textBadge-textBadgeSuccess.evqrzhe11 {
+  color: #3bade3;
+}
+.css-1ixjrmh-ToolbarButton-button-default-buttonMargin-noOverflow-DeleteButton-lightRed.evqrzhe14 {
+  border-radius: 0px;
+  background: #ff357f;
+  color: white;
+  font-weight: 600;
+}
+.css-13lzkq8-PreviewLink-RefreshPreviewButton.evqrzhe23 {
+  color: white;
+}
+.ei6fm2r1.css-ztwcyu-IconWrapper.ei6fm2r0 {
+  color: white;
+}
+.css-1t2w4bv-StyledDropdownButton-button-default-caretDown-DropdownButton-noOverflow-PublishedToolbarButton-publishedButton.evqrzhe16 {
+  border-radius: 0px;
+  background: white;
+  color: black;
+}
+.css-1acatj1-ToolbarSectionMeta-toolbarSection.evqrzhe6 {
+  border-left: 0px;
+}
+
+/*menu toolbar post edit*/
+.css-2oej7z-ToolbarContainer.evqrzhe1 {
+  height: 56px;
+  box-shadow: none;
+  background: black;
+}
+.css-16b5p1f-ToolbarSectionMain-toolbarSection.evqrzhe2 {
+  background: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
+  border: 0px !important;
+}
+.css-abwcjt-ToolbarSectionBackLink-toolbarSection.evqrzhe5 {
+  border-right: 0px;
+}
+.css-1whurdv-BackCollection.evqrzhe9 {
+  font-weight: 600;
+  color: white;
+}
+.css-f78fim-BackStatus-BackStatusUnchanged-badge-textBadge-textBadgeSuccess.evqrzhe11 {
+  color: #3bade3;
+}
+.css-1ixjrmh-ToolbarButton-button-default-buttonMargin-noOverflow-DeleteButton-lightRed.evqrzhe14 {
+  border-radius: 0px;
+  background: #ff357f;
+  color: white;
+  font-weight: 600;
+}
+.css-13lzkq8-PreviewLink-RefreshPreviewButton.evqrzhe23 {
+  color: white;
+}
+.ei6fm2r1.css-ztwcyu-IconWrapper.ei6fm2r0 {
+  color: white;
+}
+.css-1t2w4bv-StyledDropdownButton-button-default-caretDown-DropdownButton-noOverflow-PublishedToolbarButton-publishedButton.evqrzhe16 {
+  border-radius: 0px;
+  background: white;
+  color: black;
+}
+.css-1acatj1-ToolbarSectionMeta-toolbarSection.evqrzhe6 {
+  border-left: 0px;
+}
+.css-hn3jn7-EditorContainer.e1pxf6c43 {
+  padding-top: 56px;
+}
+.Resizer.vertical {
+  background: black;
+  cursor: grab;
+}
+.Resizer.vertical:hover {
+  background: #151515;
+}
+.Resizer.vertical::before {
+  background: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
+  background: ;
+}
+.css-1ix3pzw-PreviewPaneContainer-ControlPaneContainer.e1pxf6c46 {
+  background: #000000;
+}
+.Pane.vertical.Pane1 {
+  width: 20%;
+}
+.css-pcief1-FieldLabel-fieldLabel.e1j7dp4t0 {
+  border-radius: 0px;
+  background: #151515;
+  color: white;
+  font-weight: 900;
+  padding: 8px;
+  width: 100%;
+  /*! margin-top: 50px; */
+}
+.css-pcief1-FieldLabel-fieldLabel::after {
+  background: none;
+}
+.css-pcief1-FieldLabel-fieldLabel::before {
+  background: transparent;
+}
+.css-1prcas7-ControlPaneContainer.e1tnasa20 .css-83wr9v {
+  border-radius: 0;
+  background: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
+  border: none;
+  color: white;
+  font-weight: 900;
+}
+.css-6xnv66-ImageWrapper-checkerboard.e1awjdnj0 {
+  /*! float: left; */
+  display: block;
+}
+.css-83wr9v {
+  position: ;
+}
+.css-18h6btn {
+  border: 0px;
+  border-radius: 0px;
+  background: transparent;
+  padding: 0px;
+  margin: 1px;
+}
+.css-ohbgub-ListItem-listControlItem-listControlItemCollapsed-ListControl.e14bfka80 {
+  width: 100%;
+}
+.css-1265b6l-TopBarContainer.e1yavck40 {
+  margin: 0px;
+}
+.css-ohbgub-ListItem-listControlItem-listControlItemCollapsed-ListControl:first-of-type {
+  margin-top: 0px;
+}
+.css-182avcw {
+  padding: 0px;
+  border-radius: 0px;
+  border: 0px;
+}
+.css-1c858j3-ControlContainer:first-of-type {
+  margin-top: 0px;
+}
+.css-182avcw .css-1c858j3-ControlContainer.ei073ck0 {
+  margin-top: 0px;
 }
