@@ -186,6 +186,7 @@
 }
 .css-1l7q1fc-CardsGrid.e1hbvtjf0 {
   margin-top: 0px;
+  margin-left: 0px!important;
 }
 .css-lhgdwk-CardImage.eab48an8 {
   height: 190px;
@@ -207,4 +208,13 @@
 .css-1mtos59-ListCardTitle.eab48an5 {
   color: white;
   font-weight: 800;
+}
+.css-1mtos59-ListCardTitle.eab48an5:hover {
+  color: ;
+}
+.css-1t9i08i-ListCardLink.eab48an1:hover h2 {
+  color: black;
+}
+.css-1qfk5ut-CollectionTopNewButton-button-default-gray.enajvhy3:hover {
+  background: transparent;
 }
