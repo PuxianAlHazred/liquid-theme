@@ -11,8 +11,8 @@
         <script src="https://unpkg.com/@ncwidgets/netlify-cms@^0.7.0/dist/netlify-cms.js"></script>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <script type="module">
-          import cms from './netlify-cms-app';
-          import { Widget as FileRelationWidget } from './@ncwidgets/file-relation';
+          import cms from '/netlify-cms-app';
+          import { Widget as FileRelationWidget } from '/@ncwidgets/file-relation';
           cms.registerWidget(FileRelationWidget);
           cms.init();
           var AgendaPreview = createClass({
