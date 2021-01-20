@@ -16,7 +16,24 @@
           cms.registerWidget(FileRelationWidget);
           cms.init();
         </script>
+        <script type="module">
+          import htm from 'https://unpkg.com/htm?module'
+          const html = htm.bind(h);
+          const PostPreview = createClass({
+            render: function() {
+              return (
+                html`
+                  <div>
+                    <h1 className='blogTitle'>${entry.getIn(['data', 'title'])}</h1>
+                  </div>
+                `
+              );
+            }
+          });
+          CMS.registerPreviewTemplate("agenda", PostPreview);
+        </script>
         <script>
+        /*
           var AgendaPreview = createClass({
             render: function() {
               var entry = this.props.entry;
@@ -29,6 +46,7 @@
               );
             }
           });
+      */
           CMS.registerPreviewTemplate("agenda", AgendaPreview);
           CMS.registerPreviewStyle("https://liquid-theme.netlify.app/admin/ui-panel.css");
         </script>
