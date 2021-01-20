@@ -20,11 +20,11 @@
           var AgendaPreview = createClass({
             render: function() {
               var entry = this.props.entry;
-              var image = entry.getIn(['data', 'thumbnail']);
-              var bg = this.props.getAsset(image);
-              return h('div', {},
+              return h('div', {class: 'main' },
+                h('div',  {class: 'slider' }),
+                h('div',  {class: 'container grid-content' }, 
                 h('h1', {}, entry.getIn(['data', 'title'])),
-                h('img', {src: bg.toString()})
+                h('img', {src: bg.toString()}))
               );
             }
           });
