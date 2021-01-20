@@ -19,6 +19,7 @@
         <script type="module">
           import htm from 'https://unpkg.com/htm?module'
           const html = htm.bind(h);
+          const entry = this.props.entry;
           const PostPreview = createClass({
             render: function() {
               return (
@@ -46,8 +47,9 @@
               );
             }
           });
-      */
+
           CMS.registerPreviewTemplate("agenda", AgendaPreview);
+          */
           CMS.registerPreviewStyle("https://liquid-theme.netlify.app/admin/ui-panel.css");
         </script>
     </body>
