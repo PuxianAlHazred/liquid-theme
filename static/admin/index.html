@@ -24,12 +24,11 @@
                 h('div',  {class: 'slider' }),
                 h('div',  {class: 'container grid-content' },
                   h('section',  {class: 'content-slug place' },
-                    h('h1', {}, entry.getIn(['data', 'title'])),
-                    h('img', {src: bg.toString()})))
+                    h('h1', {}, entry.getIn(['data', 'title']))))
               );
             }
           });
-  
+
           CMS.registerPreviewTemplate("agenda", AgendaPreview);
           CMS.registerPreviewStyle("https://liquid-theme.netlify.app/admin/ui-panel.css");
         </script>
