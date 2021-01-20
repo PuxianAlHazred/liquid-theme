@@ -22,9 +22,12 @@
               var entry = this.props.entry;
               return h('div', {class: 'main' },
                 h('div',  {class: 'slider' }),
-                h('div',  {class: 'container grid-content' }, 
-                h('h1', {}, entry.getIn(['data', 'title'])),
-                h('img', {src: bg.toString()}))
+                h('div',  {class: 'container grid-content' },
+                  h('section',  {class: 'content-slug place' },
+                    h('h1', {}, entry.getIn(['data', 'title'])),
+                    h('img', {src: bg.toString()})
+                  )
+                );
               );
             }
           });
