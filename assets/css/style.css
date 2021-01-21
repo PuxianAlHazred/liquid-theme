@@ -15,6 +15,8 @@ NOMADS CMS
   --swiper-theme-color:#007aff;
   --swiper-navigation-size:44px;
 
+  --color-one:#3bade3;
+  --color-two:#ff357f;
   --gradient: #cecece;
 }
 
@@ -70,6 +72,71 @@ h6, .h6{ font-size: 20px; }
 .text-justify{ text-align: justify; }
 .sticky{ position: sticky; }
 .saturate{ filter: saturate(0); }
+
+/*
+AGENDA
+*/
+.list-content {
+    padding-top: 50px;
+}
+.grid-item {
+    position: relative;
+    width: calc((100% / 3) - 20px);
+    display: inline-grid;
+    grid-template-columns: 35% 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 0 10px;
+}
+article .agenda-thumbs {
+    width: 100%;
+    margin: 0;
+}
+.style {
+    font-size: 15px;
+    margin: 0;
+    color: #000;
+    font-family: changa;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translatex(100%) rotate(90deg);
+    transform-origin: top left;
+}
+.style span{
+    color:var(--color-one);
+}
+.style span:first-child{
+    color:var(--color-two);
+}
+article .artistes {
+    list-style: none;
+    padding: 0;
+    padding-right: 30px;
+    margin: 0;
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+article .date {
+    position: absolute;
+    bottom: 10px;
+    margin: 0;
+    right: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+article .link {
+    color: #fff;
+    background: #000;
+    text-decoration: navajowhite;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: -30px;
+}
+
 /*
 AGENDA Slug
 */
