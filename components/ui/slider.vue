@@ -26,8 +26,6 @@
           </div>
         </div>
       </div>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
     </div>
     <div class="swiper-thumbs">
       <ul>
@@ -44,8 +42,6 @@
   }
   /* INDEX */
   .swiper {
-      height: 70vh;
-      width: 100vw;
       transition:0.5s all ease;
   }
   .swiper-thumbs {

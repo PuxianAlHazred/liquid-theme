@@ -1,13 +1,13 @@
 <template>
   <footer id="footer" class="footer parent">
-
-      <div>
-        <p class="text-left"><i class="lar la-copyright"></i> All rights reserved by</p>
+      <div class="grid-content">
+          <div>
+            <p class="text-left"><i class="lar la-copyright"></i> All rights reserved by</p>
+          </div>
+          <div>
+            <p class="text-right"><a @click="scrollToTop">Scroll to top <i class="las la-caret-up"></i></a></p>
+          </div>
       </div>
-      <div>
-        <p class="text-right"><a @click="scrollToTop">Scroll to top <i class="las la-caret-up"></i></a></p>
-      </div>
-
 
   </footer>
 </template>
