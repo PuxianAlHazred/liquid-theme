@@ -19,10 +19,10 @@
           </a>
           <h2>{{ this.$store.state.options.generales.theme.title }}</h2>
           <ul class="menu-list">
-            <li v-for="item in this.$store.state.options.menu.menuList"><NuxtLink :to="item.url">{{ item.nomdepage }}</NuxtLink></li>
+            <li v-for="item in this.$store.state.options.menu.menuList" @click="openMenu"><NuxtLink :to="item.url">{{ item.nomdepage }}</NuxtLink></li>
           </ul>
           <ul class="rs-list">
-            <li v-for="item in this.$store.state.options.menu.rs"><NuxtLink :to="item.value"><i :class=" item.label "/></NuxtLink></li>
+            <li v-for="item in this.$store.state.options.menu.rs" @click="openMenu"><NuxtLink :to="item.value"><i :class=" item.label "/></NuxtLink></li>
           </ul>
       </nav>
     </div>
