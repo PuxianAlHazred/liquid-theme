@@ -4,60 +4,128 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Content Manager</title>
-        <link rel="stylesheet" href="https://liquid-theme.netlify.app/admin/ui-cms.css"/>
+        <link rel="stylesheet" href="/admin/ui-cms.css"/>
         <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.css"/>
     </head>
     <body>
         <script src="https://unpkg.com/@ncwidgets/netlify-cms@^0.7.0/dist/netlify-cms.js"></script>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <script>
           import CMS from 'netlify-cms-app';
           import { Widget as FileRelationWidget } from '@ncwidgets/file-relation';
           cms.registerWidget(FileRelationWidget);
           cms.init();
         </script>
+
         <script>
+
           var AgendaPreview = createClass({
             render: function() {
-              var entry = this.props.entry;
-              var lieu = entry.getIn(['data', 'lieu']);
+
+
+              const entry = this.props.entry
+              // slider
+              const img = entry.getIn(['data', 'thumbnail'])
+              const featured_img = this.props.getAsset(img) || ''
+              const title = entry.getIn(['data', 'title'])
+              const date = entry.getIn(['data', 'date'])
+              const lieu_obj = entry.getIn(['data', 'lieu'])
+              const imgLieu = lieu_obj.getIn(['thumbnailLieu'])
+              const mdLieu = lieu_obj.getIn(['descriptionLieu'])
+              const featured_img_lieu = this.props.getAsset(imgLieu) || ''
+              const artiste_obj = entry.getIn(['data', 'artiste']) || []
+
+
               return h('div', {class: 'main' },
-                h('div',  {class: 'slider' }),
+                h('div', { class: 'slider agenda-slug' },
+                  h('div',  {class: 'swiper' },
+                    h('div',  {class: 'swiper-wrapper' },
+                      h('div',  {class: 'swiper-slide' },
+                        h('div', { className: 'fontblur', style: { backgroundImage: `url(${featured_img.toString()})` } }),
+                        h('div',  {class: 'grid-content' },
+                          h('div',  {class: 'slider-content' },
+                            h('div', { className: 'flyer', style: { backgroundImage: `url(${featured_img.toString()})` } }),
+                            h('div',  {class: 'content-right' },
+                              h('div',  {class: 'meta' },
+                                h('p',  {class: 'date' }, lieu_obj.getIn(['dateEvent'])),
+                                h('p',  {class: 'hour' }, lieu_obj.getIn(['hourEvent'])),
+                                h('p',  {class: 'author' }, 'Author présente :'),
+                                h('p',  {class: 'event' }, title),
+                              ),
+                              h('ul',  {class: 'artistes' },
+                                artiste_obj.map(art  => h('li', {}, `${art.getIn(['titleArtiste'])}`))
+                              )
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                ),
+                h('section',  {class: 'ticket' },
+                  h('div',  {class: 'grid-content' },
+                    h('i',  {class: 'las la-info-circle' }),
+                    h('div',  {class: 'countdown' }),
+                    h('a',  {class: 'countdown' }, 'Réserver maintenant votre place'),
+                  )
+                ),
                 h('div',  {class: 'container grid-content' },
                   h('section',  {class: 'content-slug place' },
-                    h('h3', {}, this.props.widgetsFor('lieu').getIn(['data', 'titleLieu'])))))
-              );
-            }
-          });
-
-          CMS.registerPreviewTemplate("agenda", AgendaPreview);
-          CMS.registerPreviewStyle("https://liquid-theme.netlify.app/admin/ui-panel.css");
-        </script>
-        <script>
-          var GeneralPreview = createClass({
-            // Object fields are simpler than lists - instead of `widgetsFor` returning
-            // an array of objects, it returns a single object. Accessing the shape of
-            // that object is the same as the shape of objects returned for list fields:
-            //
-            // {
-            //   data: { front_limit: 0, author: 'Chris' },
-            //   widgets: { front_limit: (<WidgetComponent>), author: (WidgetComponent>)}
-            // }
-            render: function() {
-              var entry = this.props.entry;
-              var title = entry.getIn(['data', 'site_title']);
-              var posts = entry.getIn(['data', 'posts']);
-              return h('div', {},
-                h('h1', {}, title),
-                h('dl', {},
-                  h('dt', {}, 'Default Author'),
-                  h('dd', {}, this.props.widgetsFor('posts').getIn(['data', 'author']) || 'None'),
+                    h('div',  {class: 'agenda-header' },
+                      h('h3', {}, lieu_obj.getIn(['titleLieu'])),
+                      h('a',  {class: 'map' },
+                        h('i',  {class: 'las la-map-marked-alt' }),
+                        h('div',  {class: 'triangle' }),
+                        h('div',  {class: 'map-link' },
+                          h('div',  {class: 'text-gradient' },
+                            h('p',  {}, 'S`Y RENDRE')
+                          )
+                        )
+                      )
+                    ),
+                    h('div',  {class: 'agenda-content' },
+                      h('div', { className: 'agenda-thumbs', style: { backgroundImage: `url(${featured_img_lieu.toString()})` } }),
+                      h('div',  {class: 'content-markdown' }, lieu_obj.getIn(['descriptionLieu']) )
+                    )
+                  ),
+                  h('section',  {class: 'content-slug artistes' },
+                    h('div',  {class: 'agenda-header' },
+                      h('h3', {}, "ARTISTES"),
+                      h('a',  {class: 'map' },
+                        h('i',  {class: 'las la-user-tag' }),
+                        h('div',  {class: 'map-link' },
+                          h('div',  {class: 'text-gradient' },
+                            h('p',  {}, 'VOTRE TAG')
+                          )
+                        )
+                      )
+                    ),
+                    h('div',  {class: 'agenda-content' },
+                      h('div', { className: 'agenda-thumbs', style: { backgroundImage: `url(${featured_img_lieu.toString()})` } }),
+                      h('div',  {class: 'content-markdown' }, lieu_obj.getIn(['descriptionLieu']) )
+                    ),
+                    h('div',  {},
+                      artiste_obj.map(art  =>
+                        h('div',  {class: 'agenda-content' },
+                          h('div', { className: 'agenda-thumbs', style: { backgroundImage: `url(${art.getIn(['thumbnailArtiste'])})` } }),
+                          h('div',  {class: 'content-markdown' },
+                            h('h4', {}, `${art.getIn(['titleArtiste'])}`),
+                            h('p', {}, `${art.getIn(['descriptionArtiste'])}`),
+                            h('a', {}, `${art.getIn(['linkArtiste'])}`),
+                          )
+                        )
+                      )
+                    )
+                  )
                 )
               );
             }
           });
-
-          CMS.registerPreviewTemplate("general", GeneralPreview);
+          CMS.registerPreviewStyle("https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css");
+          CMS.registerPreviewTemplate("agenda", AgendaPreview);
+          CMS.registerPreviewStyle("/admin/ui-panel.css");
         </script>
+
     </body>
 </html>

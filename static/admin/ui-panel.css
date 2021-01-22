@@ -221,3 +221,130 @@ AGENDA Slug
     margin-top: 20px;
     display: block;
 }
+/****************SLIDER*****************/
+.swiper {
+  height: 70vh;
+  width: 100%;
+}
+.swiper-slide {
+  text-align: right;
+  font-size: 38px;
+  font-weight: 700;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 80vh;
+}
+.swiper-pagination > .swiper-pagination-bullet {
+  background: white!important;
+  mix-blend-mode: difference!important;
+}
+.swiper-button-next, .swiper-button-prev{
+  color: white!important;
+  mix-blend-mode: difference!important;
+}
+ .fontblur {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.5;
+}
+.agenda-slug .fontblur{
+    filter: blur(50px);
+    opacity: 1;
+}
+.agenda-slug .swiper-button-next, .agenda-slug .swiper-button-prev {
+    display: none;
+}
+.swiper-slide .grid-content {
+    height: calc(100% - 50px);
+    max-width: 1180px;
+    padding: 25px 0;
+}
+.swiper-slide .slider-content {
+    text-decoration: none;
+    color: #fff;
+    margin: 0;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.flyer {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.content-right {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.swiper-slide a .meta {
+    display: block;
+}
+.swiper-slide .grid-content p {
+    margin: 0;
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: normal;
+    text-align: right;
+}
+.swiper-slide .grid-content p.hour {
+    font-size: 34px;
+    padding-bottom: 15px;
+    display: inline-block;
+    border-bottom: 8px solid #fff;
+}
+.swiper-slide .grid-content p.date {
+    margin-bottom: -10px;
+}
+.swiper-slide .grid-content p.author {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 10px 0 0;
+}
+.swiper-slide .grid-content p.author span{
+    font-weight: bold;
+}
+.swiper-slide .grid-content p.event {
+    font-weight: bold;
+}
+.swiper-slide .artistes {
+    margin: 0;
+    position: relative;
+    padding: 50px 0;
+    list-style: none;
+}
+.swiper-slide .artistes li {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 5px;
+    padding-right: 0;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    text-align: right;
+}
+.swiper-slide .artistes li:hover {
+    font-weight: 600;
+    padding-right: 50px;
+}
+.swiper-slide .artistes li::after {
+    content: "<";
+    position: absolute;
+    width: 50px;
+    line-height: 75px;
+    text-align: center;
+    opacity: .5;
+}
