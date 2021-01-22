@@ -2,7 +2,7 @@
   <footer id="footer" class="footer parent">
       <div class="grid-content">
           <div>
-            <p class="text-left"><i class="lar la-copyright"></i> All rights reserved by</p>
+            <p class="text-left"><i class="lar la-copyright"></i> All rights reserved by PIKS-L</p>
           </div>
           <div>
             <p class="text-right"><a @click="scrollToTop">Scroll to top <i class="las la-caret-up"></i></a></p>
