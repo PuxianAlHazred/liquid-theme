@@ -223,7 +223,7 @@ AGENDA Slug
 }
 /****************SLIDER*****************/
 .swiper {
-  height: 70vh;
+  height: 80vh;
   width: 100%;
 }
 .swiper-slide {
@@ -236,6 +236,7 @@ AGENDA Slug
   align-items: center;
   overflow: hidden;
   height: 80vh;
+  position: relative;
 }
 .swiper-pagination > .swiper-pagination-bullet {
   background: white!important;
@@ -347,4 +348,20 @@ AGENDA Slug
     line-height: 75px;
     text-align: center;
     opacity: .5;
+}
+.ticket {
+    line-height: 75px;
+    display: block;
+    padding-right: 25px;
+    text-align: right;
+    background: #000;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Changa";
+}
+.ticket i {
+    float: left;
+    line-height: 75px;
+    font-size: 35px;
+    padding-left: 25px;
 }

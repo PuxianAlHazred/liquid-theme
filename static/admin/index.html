@@ -35,8 +35,6 @@
               const mdLieu = lieu_obj.getIn(['descriptionLieu'])
               const featured_img_lieu = this.props.getAsset(imgLieu) || ''
               const artiste_obj = entry.getIn(['data', 'artiste']) || []
-
-
               return h('div', {class: 'main' },
                 h('div', { class: 'slider agenda-slug' },
                   h('div',  {class: 'swiper' },
