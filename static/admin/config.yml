@@ -26,7 +26,6 @@ collections:
       - label: "Événement"
         name: "event"
         widget: "object"
-        collapsed: true
         fields:
           - {label: Date de l'événement, name: dateEvent, widget: "datetime", format: "MM/DD/YYYY", required: true}
           - {label: Heure de l'événement, name: hourEvent, widget: string, required: true}
