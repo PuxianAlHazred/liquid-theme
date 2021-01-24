@@ -76,8 +76,8 @@ collections:
         widget: "object"
         collapsed: true
         fields:
-          - {label: Couleur 1, name: color1, widget: 'color', enableAlpha: true, allowInput: true}
-          - {label: Couleur 2, name: color2, widget: 'color', enableAlpha: true, allowInput: true}
+          - {label: Couleur 1, name: color1, widget: string}
+          - {label: Couleur 2, name: color2, widget: string}
           - {label: Dégrader, name: gradientEvent, widget: string}
       - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD", required: true}
 
