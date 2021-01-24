@@ -54,6 +54,7 @@ module.exports = {
     { src: '@/plugins/filters.js'},
     { src: '@/plugins/moment.js'},
     { src: '@/plugins/vue-gallery.client.js'},
+    { src: '@/plugins/countdown.js'},
     { src: '@/plugins/markdown.js', ssr: false },
     { src: '@/plugins/disqus.js'},
   ],

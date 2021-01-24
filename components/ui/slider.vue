@@ -94,9 +94,11 @@ export default {
     return {
       routing: '',
       active: false,
-      filtered: this.$store.state.agenda.posts,
       indexed: 0,
     }
+  },
+  props: {
+    filtered: { type: Array, required: true },
   },
   methods: {
     swiperRedied(swiper) {
@@ -117,24 +119,5 @@ export default {
       console.log( "To slider : "+ i)
     }
   },
-  beforeUpdate() {
-    if ( this.$route.name === "agenda-slug" ) {
-      console.log("beforeUpdate if")
-      this.filtered = this.$store.state.agenda.posts.filter(a => {return a._path+'/' === this.$route.path});
-    } else {
-      console.log("beforeUpdate else")
-      this.filtered = this.$store.state.agenda.posts
-    }
-  },
-  async created() {
-    if ( this.$route.name === "agenda-slug" ) {
-      console.log("created else")
-      this.filtered = this.$store.state.agenda.posts.filter(a => {return a._path+'/' === this.$route.path});
-    } else {
-      console.log("created else")
-      this.filtered = this.$store.state.agenda.posts
-    }
-  },
-
 }
 </script>

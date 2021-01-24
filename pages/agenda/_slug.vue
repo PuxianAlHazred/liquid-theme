@@ -4,7 +4,17 @@
     <section class="ticket">
       <div class="grid-content">
           <i class="las la-info-circle"></i>
-          <div class="countdown"></div>
+          <div class="countdown">
+            <div class="text-center">
+              <div v-if="currentTime">
+                <div>{{ currentTime ? `${currentTime.days}` : "" }}<span>Day</span></div>
+                <div>{{ currentTime ? `${("0" + currentTime.hours).slice(-2)}` : "" }}<span>Hours</span></div>
+                <div>{{ currentTime ? `${("0" + currentTime.minutes).slice(-2)}` : "" }}<span>Minutes</span></div>
+                <div>{{ currentTime ? `${("0" + currentTime.seconds).slice(-2)}` : "" }}<span>Seconds</span></div>
+              </div>
+              <p v-if="!currentTime">Time's Up!</p>
+            </div>
+          </div>
           <a target="_blank" :href="lieu.ticketLink">Réserver maintenant votre place</a>
       </div>
     </section>
@@ -46,19 +56,51 @@
     </ClientOnly>
   </div>
 </template>
+<style>
+  .countdown {
+    color: white;
+  }
 
+</style>
 <script>
 export default {
   layout: 'default',
   scrollToTop: true,
   data() {
     return {
-      options: this.$store.state.options.plugins.markdown
+      options: this.$store.state.options.plugins.markdown,
+      currentTime: null,
+      speed: 1000,
     };
+  },
+  mounted() {
+    setTimeout(this.countdown, 1);
   },
   async asyncData({ params }) {
     let page = await import('~/content/agenda/posts/' + params.slug + '.json');
     return page;
   },
+  methods: {
+    countdown() {
+      let t = Date.parse(this.lieu.dateEvent) - Date.parse(new Date());
+      console.log(t)
+      let seconds = Math.floor((t / 1000) % 60);
+      let minutes = Math.floor((t / 1000 / 60) % 60);
+      let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      let days = Math.floor(t / (1000 * 60 * 60 * 24));
+      if (t > 0) {
+        this.currentTime = {
+          total: t,
+          days: days,
+          hours: hours,
+          minutes: minutes,
+          seconds: seconds
+        };
+        setTimeout(this.countdown, this.speed);
+      } else {
+        this.currentTime = null;
+      }
+    }
+  }
 };
 </script>
