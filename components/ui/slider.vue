@@ -13,8 +13,8 @@
               <div class="flyer" :lazy-background="e.thumbnail"></div>
               <div class="content-right">
                   <div class="meta">
-                    <p class="date">{{ e.lieu.dateEvent }}</p>
-                    <p class="hour">{{ e.lieu.hourEvent }}</p>
+                    <p class="date">{{ e.event.dateEvent }}</p>
+                    <p class="hour">{{ e.event.hourEvent }}</p>
                     <p class="author"><span>author</span> présente :</p>
                     <p class="event">{{ e.title }}</p>
                   </div>

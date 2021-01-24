@@ -1,11 +1,13 @@
 {
   "lieu": {
-    "dateEvent": "01/31/2022",
     "descriptionLieu": "Pavidum illa erubuere vertice, pertulerint genus melior communis nymphae\nArgolicae conscia. Tendens matrem Aquilonem cuspide fidem, est longum dixit\nreducunt in auras; medio. Bina gurgite Nelea ne choro; quoque, perfectaque, hac\ncomitata urbe, scire.",
     "gmapsLieu": " #",
     "linkLieu": "#",
     "thumbnailLieu": "/images/uploads/7995-bikini4.jpg",
-    "titleLieu": "Gravity Beat",
+    "titleLieu": "Gravity Beat"
+  },
+  "event": {
+    "dateEvent": "01/31/2022",
     "hourEvent": "20H à MINUIT",
     "ticketLink": "#"
   },

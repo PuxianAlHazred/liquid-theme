@@ -24,7 +24,7 @@ collections:
       - {label: Titre de l'événement, name: title, widget: string, required: true}
       - {label: Couverture de l'événement, name: thumbnail, widget: image, required: true}
       - label: "Événement"
-        name: "lieu"
+        name: "event"
         widget: "object"
         collapsed: true
         fields:

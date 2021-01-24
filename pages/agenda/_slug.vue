@@ -15,7 +15,7 @@
               <p v-if="!currentTime">Time's Up!</p>
             </div>
           </div>
-          <a target="_blank" :href="lieu.ticketLink">Réserver maintenant votre place</a>
+          <a target="_blank" :href="event.ticketLink">Réserver maintenant votre place</a>
       </div>
     </section>
     <div class="container grid-content">
@@ -48,7 +48,7 @@
               <div class="content-markdown">
                   <h4>{{element.titleArtiste}}</h4>
                   <markdown-it-vue :content="element.descriptionArtiste" :options="options"/>
-                  <a class="artiste-link" :href="element.linkArtiste" target="_blank">S'Y RENDRE</a>
+                  <a class="artiste-link" :href="element.linkArtiste" target="_blank">En savoir plus <i class="las la-external-link-alt"></i></a>
               </div>
             </div>
         </section>
@@ -82,7 +82,7 @@ export default {
   },
   methods: {
     countdown() {
-      let t = Date.parse(this.lieu.dateEvent) - Date.parse(new Date());
+      let t = Date.parse(this.event.dateEvent) - Date.parse(new Date());
       console.log(t)
       let seconds = Math.floor((t / 1000) % 60);
       let minutes = Math.floor((t / 1000 / 60) % 60);
