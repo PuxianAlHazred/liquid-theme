@@ -55,7 +55,7 @@
 
     </div>
     <div class="other-event">
-      <div class="container grid-content">
+      <div class="grid-content">
         <article v-for="element in otherPost.slice(0,1)" class="grid-item">
           <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
 
