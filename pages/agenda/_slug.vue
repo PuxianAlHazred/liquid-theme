@@ -71,10 +71,20 @@ export default {
       options: this.$store.state.options.plugins.markdown,
       currentTime: null,
       speed: 1000,
+      otherPost: []
     };
   },
   mounted() {
     setTimeout(this.countdown, 1);
+
+    var allId = this.$store.state.agenda.posts.map((e, i) => {
+      console.log(" ALL ID : " + i + " - TITLE : " + e.title);
+      if(e.title != this.title) {
+        console.log("IS NOT CURRENT ARTICLE : " + e.title)
+        this.otherPost = e
+      }
+      return i
+    });
   },
   async asyncData({ params }) {
     let page = await import('~/content/agenda/posts/' + params.slug + '.json');
@@ -83,7 +93,6 @@ export default {
   methods: {
     countdown() {
       let t = Date.parse(this.event.dateEvent) - Date.parse(new Date());
-      console.log(t)
       let seconds = Math.floor((t / 1000) % 60);
       let minutes = Math.floor((t / 1000 / 60) % 60);
       let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
