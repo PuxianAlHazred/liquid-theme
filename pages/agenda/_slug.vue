@@ -75,6 +75,16 @@ export default {
   },
   mounted() {
     setTimeout(this.countdown, 1);
+
+    var allId = this.$store.state.agenda.posts.map((e, i) => {
+      console.log("ID : " + i + " - TITLE : " + e.title);
+      if(e.title != this.title) {
+        console.log("lol : " +e.title)
+      }
+      return i
+    });
+    var search = this.title;
+    console.log("MY ID : " +search)
   },
   async asyncData({ params }) {
     let page = await import('~/content/agenda/posts/' + params.slug + '.json');
@@ -83,7 +93,6 @@ export default {
   methods: {
     countdown() {
       let t = Date.parse(this.event.dateEvent) - Date.parse(new Date());
-      console.log(t)
       let seconds = Math.floor((t / 1000) % 60);
       let minutes = Math.floor((t / 1000 / 60) % 60);
       let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
