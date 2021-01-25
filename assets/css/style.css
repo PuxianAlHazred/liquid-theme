@@ -26,7 +26,7 @@ html {
 
 body {
     margin: 0;
-    background: #cecece;
+    background: #fff;
 }
 input[type="text"] {
     width: calc(100% - 30px);
@@ -40,7 +40,7 @@ button {
 }
 
 .main {
-    background: #cecece;
+    background: #fff;
     display: block;
     min-height: 100vh;
     padding: 0;
@@ -356,13 +356,15 @@ AGENDA Slug
     margin-top: 20px;
     display: block;
 }
-small {
+.title-event {
     font-weight: 300;
     color: gray;
     font-size: 13px;
     text-transform: uppercase;
 }
-
+.other-event {
+   background:#cecece;
+}
 .other-event .grid-content{
     display: grid;
     grid-template-columns: 33% 1fr 33%;
