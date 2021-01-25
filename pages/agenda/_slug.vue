@@ -52,6 +52,35 @@
               </div>
             </div>
         </section>
+
+        <div class="list-content">
+            <article v-for="element in otherPost.slice(0,1)" class="grid-item">
+              <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
+
+              <div class="content-right">
+                  <p class="style"><span>{{ element.cts[0].label }}</span> - <span>{{ element.tgs[0].label }}</span></p>
+                  <ul class="artistes">
+                    <small>{{ element.title }}</small>
+                    <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
+                  </ul>
+                  <p class="date">{{ element.event.dateEvent }}</p>
+                  <nuxt-link class="link" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
+              </div>
+            </article>
+            <h4>AUTRES ÉVÉNEMENTS</h4>
+            <article v-for="element in otherPost.slice(1,2)" class="grid-item">
+              <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
+              <div class="content-right">
+                  <p class="style"><span>{{ element.cts[0].label }}</span> - <span>{{ element.tgs[0].label }}</span></p>
+                  <ul class="artistes">
+                    <small>{{ element.title }}</small>
+                    <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
+                  </ul>
+                  <p class="date">{{ element.event.dateEvent }}</p>
+                  <nuxt-link class="link" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
+              </div>
+            </article>
+        </div>
     </div>
     </ClientOnly>
   </div>
@@ -78,13 +107,16 @@ export default {
     setTimeout(this.countdown, 1);
 
     var allId = this.$store.state.agenda.posts.map((e, i) => {
-      console.log(" ALL ID : " + i + " - TITLE : " + e.title);
+
       if(e.title != this.title) {
+        this.otherPost.push(e)
         console.log("IS NOT CURRENT ARTICLE : " + e.title)
-        this.otherPost = e
+      } else {
+        console.log("IS CURRENT ARTICLE : " + e.title)
       }
-      return i
-    });
+      console.log(" ALL ID : " + i + " - TITLE : " + e.title);
+
+    }).slice(0,1);
   },
   async asyncData({ params }) {
     let page = await import('~/content/agenda/posts/' + params.slug + '.json');
