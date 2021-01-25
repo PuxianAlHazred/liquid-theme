@@ -32,7 +32,7 @@
     </div>
     <div class="swiper-thumbs">
       <ul>
-        <li v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button" @click="toSlideTop(i)">
+        <li :style="'background:'+e.theme.color1+';color:'+e.theme.color2+';'" v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button" @click="toSlideTop(i)">
           {{ e.date }}
         </li>
       </ul>
@@ -73,13 +73,14 @@
       padding: 10px;
       text-align: center;
       list-style: none;
-      background: blue;
+      color:white;
   }
   .swiper-thumbs .swiper-thumbs-button:hover {
       background: green;
   }
   .swiper-thumbs .swiper-thumbs-button.active {
-      background: pink;
+      background: black!important;
+      color:white!important;
   }
   .swiper-back {
       display:none;
