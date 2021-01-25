@@ -43,6 +43,8 @@
 
   #slider{
     transition:1s all ease;
+    overflow: hidden;
+    position: relative;
   }
   /* INDEX */
   .swiper {

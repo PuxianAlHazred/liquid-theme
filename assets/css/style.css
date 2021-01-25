@@ -356,3 +356,53 @@ AGENDA Slug
     margin-top: 20px;
     display: block;
 }
+small {
+    font-weight: 300;
+    color: gray;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.other-event{
+    display: grid;
+    grid-template-columns: 33% 1fr 33%;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.other-event .grid-item {
+    width: calc(100% - 20px);
+}
+.select-other {
+    text-align: center;
+}
+.other-event .underline {
+    font-size: 30px;
+    margin: 0;
+    font-family: changa;
+    line-height: 25px;
+    padding-bottom: 15px;
+}
+.other-event .grid-item:nth-child(3) .agenda-thumbs {
+    left:auto;
+    right:10px;
+}
+.other-event .grid-item:nth-child(3) .style {
+    right: auto;
+    left: 0;
+    transform-origin: top right;
+    transform: translateX(-100% ) rotate(-90deg);
+}
+.other-event .grid-item:nth-child(3) .artistes {
+    padding-right: 0;
+    padding-left: 30px;
+    text-align: left;
+}
+.other-event .grid-item:nth-child(3) .date {
+    left: 20px;
+    right: auto;
+}
+.other-event .grid-item:nth-child(3) .link {
+    left: auto;
+    right: calc(35% - 20px);
+}
