@@ -9,6 +9,7 @@
                 <div class="content-right">
                     <p class="style"><span>{{ element.cts[0].label }}</span> - <span>{{ element.tgs[0].label }}</span></p>
                     <ul class="artistes">
+                      <small>{{ element.title }}</small>
                       <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
                     </ul>
                     <p class="date">{{ element.lieu.dateEvent }}</p>

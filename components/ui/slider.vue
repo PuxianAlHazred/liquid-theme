@@ -27,6 +27,9 @@
         </div>
       </div>
     </div>
+    <div class="swiper-back">
+      <NuxtLink to="/"><i class="las la-undo"></i></NuxtLink>
+    </div>
     <div class="swiper-thumbs">
       <ul>
         <li v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button" @click="toSlideTop(i)">
@@ -37,6 +40,7 @@
   </div>
 </template>
 <style>
+
   #slider{
     transition:1s all ease;
   }
@@ -75,6 +79,9 @@
   .swiper-thumbs .swiper-thumbs-button.active {
       background: pink;
   }
+  .swiper-back {
+      display:none;
+  }
   /* SLUG ACTIVE */
   .agenda-slug .swiper{
     height:100vh;
@@ -85,7 +92,19 @@
       height: 100vh;
       right:-50px;
   }
+  .agenda-slug .swiper-back {
+      position: absolute;
+      top: 20px;
+      left: 100px;
 
+      z-index: 1;
+      cursor: pointer;
+      display:block;
+  }
+  .agenda-slug .swiper-back i{
+    color: white!important;
+    font-size: 30px;
+  }
 </style>
 <script>
 export default {
