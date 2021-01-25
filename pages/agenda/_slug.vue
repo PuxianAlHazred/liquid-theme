@@ -1,21 +1,20 @@
 <template>
   <div>
     <ClientOnly>
-    <section class="ticket">
+    <section class="ticket-content">
       <div class="grid-content">
-          <i class="las la-info-circle"></i>
           <div class="countdown">
-            <div class="text-center">
-              <div v-if="currentTime">
-                <div>{{ currentTime ? `${currentTime.days}` : "" }}<span>Day</span></div>
-                <div>{{ currentTime ? `${("0" + currentTime.hours).slice(-2)}` : "" }}<span>Hours</span></div>
-                <div>{{ currentTime ? `${("0" + currentTime.minutes).slice(-2)}` : "" }}<span>Minutes</span></div>
-                <div>{{ currentTime ? `${("0" + currentTime.seconds).slice(-2)}` : "" }}<span>Seconds</span></div>
+              <div class="current-time" v-if="currentTime">
+                <p><span>{{ currentTime ? `${currentTime.days}` : "" }}</span><span class="text-gradient">Day</span></p>
+                <p><span>{{ currentTime ? `${("0" + currentTime.hours).slice(-2)}` : "" }}</span><span class="text-gradient">Hours</span></p>
+                <p><span>{{ currentTime ? `${("0" + currentTime.minutes).slice(-2)}` : "" }}</span><span class="text-gradient">Minutes</span></p>
+                <p><span>{{ currentTime ? `${("0" + currentTime.seconds).slice(-2)}` : "" }}</span><span class="text-gradient">Seconds</span></p>
               </div>
               <p v-if="!currentTime">Time's Up!</p>
-            </div>
           </div>
-          <a target="_blank" :href="event.ticketLink">Réserver maintenant votre place</a>
+          <div class="reserv">
+              <a target="_blank" class="underline" :href="event.ticketLink">Réserver maintenant votre place</a>
+          </div>
       </div>
     </section>
     <div class="container grid-content">
@@ -57,9 +56,7 @@
   </div>
 </template>
 <style>
-  .countdown {
-    color: white;
-  }
+
 
 </style>
 <script>

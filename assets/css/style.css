@@ -157,6 +157,57 @@ article .link {
 /*
 AGENDA Slug
 */
+.ticket-content {
+    background: #000;
+    padding:25px 0;
+}
+.ticket-content .grid-content {
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.countdown {
+    color: white;
+    text-align: left;
+    display: inline-block;
+}
+.current-time {
+    display: inline-flex;
+}
+.current-time p {
+    margin: 0 15px;
+    text-align:center;
+}
+.current-time p span {
+    width: 100%;
+    display: block;
+    line-height: initial;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.current-time p span:first-child {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 50px;
+    line-height: 50px;
+}
+.reserv {
+    text-align: right;
+}
+.ticket-content .underline {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: changa;
+    font-size: 25px;
+    top: 50%;
+    transform: translateY(calc(-50% - 7px));
+    position: relative;
+    display: inline-block;
+}
+
+
 .content-slug  {
     position: relative;
     padding-bottom: 30px;

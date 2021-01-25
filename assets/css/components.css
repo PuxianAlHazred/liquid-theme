@@ -119,6 +119,7 @@ components > ui > header.vue
     font-size: 22px;
     font-weight: bold;
     font-family: "Changa";
+    color: #fff;
 }
 .ticket i {
     float: left;
