@@ -363,12 +363,13 @@ small {
     text-transform: uppercase;
 }
 
-.other-event{
+.other-event .grid-content{
     display: grid;
     grid-template-columns: 33% 1fr 33%;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    padding: 100px 0;
 }
 .other-event .grid-item {
     width: calc(100% - 20px);
