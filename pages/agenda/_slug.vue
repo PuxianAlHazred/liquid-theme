@@ -71,20 +71,20 @@ export default {
       options: this.$store.state.options.plugins.markdown,
       currentTime: null,
       speed: 1000,
+      otherPost: []
     };
   },
   mounted() {
     setTimeout(this.countdown, 1);
 
     var allId = this.$store.state.agenda.posts.map((e, i) => {
-      console.log("ID : " + i + " - TITLE : " + e.title);
+      console.log(" ALL ID : " + i + " - TITLE : " + e.title);
       if(e.title != this.title) {
-        console.log("lol : " +e.title)
+        console.log("IS NOT CURRENT ARTICLE : " + e.title)
+        this.otherPost = e
       }
       return i
     });
-    var search = this.title;
-    console.log("MY ID : " +search)
   },
   async asyncData({ params }) {
     let page = await import('~/content/agenda/posts/' + params.slug + '.json');
