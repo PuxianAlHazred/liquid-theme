@@ -1,25 +1,17 @@
 <template>
-  <footer id="footer" class="footer parent">
+  <footer id="footer">
       <div class="grid-content">
-          <div>
-            <p class="text-left"><i class="lar la-copyright"></i> All rights reserved by PIKS-L</p>
+          <div class="">
+            <p class="text-left"><i class="lar la-copyright"></i> COPYRIGHT AND DESIGN BY <span class="text-gradient">PIKS-L</span></p>
           </div>
-          <div>
-            <p class="text-right"><a @click="scrollToTop">Scroll to top <i class="las la-caret-up"></i></a></p>
+          <div class="">
+            <p class="text-right"><a class="underline" @click="scrollToTop">Scroll to top <i class="las la-caret-up"></i></a></p>
           </div>
       </div>
 
   </footer>
 </template>
-<style>
-  .parent {
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    grid-template-rows: 50px;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-</style>
+
 <script>
   export default {
     methods: {
