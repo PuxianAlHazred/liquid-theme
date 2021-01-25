@@ -52,36 +52,39 @@
             </div>
         </section>
 
-        <div class="list-content other-event">
-            <article v-for="element in otherPost.slice(0,1)" class="grid-item">
-              <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
 
-              <div class="content-right">
-                  <p class="style"><span>{{ element.cts[0].label }}</span> - <span>{{ element.tgs[0].label }}</span></p>
-                  <ul class="artistes">
-                    <small>{{ element.title }}</small>
-                    <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
-                  </ul>
-                  <p class="date">{{ element.event.dateEvent }}</p>
-                  <nuxt-link class="link" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
-              </div>
-            </article>
-            <div class="select-other">
-                <h4 class="underline">OTHER EVENTS</h4>
-            </div>
-            <article v-for="element in otherPost.slice(1,2)" class="grid-item">
-              <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
-              <div class="content-right">
-                  <p class="style"><span>{{ element.cts[0].label }}</span> - <span>{{ element.tgs[0].label }}</span></p>
-                  <ul class="artistes">
-                    <small class="title-event">{{ element.title }}</small>
-                    <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
-                  </ul>
-                  <p class="date">{{ element.event.dateEvent }}</p>
-                  <nuxt-link class="link" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
-              </div>
-            </article>
+    </div>
+    <div class="other-event">
+      <div class="container grid-content">
+        <article v-for="element in otherPost.slice(0,1)" class="grid-item">
+          <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
+
+          <div class="content-right">
+              <p class="style"><span>{{ element.cts[0].label }}</span> - <span>{{ element.tgs[0].label }}</span></p>
+              <ul class="artistes">
+                <small>{{ element.title }}</small>
+                <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
+              </ul>
+              <p class="date">{{ element.event.dateEvent }}</p>
+              <nuxt-link class="link" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
+          </div>
+        </article>
+        <div class="select-other">
+            <h4 class="underline">OTHER EVENTS</h4>
         </div>
+        <article v-for="element in otherPost.slice(1,2)" class="grid-item">
+          <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
+          <div class="content-right">
+              <p class="style"><span>{{ element.cts[0].label }}</span> - <span>{{ element.tgs[0].label }}</span></p>
+              <ul class="artistes">
+                <small class="title-event">{{ element.title }}</small>
+                <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
+              </ul>
+              <p class="date">{{ element.event.dateEvent }}</p>
+              <nuxt-link class="link" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
+          </div>
+        </article>
+      </div>
     </div>
     </ClientOnly>
   </div>
