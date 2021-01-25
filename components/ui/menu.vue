@@ -1,11 +1,12 @@
 <template>
   <header class="menu">
     <div class="black-col" >
-      
+
     </div>
     <div class="main-menu" :class="{active: MenuIsActive}" >
       <div id="menu-select"  @click="openMenu">
-          <p></p>
+          <img class="logo-menu" :src="this.$store.state.options.generales.theme.favicon" :alt="this.$store.state.options.generales.theme.title" />
+          <p><i class="las la-times"></i></p>
           <span :style="bar1"></span>
           <span :style="bar2"></span>
           <span :style="bar3"></span>
