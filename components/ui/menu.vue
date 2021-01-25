@@ -1,9 +1,7 @@
 <template>
   <header class="menu">
     <div class="black-col" >
-      <NuxtLink to="/" class="logo">
-        <img :src="this.$store.state.options.menu.logo" :alt="this.$store.state.options.generales.theme.title" />
-      </NuxtLink>
+      
     </div>
     <div class="main-menu" :class="{active: MenuIsActive}" >
       <div id="menu-select"  @click="openMenu">
@@ -17,7 +15,7 @@
               <i class="las la-ticket-alt"/>
               Billeterie
           </a>
-          <h2>{{ this.$store.state.options.generales.theme.title }}</h2>
+          <img class="logo" :src="this.$store.state.options.menu.logo" :alt="this.$store.state.options.generales.theme.title" />
           <ul class="menu-list">
             <li v-for="item in this.$store.state.options.menu.menuList" @click="openMenu"><NuxtLink :to="item.url">{{ item.nomdepage }}</NuxtLink></li>
           </ul>

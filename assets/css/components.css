@@ -15,23 +15,23 @@ components > ui > header.vue
     position: fixed;
     top: 0;
     left: 0;
-    width: 150px;
+    width: 65px;
     height: 100vh;
     background: #000;
 }
 .logo {
-    width: calc(100% - 30px);
+    width: calc(70% - 45px);
     height: auto;
     display: block;
     padding: 15px;
-}
-.logo img {
-    max-width: 100%;
+    position: relative;
+    margin-left: 30%;
 }
 .main-menu{
     width: 65px;
     height: 300px;
-    left: 150px;
+    top: 0;
+    left: 0px;
     position: absolute;
     background:var(--gradient);
     -webkit-transition: width .5s ease,height .5s ease .5s;
@@ -315,52 +315,22 @@ components > ui > footer.vue
 */
 #footer {
     width: 100%;
-    background: #fff;
+    background: #000;
     height: 50px;
+    position: relative;
+    color: #fff;
+    padding: 25px 0;
 }
-#footer.sticky {
-    position: fixed;
-    bottom:0;
-    left:0;
+#footer .grid-content {
+    display: flex;
+    padding: 0;
 }
-
-#footer .accordion {
-    background: #e1e1e1;
-    text-align: center;
+#footer .grid-content div {
+    width: 50%;
 }
-.grid-footer {
-    padding: 0 25px;
-    text-transform: uppercase;
-}
-.grid-footer p {
-    display: inline-block;
+#footer p {
     margin: 0;
     line-height: 50px;
-    font-size: 18px;
-}
-.grid-footer button {
-    background: none;
-    border: none;
-    color: #555;
-    padding: 0;
-    float: right;
-    display: block;
-    font-size: 12px;
-    line-height: 50px;
-    text-transform: uppercase;
-}
-.grid-footer button:hover {
-    background: none;
-    color: #333;
-}
-.grid-footer button.acordion-title {
-    padding: 0 5px 0 25px;
-}
-.grid-footer button.acordion-title i {
-    right: auto;
-    left: 0;
-    transform: translatey(-50%) rotate(180deg);
-}
-.grid-footer button.acordion-title.active i {
-    transform: translatey(-50%) rotate(0deg);
+    font-size: 20px;
+    font-weight: bold;
 }
