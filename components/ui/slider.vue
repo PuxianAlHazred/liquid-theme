@@ -137,6 +137,7 @@ export default {
         node.addEventListener('animationend', handleAnimationEnd, {once: true});
       });
       animateCSS('.meta', 'bounce');
+      animateCSS('.artistes', 'rollIn');
     },
     slideChange(i, reallyIndex) {
       this.indexed = this.$refs.swiperTop.swiper.activeIndex;
