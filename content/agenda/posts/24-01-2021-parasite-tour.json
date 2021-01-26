@@ -19,7 +19,7 @@
   "theme": {
     "color1": "#2b4fa7",
     "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
-    "color2": "#1b346d"
+    "color2": "#80b3ff"
   },
   "cts": [
     {

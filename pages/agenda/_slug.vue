@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="cssVars">
     <ClientOnly>
     <section class="ticket-content">
       <div class="grid-content">
@@ -104,6 +104,13 @@ export default {
       speed: 1000,
       otherPost: []
     };
+  },
+  computed: {
+    cssVars() {
+      return {
+        "--gradient": this.theme.gradientEvent
+      }
+    }
   },
   mounted() {
     setTimeout(this.countdown, 1);
