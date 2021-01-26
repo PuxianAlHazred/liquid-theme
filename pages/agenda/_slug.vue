@@ -1,5 +1,5 @@
 <template>
-  <div :style="cssVars">
+  <div :style="'--gradient:'+this.theme.gradientEvent">
     <ClientOnly>
     <section class="ticket-content">
       <div class="grid-content">
@@ -51,8 +51,6 @@
               </div>
             </div>
         </section>
-
-
     </div>
     <div class="other-event">
       <div class="grid-content">
@@ -104,13 +102,6 @@ export default {
       speed: 1000,
       otherPost: []
     };
-  },
-  computed: {
-    cssVars() {
-      return {
-        "--gradient": this.theme.gradientEvent
-      }
-    }
   },
   mounted() {
     setTimeout(this.countdown, 1);
