@@ -13,7 +13,7 @@
               <div class="flyer" :lazy-background="e.thumbnail"></div>
               <div class="content-right">
                   <div class="meta">
-                    <p class="date">{{ e.event.dateEvent }}</p>
+                    <p class="date ">{{ e.event.dateEvent }}</p>
                     <p class="hour">{{ e.event.hourEvent }}</p>
                     <p class="author"><span>author</span> présente :</p>
                     <p class="event">{{ e.title }}</p>
@@ -40,7 +40,6 @@
   </div>
 </template>
 <style>
-
   #slider{
     transition:1s all ease;
     overflow: hidden;
@@ -125,10 +124,24 @@ export default {
   methods: {
     swiperRedied(swiper) {
       console.log("Swiper ready !")
+      const animateCSS = (element, animation, prefix = 'animate__') =>
+        new Promise((resolve, reject) => {
+        const animationName = `${prefix}${animation}`;
+        const node = document.querySelector(element);
+        node.classList.add(`${prefix}animated`, animationName);
+        function handleAnimationEnd(event) {
+          event.stopPropagation();
+          node.classList.remove(`${prefix}animated`, animationName);
+          resolve('Animation ended');
+        }
+        node.addEventListener('animationend', handleAnimationEnd, {once: true});
+      });
+      animateCSS('.meta', 'bounce');
     },
     slideChange(i, reallyIndex) {
       this.indexed = this.$refs.swiperTop.swiper.activeIndex;
       console.log( "Slider change : "+ this.indexed )
+
 
     },
     clickSlide(i, reallyIndex) {
@@ -139,6 +152,7 @@ export default {
       this.$refs.swiperTop.swiper.slideTo(i);
       this.indexed = i
       console.log( "To slider : "+ i)
+
     }
   },
 }
