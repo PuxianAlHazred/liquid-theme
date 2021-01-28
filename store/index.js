@@ -27,7 +27,7 @@ export const state = () => ({
       swiper: {
         allowTouchMove:false,
         loop: false,
-        slidesPerView: '1',
+        slidesPerView: '3',
         centeredSlides: true,
         parallax: {
           enabled : true

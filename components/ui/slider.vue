@@ -10,7 +10,7 @@
       >
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(e, i) in filtered" :key="i" data-swiper-parallax-opacity="0.1">
-          <div class="fontblur" :lazy-background="e.thumbnail"></div>
+          <div class="fontblur" data-tilt-full-page-listening :lazy-background="e.thumbnail"></div>
           <div class="grid-content">
             <NuxtLink class="slider-content" :to="e._path+'/'">
                 <transition name="fadeFlyer">
@@ -67,7 +67,7 @@
   .directGlitch {
     -webkit-filter: url("#glitch");
     filter: url("#glitch");
-    
+
   }
   .glitchy:hover {
     -webkit-filter: url("#glitch");
@@ -252,7 +252,7 @@ export default {
     slideChange(i, reallyIndex) {
       this.indexed = this.$refs.swiperTop.swiper.activeIndex;
       console.log( "Slider change : "+ this.indexed )
-
+      VanillaTilt.init(document.querySelectorAll(".flyer"));
     },
     onSwiperSlideChangeTransitionStart() {
       this.show = false
