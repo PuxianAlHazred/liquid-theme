@@ -105,7 +105,6 @@ export default {
   },
   mounted() {
     setTimeout(this.countdown, 1);
-
     var allId = this.$store.state.agenda.posts.map((e, i) => {
 
       if(e.title != this.title) {

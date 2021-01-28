@@ -1,5 +1,5 @@
 <template>
-  <div  :style="cssVars">
+  <div id="app" :style="cssVars">
     <ui-menu></ui-menu>
     <div class="main">
       <ui-slider :class="this.$route.name" :filtered="this.filtered"></ui-slider>
@@ -31,14 +31,20 @@
     },
     computed: {
       cssVars() {
-        return {
-          "--gradient": this.$store.state.options.generales.theme.gradient
-        }
-      }
+          return {
+            "--gradient": this.$store.state.options.generales.theme.gradient,
+          }
+      },
+      cssVars2() {
+          return {
+            "--gradient": this.$store.state.options.generales.theme.gradient,
+          }
+      },
     },
     beforeUpdate() {
       if ( this.$route.name === "agenda-slug" ) {
         console.log("beforeUpdate if")
+
         this.filtered = this.$store.state.agenda.posts.filter(a => {return a._path+'/' === this.$route.path});
       } else {
         console.log("beforeUpdate else")
