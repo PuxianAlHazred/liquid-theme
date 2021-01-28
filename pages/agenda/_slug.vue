@@ -9,11 +9,11 @@
                 <p><span>{{ currentTime ? `${("0" + currentTime.hours).slice(-2)}` : "" }}</span><span class="text-gradient">Hours</span></p>
                 <p><span>{{ currentTime ? `${("0" + currentTime.minutes).slice(-2)}` : "" }}</span><span class="text-gradient">Minutes</span></p>
                 <p><span>{{ currentTime ? `${("0" + currentTime.seconds).slice(-2)}` : "" }}</span><span class="text-gradient">Seconds</span></p>
+                <div class="reserv">
+                    <a target="_blank" class="underline glitchy" :href="event.ticketLink">Réserver maintenant votre place</a>
+                </div>
               </div>
-              <p v-if="!currentTime">Time's Up!</p>
-          </div>
-          <div class="reserv">
-              <a target="_blank" class="underline glitchy" :href="event.ticketLink">Réserver maintenant votre place</a>
+              <p class=" timeto underline glitchy" v-if="!currentTime">Time's Up!</p>
           </div>
       </div>
     </section>
