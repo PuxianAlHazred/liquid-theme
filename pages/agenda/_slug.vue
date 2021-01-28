@@ -24,7 +24,7 @@
               <a class="map" :href="lieu.linkLieu" target="_blank">
                 <i class="las la-map-marked-alt"></i>
                 <div class="triangle"></div>
-                <div class="map-link"><div class="text-gradient"><p>S'Y RENDRE</p></div></div>
+                <div class="map-link"><div class="text-gradient" data-text="S'Y RENDRE"><p>S'Y RENDRE</p></div></div>
               </a>
             </div>
             <div class="agenda-content">

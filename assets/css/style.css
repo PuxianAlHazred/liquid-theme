@@ -85,6 +85,27 @@ h6, .h6{ font-size: 20px; }
     height: 7px;
     background: var(--gradient);
 }
+.text-gradient{
+    position:relative;
+}
+.text-gradient::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgb(27, 3, 3) 0%, rgb(240, 0, 1) 35%, rgb(27, 3, 3) 100%);
+    background-clip: border-box;
+    width: 100%;
+    height: 100%;
+    -webkit-background-clip: inherit;
+    -webkit-text-fill-color: transparent;
+    line-height: 50px;
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+.text-gradient:hover::before {
+    opacity: 1;
+}
 
 /*
 AGENDA
@@ -244,6 +265,7 @@ AGENDA Slug
     padding-right: 20px;
     background: #fff;
     z-index: 1;
+    text-transform: uppercase;
 }
 .map {
     float: right;
@@ -282,6 +304,7 @@ AGENDA Slug
     padding: 4px 5px;
     position: relative;
     font-size: 40px;
+    background: inherit;
 }
 .artistes .map-link p:before {
     content:'';
