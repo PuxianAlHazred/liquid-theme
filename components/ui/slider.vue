@@ -79,7 +79,14 @@
   .clipPath {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
-
+  .swiper.directGlitch .meta .author{
+     opacity:0;
+     transition: all 0s ease;
+  }
+  .swiper .meta .author{
+     opacity:1;
+     transition: all 1s ease;
+  }
   .fadeFlyer-enter-active, .fadeFlyer-leave-active {
     transition: all .5s ease-out;
     -webkit-filter: url("#glitch");
@@ -148,38 +155,7 @@
   .swiper {
       transition:0.5s all ease;
   }
-  .swiper-thumbs {
-      transition:0.3s all ease;
-      position: absolute;
-      top: 0;
-      width: 50px;
-      height: 70vh;
-      z-index: 9;
-      cursor: pointer;
-      right: 0px;
-      background: transparent;
-  }
-  .swiper-thumbs .swiper-thumbs-button {
-      width: 30px;
-      height: 100px;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      line-height: 30px;
-      left: -40px;
-      top: -16px;
-      position: relative;
-      padding: 10px;
-      text-align: center;
-      list-style: none;
-      color:white;
-  }
-  .swiper-thumbs .swiper-thumbs-button:hover {
-      background: green;
-  }
-  .swiper-thumbs .swiper-thumbs-button.active {
-      background: black!important;
-      color:white!important;
-  }
+
   .swiper-back {
       display:none;
   }
@@ -252,12 +228,11 @@ export default {
     slideChange(i, reallyIndex) {
       this.indexed = this.$refs.swiperTop.swiper.activeIndex;
       console.log( "Slider change : "+ this.indexed )
-      VanillaTilt.init(document.querySelectorAll(".flyer"));
+      VanillaTilt.init(document.querySelector(".flyer"), {         "mouse-event-element": '.content-right'       });
     },
     onSwiperSlideChangeTransitionStart() {
       this.show = false
       this.$refs.swiperTop.classList.add("directGlitch");
-
     },
     onSwiperSlideChangeTransitionEnd() {
       this.show = true

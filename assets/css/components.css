@@ -256,8 +256,6 @@ nav a {
 }
 .content-right {
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     display: block;
 }
 .swiper-slide a .meta {
@@ -320,6 +318,29 @@ nav a {
     line-height: 75px;
     text-align: center;
     opacity: .5;
+}
+.swiper-thumbs {
+    position: absolute;
+    width: 70vh;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    transform-origin: top left;
+    transform: translateX(100%) rotate(90deg);
+}
+.swiper-thumbs ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-flex;
+    width: 100%;
+}
+.swiper-thumbs ul li {
+    line-height: 50px;
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
 }
 /*
 components > ui > footer.vue
