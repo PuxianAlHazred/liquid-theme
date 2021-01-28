@@ -201,7 +201,9 @@ export default {
     swiperRedied(swiper) {
       console.log("Swiper ready !")
       this.show = true
-      VanillaTilt.init(document.querySelectorAll(".flyer"));
+      VanillaTilt.init(document.querySelector(".flyer"), {
+        
+      });
       /*
       const animateCSS = (element, animation, prefix = 'animate__') =>
         new Promise((resolve, reject) => {
@@ -228,7 +230,9 @@ export default {
     slideChange(i, reallyIndex) {
       this.indexed = this.$refs.swiperTop.swiper.activeIndex;
       console.log( "Slider change : "+ this.indexed )
-      VanillaTilt.init(document.querySelector(".flyer"), {         "mouse-event-element": '.content-right'       });
+      VanillaTilt.init(document.querySelector(".flyer"), {
+
+      });
     },
     onSwiperSlideChangeTransitionStart() {
       this.show = false

@@ -379,3 +379,11 @@ components > ui > footer.vue
     font-size: 20px;
     font-weight: bold;
 }
+#footer svg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 0px;
+    height: 0px;
+}
