@@ -259,6 +259,13 @@ nav a {
     display: block;
     width: 60%;
     left: 40%;
+    transition: all .5s ease;
+    top: 0%;
+    transform: translateY(0);
+}
+.agenda-slug .content-right {
+    top: 50%;
+    transform: translateY(-50%);
 }
 .swiper-slide a .meta {
     display: block;
