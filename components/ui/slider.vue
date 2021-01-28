@@ -1,6 +1,6 @@
 <template>
   <div id="slider" ref="slider" >
-    <div class="swiper" ref="swiperTop"
+    <div class="swiper" ref="swiperTop" effect="fade"
       v-swiper:myDirectiveSwiper="this.$store.state.options.plugins.swiper"
       @ready="swiperRedied"
       @slide-change="slideChange"
@@ -9,11 +9,14 @@
       @slider-move="sliderMove"
       >
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(e, i) in filtered" :key="i">
+        <div class="swiper-slide" v-for="(e, i) in filtered" :key="i" data-swiper-parallax-opacity="0.1">
           <div class="fontblur" :lazy-background="e.thumbnail"></div>
           <div class="grid-content">
             <NuxtLink class="slider-content" :to="e._path+'/'">
-              <div  class="flyer" :lazy-background="e.thumbnail"></div>
+                <transition name="fadeFlyer">
+                  <div v-show="show" class="clipPath flyer glitchy" :lazy-background="e.thumbnail">
+                  </div>
+                </transition>
                 <div class="content-right">
                   <div class="meta">
                     <transition  name="fadeDate">
@@ -27,16 +30,16 @@
                       </div>
                     </transition>
                     <p class="Two author"><span>author</span> présente :</p>
-                    <transition name="fadeTwo"   >
-                      <div v-show="show" class="clipPath" >
+                    <transition name="fadeTwo">
+                      <div v-show="show" class="clipPath glitchy" >
                           <p class="Two event">{{ e.title }}</p>
                       </div>
                     </transition>
                   </div>
-                  <ul class="artistes ">
+                  <ul class="artistes">
                     <li v-for="(a, i) in e.artiste" :key="i">
                       <transition name="fadeTree" tag="div" :time="i">
-                        <div v-show="show" class="clipPath" >
+                        <div v-show="show" class="clipPath glitchy">
                           {{ a.titleArtiste }}
                         </div>
                       </transition>
@@ -48,12 +51,12 @@
         </div>
       </div>
     </div>
-    <div class="swiper-back">
+    <div class="swiper-back glitchy">
       <NuxtLink to="/"><i class="las la-undo"></i></NuxtLink>
     </div>
     <div class="swiper-thumbs">
       <ul>
-        <li :style="'background:'+e.theme.color1+';color:'+e.theme.color2+';'" v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button" @click="toSlideTop(i)">
+        <li :style="'background:'+e.theme.color1+';color:'+e.theme.color2+';'" v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button glitchy" @click="toSlideTop(i)">
           {{ e.date }}
         </li>
       </ul>
@@ -61,6 +64,15 @@
   </div>
 </template>
 <style>
+  .directGlitch {
+    -webkit-filter: url("#glitch");
+    filter: url("#glitch");
+    
+  }
+  .glitchy:hover {
+    -webkit-filter: url("#glitch");
+    filter: url("#glitch");
+  }
   .meta {
     min-height:175px;
   }
@@ -68,19 +80,35 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 
+  .fadeFlyer-enter-active, .fadeFlyer-leave-active {
+    transition: all .5s ease-out;
+    -webkit-filter: url("#glitch");
+    filter: url("#glitch");
+  }
+  .fadeFlyer-enter, .fadeFlyer-leave-to {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    transform: translate(0%, -100%);
+    transition: all .0s ease-out;
+    filter:blur(10px);
+  }
+
   .fadeOne-enter-active, .fadeOne-leave-active {
     transition: all .5s ease-out;
+    -webkit-filter: url("#glitch");
+    filter: url("#glitch");
   }
   .fadeOne-enter, .fadeOne-leave-to {
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
     transform: translate(0%, 100%);
     transition: all .0s ease-out;
-    filter:blur(5px);
+    filter:blur(10px);
   }
 
   .fadeDate-enter-active, .fadeDate-leave-active {
     transition: all .3s ease-out;
     transition-delay: 0.3s;
+    -webkit-filter: url("#glitch");
+    filter: url("#glitch");
   }
   .fadeDate-enter, .fadeDate-leave-to {
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
@@ -102,6 +130,7 @@
 
   .fadeTree-enter-active, .fadeTree-leave-active {
     transition: all .5s ease-out;
+    transition-delay: 0.5s;
   }
   .fadeTree-enter, .fadeTree-leave-to {
     clip-path: polygon(0% 100%, 100% 100%, 0% 100%, 0% 100%);
@@ -195,11 +224,8 @@ export default {
   methods: {
     swiperRedied(swiper) {
       console.log("Swiper ready !")
-      VanillaTilt.init(document.querySelector(".flyer"), {
-        glare: true,
-        "max-glare": 0.2
-      });
       this.show = true
+      VanillaTilt.init(document.querySelectorAll(".flyer"));
       /*
       const animateCSS = (element, animation, prefix = 'animate__') =>
         new Promise((resolve, reject) => {
@@ -221,16 +247,23 @@ export default {
 
     sliderMove() {
       console.log( "Slider : On move touch")
+
     },
     slideChange(i, reallyIndex) {
       this.indexed = this.$refs.swiperTop.swiper.activeIndex;
       console.log( "Slider change : "+ this.indexed )
+
     },
     onSwiperSlideChangeTransitionStart() {
       this.show = false
+      this.$refs.swiperTop.classList.add("directGlitch");
+
     },
     onSwiperSlideChangeTransitionEnd() {
       this.show = true
+      this.$refs.swiperTop.classList.remove("directGlitch");
+
+
     },
     clickSlide(i, reallyIndex) {
       console.log( "Click on slider : "+ i)

@@ -8,3 +8,6 @@ const {Swiper, SwiperSlide} = getAwesomeSwiper(SwiperClass)
 
 // import style
 import 'swiper/swiper-bundle.min.css'
+
+import SwiperCore, { EffectFade } from 'swiper';
+SwiperCore.use([EffectFade]);

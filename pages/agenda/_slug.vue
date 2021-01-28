@@ -13,7 +13,7 @@
               <p v-if="!currentTime">Time's Up!</p>
           </div>
           <div class="reserv">
-              <a target="_blank" class="underline" :href="event.ticketLink">Réserver maintenant votre place</a>
+              <a target="_blank" class="underline glitchy" :href="event.ticketLink">Réserver maintenant votre place</a>
           </div>
       </div>
     </section>
@@ -22,13 +22,13 @@
             <div class="agenda-header">
               <h3>{{lieu.titleLieu}}</h3>
               <a class="map" :href="lieu.linkLieu" target="_blank">
-                <i class="las la-map-marked-alt"></i>
+                <i class="las la-map-marked-alt "></i>
                 <div class="triangle"></div>
-                <div class="map-link"><div class="text-gradient" data-text="S'Y RENDRE"><p>S'Y RENDRE</p></div></div>
+                <div class="map-link "><div class="text-gradient " data-text="S'Y RENDRE"><p>S'Y RENDRE</p></div></div>
               </a>
             </div>
             <div class="agenda-content">
-              <div class="agenda-thumbs" :lazy-background="lieu.thumbnailLieu" ></div>
+              <div class="agenda-thumbs glitchy" :lazy-background="lieu.thumbnailLieu" ></div>
               <div class="content-markdown">
                   <markdown-it-vue :content="lieu.descriptionLieu" :options="this.$store.state.options.plugins.markdown"/>
               </div>
@@ -39,11 +39,11 @@
               <h3>ARTISTES</h3>
               <div class="map">
                 <i class="las la-user-tag"></i>
-                <div class="map-link"><div class="text-gradient"><p>{{cts[0].label}}</p></div></div>
+                <div class="map-link "><div class="text-gradient "><p class="glitchy">{{cts[0].label}}</p></div></div>
               </div>
             </div>
             <div v-for="(element, index) in artiste" class="agenda-content">
-              <div class="agenda-thumbs" :lazy-background="element.thumbnailArtiste"></div>
+              <div class="agenda-thumbs glitchy" :lazy-background="element.thumbnailArtiste"></div>
               <div class="content-markdown">
                   <h4>{{element.titleArtiste}}</h4>
                   <markdown-it-vue :content="element.descriptionArtiste" :options="options"/>

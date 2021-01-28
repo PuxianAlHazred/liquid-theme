@@ -25,14 +25,18 @@ export const state = () => ({
         }
       },
       swiper: {
+        allowTouchMove:false,
         loop: false,
         slidesPerView: '1',
         centeredSlides: true,
-        parallax: true,
+        parallax: {
+          enabled : true
+        },
         autoplay: {
           delay: 10000,
         },
         spaceBetween: 0,
+        effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
