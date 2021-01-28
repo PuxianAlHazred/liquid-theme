@@ -1,7 +1,9 @@
 <template>
   <header class="menu">
     <div class="black-col" >
-
+      <ul class="rs-list">
+        <li v-for="item in this.$store.state.options.menu.rs"><a :href="item.value" target="_blank"><i :class=" item.label "/></a></li>
+      </ul>
     </div>
     <div class="main-menu" :class="{active: MenuIsActive}" >
       <div id="menu-select"  @click="openMenu">
@@ -19,9 +21,6 @@
           <img class="logo" :src="this.$store.state.options.menu.logo" :alt="this.$store.state.options.generales.theme.title" />
           <ul class="menu-list">
             <li v-for="item in this.$store.state.options.menu.menuList" @click="openMenu"><NuxtLink :to="item.url">{{ item.nomdepage }}</NuxtLink></li>
-          </ul>
-          <ul class="rs-list">
-            <li v-for="item in this.$store.state.options.menu.rs" @click="openMenu"><NuxtLink :to="item.value"><i :class=" item.label "/></NuxtLink></li>
           </ul>
       </nav>
     </div>

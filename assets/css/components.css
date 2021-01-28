@@ -179,6 +179,15 @@ nav a {
     position: absolute;
     bottom: 25px;
     width: 100%;
+    padding: 0;
+    margin: 0;
+    cursor:pointer;
+}
+.rs-list li {
+    text-align: center;
+}
+.rs-list a {
+    color: #fff;
 }
 .rs-list i {
     font-size: 30px;
@@ -264,8 +273,6 @@ nav a {
 .swiper-slide .grid-content p.hour {
     font-size: 34px;
     padding-bottom: 15px;
-    display: inline-block;
-    border-bottom: 8px solid #fff;
 }
 .swiper-slide .grid-content p.date {
     margin-bottom: -10px;
@@ -274,6 +281,9 @@ nav a {
     font-size: 16px;
     text-transform: uppercase;
     margin: 10px 0 0;
+    border-top: 8px solid #fff;
+    padding-top: 15px;
+    display: inline-block;
 }
 .swiper-slide .grid-content p.author span{
     font-weight: bold;

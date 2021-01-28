@@ -4,8 +4,7 @@ NOMADS CMS
 
 @font-face {
     font-family: "Changa";
-    src: 
-    url(~assets/font/changaOne/ChangaOne-Regular.ttf) format("truetype");
+    src: url(~assets/font/changaOne/ChangaOne-Regular.ttf) format("truetype");
 }
 
 :root {
