@@ -4,6 +4,9 @@
       v-swiper:myDirectiveSwiper="this.$store.state.options.plugins.swiper"
       @ready="swiperRedied"
       @slide-change="slideChange"
+      @slideChangeTransitionStart="onSwiperSlideChangeTransitionStart"
+      @slideChangeTransitionEnd="onSwiperSlideChangeTransitionEnd"
+      @slider-move="sliderMove"
       >
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(e, i) in filtered" :key="i">
@@ -11,12 +14,20 @@
           <div class="grid-content">
             <NuxtLink class="slider-content" :to="e._path+'/'">
               <div class="flyer" :lazy-background="e.thumbnail"></div>
-              <div class="content-right">
+                <div class="content-right">
                   <div class="meta">
-                    <p class="date ">{{ e.event.dateEvent }}</p>
-                    <p class="hour">{{ e.event.hourEvent }}</p>
-                    <p class="author"><span>author</span> présente :</p>
-                    <p class="event">{{ e.title }}</p>
+                    <transition name="fadeOne">
+                      <div v-show="show" class="clipPath">
+                        <p class="One date">{{ e.event.dateEvent }}</p>
+                        <p class="One hour">{{ e.event.hourEvent }}</p>
+                      </div>
+                    </transition>
+                    <transition name="fadeTwo">
+                      <div v-show="show" class="clipPath">
+                        <p class="Two author"><span>author</span> présente :</p>
+                        <p class="Two event">{{ e.title }}</p>
+                      </div>
+                    </transition>
                   </div>
                   <ul class="artistes">
                     <li v-for="(a, i) in e.artiste" :key="i" >{{ a.titleArtiste }}</li>
@@ -40,6 +51,29 @@
   </div>
 </template>
 <style>
+.meta {
+  min-height:175px;
+}
+.clipPath {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.fadeOne-enter-active, .fadeOne-leave-active {
+  transition: all .5s ease-out;
+}
+.fadeOne-enter, .fadeOne-leave-to {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  transform: translate(0%, 100%);
+  transition: all .0s ease-out;
+}
+
+.fadeTwo-enter-active, .fadeTwo-leave-active {
+  transition: all .5s ease-out;
+}
+.fadeTwo-enter, .fadeTwo-leave-to {
+  clip-path: polygon(0% 100%, 100% 100%, 0% 100%, 0% 100%);
+  transform: translate(0%, -100%);
+  transition: all .0s ease-out;
+}
   #slider{
     transition:1s all ease;
     overflow: hidden;
@@ -116,6 +150,7 @@ export default {
       routing: '',
       active: false,
       indexed: 0,
+      show: false
     }
   },
   props: {
@@ -124,6 +159,8 @@ export default {
   methods: {
     swiperRedied(swiper) {
       console.log("Swiper ready !")
+      this.show = true
+      /*
       const animateCSS = (element, animation, prefix = 'animate__') =>
         new Promise((resolve, reject) => {
         const animationName = `${prefix}${animation}`;
@@ -138,12 +175,22 @@ export default {
       });
       animateCSS('.meta', 'bounce');
       animateCSS('.artistes', 'rollIn');
+      */
+
+    },
+
+    sliderMove() {
+      console.log( "Slider : On move touch")
     },
     slideChange(i, reallyIndex) {
       this.indexed = this.$refs.swiperTop.swiper.activeIndex;
       console.log( "Slider change : "+ this.indexed )
-
-
+    },
+    onSwiperSlideChangeTransitionStart() {
+      this.show = false
+    },
+    onSwiperSlideChangeTransitionEnd() {
+      this.show = true
     },
     clickSlide(i, reallyIndex) {
       console.log( "Click on slider : "+ i)
