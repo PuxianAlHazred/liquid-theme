@@ -166,7 +166,7 @@
 
   }
   .agenda-slug .swiper-thumbs {
-      height: 100vh;
+      width: 100vh;
       right:-50px;
   }
   .agenda-slug .swiper-back {
