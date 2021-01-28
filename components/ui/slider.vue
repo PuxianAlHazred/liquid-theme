@@ -13,11 +13,11 @@
           <div class="fontblur" :lazy-background="e.thumbnail"></div>
           <div class="grid-content">
             <NuxtLink class="slider-content" :to="e._path+'/'">
-              <div class="flyer" :lazy-background="e.thumbnail"></div>
+              <div  class="flyer" :lazy-background="e.thumbnail"></div>
                 <div class="content-right">
                   <div class="meta">
-                    <transition name="fadeDate">
-                      <div v-show="show" class="clipPath">
+                    <transition  name="fadeDate">
+                      <div v-if="show" class="clipPath">
                         <p class="One date">{{ e.event.dateEvent }}</p>
                       </div>
                     </transition>
@@ -35,7 +35,7 @@
                   </div>
                   <ul class="artistes ">
                     <li v-for="(a, i) in e.artiste" :key="i">
-                      <transition name="fadeTree"   >
+                      <transition name="fadeTree" tag="div" :time="i">
                         <div v-show="show" class="clipPath" >
                           {{ a.titleArtiste }}
                         </div>
@@ -61,54 +61,54 @@
   </div>
 </template>
 <style>
-.meta {
-  min-height:175px;
-}
-.clipPath {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
+  .meta {
+    min-height:175px;
+  }
+  .clipPath {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
 
-.fadeOne-enter-active, .fadeOne-leave-active {
-  transition: all .5s ease-out;
-}
-.fadeOne-enter, .fadeOne-leave-to {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-  transform: translate(0%, 100%);
-  transition: all .0s ease-out;
-  filter:blur(5px);
-}
+  .fadeOne-enter-active, .fadeOne-leave-active {
+    transition: all .5s ease-out;
+  }
+  .fadeOne-enter, .fadeOne-leave-to {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    transform: translate(0%, 100%);
+    transition: all .0s ease-out;
+    filter:blur(5px);
+  }
 
-.fadeDate-enter-active, .fadeDate-leave-active {
-  transition: all .3s ease-out;
-  transition-delay: 0.3s;
-}
-.fadeDate-enter, .fadeDate-leave-to {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-  transform: translate(0%, 100%);
-  transition: all .0s ease-out;
-  filter:blur(5px);
-}
+  .fadeDate-enter-active, .fadeDate-leave-active {
+    transition: all .3s ease-out;
+    transition-delay: 0.3s;
+  }
+  .fadeDate-enter, .fadeDate-leave-to {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    transform: translate(0%, 100%);
+    transition: all .0s ease-out;
+    filter:blur(5px);
+  }
 
-.fadeTwo-enter-active, .fadeTwo-leave-active {
-  transition: all .5s ease-out;
-  transition-delay: 0.3s;
-}
-.fadeTwo-enter, .fadeTwo-leave-to {
-  clip-path: polygon(0% 100%, 100% 100%, 0% 100%, 0% 100%);
-  transform: translate(0%, -100%);
-  transition: all .0s ease-out;
-  filter:blur(5px);
-}
+  .fadeTwo-enter-active, .fadeTwo-leave-active {
+    transition: all .5s ease-out;
+    transition-delay: 0.3s;
+  }
+  .fadeTwo-enter, .fadeTwo-leave-to {
+    clip-path: polygon(0% 100%, 100% 100%, 0% 100%, 0% 100%);
+    transform: translate(0%, -100%);
+    transition: all .0s ease-out;
+    filter:blur(5px);
+  }
 
-.fadeTree-enter-active, .fadeTree-leave-active {
-  transition: all .5s ease-out;
-}
-.fadeTree-enter, .fadeTree-leave-to {
-  clip-path: polygon(0% 100%, 100% 100%, 0% 100%, 0% 100%);
-  transform: translate(0%, -100%);
-  transition: all .0s ease-out;
+  .fadeTree-enter-active, .fadeTree-leave-active {
+    transition: all .5s ease-out;
+  }
+  .fadeTree-enter, .fadeTree-leave-to {
+    clip-path: polygon(0% 100%, 100% 100%, 0% 100%, 0% 100%);
+    transform: translate(0%, -100%);
+    transition: all .0s ease-out;
 
-}
+  }
 
   #slider{
     transition:1s all ease;
@@ -195,6 +195,10 @@ export default {
   methods: {
     swiperRedied(swiper) {
       console.log("Swiper ready !")
+      VanillaTilt.init(document.querySelector(".flyer"), {
+        glare: true,
+        "max-glare": 0.2
+      });
       this.show = true
       /*
       const animateCSS = (element, animation, prefix = 'animate__') =>
