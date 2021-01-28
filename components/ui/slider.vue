@@ -16,21 +16,31 @@
               <div class="flyer" :lazy-background="e.thumbnail"></div>
                 <div class="content-right">
                   <div class="meta">
-                    <transition name="fadeOne">
+                    <transition name="fadeDate">
                       <div v-show="show" class="clipPath">
                         <p class="One date">{{ e.event.dateEvent }}</p>
+                      </div>
+                    </transition>
+                    <transition name="fadeOne">
+                      <div v-show="show" class="clipPath">
                         <p class="One hour">{{ e.event.hourEvent }}</p>
                       </div>
                     </transition>
-                    <transition name="fadeTwo">
-                      <div v-show="show" class="clipPath">
-                        <p class="Two author"><span>author</span> présente :</p>
-                        <p class="Two event">{{ e.title }}</p>
+                    <p class="Two author"><span>author</span> présente :</p>
+                    <transition name="fadeTwo"   >
+                      <div v-show="show" class="clipPath" >
+                          <p class="Two event">{{ e.title }}</p>
                       </div>
                     </transition>
                   </div>
-                  <ul class="artistes">
-                    <li v-for="(a, i) in e.artiste" :key="i" >{{ a.titleArtiste }}</li>
+                  <ul class="artistes ">
+                    <li v-for="(a, i) in e.artiste" :key="i">
+                      <transition name="fadeTree"   >
+                        <div v-show="show" class="clipPath" >
+                          {{ a.titleArtiste }}
+                        </div>
+                      </transition>
+                    </li>
                   </ul>
               </div>
             </NuxtLink>
@@ -57,6 +67,7 @@
 .clipPath {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
+
 .fadeOne-enter-active, .fadeOne-leave-active {
   transition: all .5s ease-out;
 }
@@ -64,16 +75,41 @@
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
   transform: translate(0%, 100%);
   transition: all .0s ease-out;
+  filter:blur(5px);
+}
+
+.fadeDate-enter-active, .fadeDate-leave-active {
+  transition: all .3s ease-out;
+  transition-delay: 0.3s;
+}
+.fadeDate-enter, .fadeDate-leave-to {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  transform: translate(0%, 100%);
+  transition: all .0s ease-out;
+  filter:blur(5px);
 }
 
 .fadeTwo-enter-active, .fadeTwo-leave-active {
   transition: all .5s ease-out;
+  transition-delay: 0.3s;
 }
 .fadeTwo-enter, .fadeTwo-leave-to {
   clip-path: polygon(0% 100%, 100% 100%, 0% 100%, 0% 100%);
   transform: translate(0%, -100%);
   transition: all .0s ease-out;
+  filter:blur(5px);
 }
+
+.fadeTree-enter-active, .fadeTree-leave-active {
+  transition: all .5s ease-out;
+}
+.fadeTree-enter, .fadeTree-leave-to {
+  clip-path: polygon(0% 100%, 100% 100%, 0% 100%, 0% 100%);
+  transform: translate(0%, -100%);
+  transition: all .0s ease-out;
+
+}
+
   #slider{
     transition:1s all ease;
     overflow: hidden;
