@@ -14,7 +14,9 @@
         <script>
           import CMS from 'netlify-cms-app';
           import { Widget as FileRelationWidget } from '@ncwidgets/file-relation';
+          import { fr } from 'netlify-cms-locales';
           cms.registerWidget(FileRelationWidget);
+          CMS.registerLocale('fr', fr);
           cms.init();
         </script>
 

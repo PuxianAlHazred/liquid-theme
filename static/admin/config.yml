@@ -7,25 +7,30 @@ media_folder_relative: true
 public_folder: "/images/uploads"
 display_url: https://liquid-theme.netlify.app/
 site_url: https://liquid-theme.netlify.app/
-
+locale: 'fr'
 collections:
   - name: "agenda"
     label: "📚 Agenda"
+    description: >
+      The description is a great place for tone setting, high level information, and editing
+      guidelines that are specific to a collection.
     folder: "content/agenda/posts"
     create: true
     editor:
       preview: true
+    summary: '{{title}} -- {{day}}/{{month}}/{{year}}'
     slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
     show_preview_links: true
     preview_path: "blog/{{day}}-{{month}}-{{year}}-{{slug}}"
     format: 'json'
     sort: 'date'
     fields:
-      - {label: Titre de l'événement, name: title, widget: string, required: true}
+      - {label: Titre de l'événement, name: title, widget: string, required: true, default: 'Nom de mon événement'}
       - {label: Couverture de l'événement, name: thumbnail, widget: image, required: true}
       - label: "Événement"
         name: "event"
         widget: "object"
+        summary: "{{fields.dateEvent}}: {{fields.hourEvent}}"
         fields:
           - {label: Date de l'événement, name: dateEvent, widget: "datetime", format: "MM/DD/YYYY", required: true}
           - {label: Heure de l'événement, name: hourEvent, widget: string, required: true}
@@ -33,7 +38,9 @@ collections:
       - label: "Artiste"
         name: "artiste"
         widget: "list"
-        required: false
+        max: 5
+        min: 1
+        summary: '{{fields.titleArtiste}}'
         fields:
           - { label: Nom, name: titleArtiste, widget: string}
           - { label: Image, name: thumbnailArtiste, widget: image }
@@ -42,6 +49,7 @@ collections:
       - label: "Lieu"
         name: "lieu"
         widget: "object"
+        summary: "{{fields.titleLieu}}"
         fields:
           - { label: Nom, name: titleLieu, widget: string}
           - { label: Image, name: thumbnailLieu, widget: image }
