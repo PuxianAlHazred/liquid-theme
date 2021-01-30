@@ -32,9 +32,9 @@ collections:
         widget: "object"
         summary: "{{fields.dateEvent}}: {{fields.hourEvent}}"
         fields:
-          - {label: Date de l'événement, name: dateEvent, widget: "datetime", format: "MM/DD/YYYY", required: true}
-          - {label: Heure de l'événement, name: hourEvent, widget: string, required: true}
-          - {label: Lien vers la billeterie, name: ticketLink, widget: string }
+          - {label: Date de l'événement, name: dateEvent, widget: "datetime", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true, default: ''}
+          - {label: Heure de l'événement, name: hourEvent, widget: string, required: true, default: '20H > 23H'}
+          - {label: Lien vers la billeterie, name: ticketLink, widget: string, default: 'https://www.lienversvotrebilleterie.com/' }
       - label: "Artiste"
         name: "artiste"
         widget: "list"
@@ -42,20 +42,20 @@ collections:
         min: 1
         summary: '{{fields.titleArtiste}}'
         fields:
-          - { label: Nom, name: titleArtiste, widget: string}
+          - { label: Nom, name: titleArtiste, widget: string, default: 'Nom de l'artiste'}
           - { label: Image, name: thumbnailArtiste, widget: image }
           - { label: Description, name: descriptionArtiste, widget: markdown }
-          - { label: Lien vers le site, name: linkArtiste, widget: string }
+          - { label: Lien vers le site, name: linkArtiste, widget: string , default: 'https://www.votrelienutile.com/'}
       - label: "Lieu"
         name: "lieu"
         widget: "object"
         summary: "{{fields.titleLieu}}"
         fields:
-          - { label: Nom, name: titleLieu, widget: string}
+          - { label: Nom, name: titleLieu, widget: string, default: 'Nom du lieu'}
           - { label: Image, name: thumbnailLieu, widget: image }
           - { label: Description, name: descriptionLieu, widget: markdown }
-          - { label: Lien vers le site, name: linkLieu, widget: string }
-          - { label: Lien google map, name: gmapsLieu, widget: string }
+          - { label: Lien vers le site, name: linkLieu, widget: string, default: 'https://www.lienverslelieu.com/' }
+          - { label: Lien google map, name: gmapsLieu, widget: string, default: 'https://www.liengooglemap.com/' }
       - label: "Tags"
         name: "tgs"
         slug: "{{slug}}"
@@ -83,9 +83,9 @@ collections:
         widget: "object"
         collapsed: true
         fields:
-          - {label: Couleur 1, name: color1, widget: string}
-          - {label: Couleur 2, name: color2, widget: string}
-          - {label: Dégrader, name: gradientEvent, widget: string}
+          - {label: Couleur 1, name: color1, widget: string, default: '#FF0000'}
+          - {label: Couleur 2, name: color2, widget: string, default: '#0000FF'}
+          - {label: Dégrader, name: gradientEvent, widget: string, default: '#'}
       - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD", required: true}
 
   - name: "configurations"
