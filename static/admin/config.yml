@@ -11,19 +11,17 @@ locale: 'fr'
 collections:
   - name: "agenda"
     label: "📚 Agenda"
-    description: >
-      The description is a great place for tone setting, high level information, and editing
-      guidelines that are specific to a collection.
     folder: "content/agenda/posts"
     create: true
     editor:
       preview: true
-    summary: '{{title}} -- {{day}}/{{month}}/{{year}}'
+    summary: '{{title}} crée le {{fields.dateEvent}}'
     slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
     show_preview_links: true
     preview_path: "blog/{{day}}-{{month}}-{{year}}-{{slug}}"
     format: 'json'
     sort: 'date'
+    sortable_fields: ['dateEvent']
     fields:
       - {label: Titre de l'événement, name: title, widget: string, required: true, default: 'Nom de mon événement'}
       - {label: Couverture de l'événement, name: thumbnail, widget: image, required: true}
