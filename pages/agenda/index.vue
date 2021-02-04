@@ -12,7 +12,7 @@
                       <small class="title-event">{{ element.title }}</small>
                       <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
                     </ul>
-                    <p class="date">{{ element.lieu.dateEvent }}</p>
+                    <p class="date">{{ element.event.dateEvent }}</p>
                     <nuxt-link class="link" :to="element._path+'/'">En savoir plus</nuxt-link>
                 </div>
               </article>
