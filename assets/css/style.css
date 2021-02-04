@@ -127,7 +127,7 @@ article .agenda-thumbs {
     left: 10px;
     top: 0;
 }
-article .content-right {
+.grid-item .content-right {
     width: 100%;
     left: 0;
 }
