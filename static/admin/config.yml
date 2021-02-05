@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   #name: test-repo
   branch: main
+  repo: PuxianAlHazred/liquid-theme
 media_folder: "static/images/uploads"
 media_folder_relative: true
 public_folder: "/images/uploads"
