@@ -5,20 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Content Manager</title>
         <link rel="stylesheet" href="/admin/ui-cms.css"/>
-        <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.css"/>
+        <link rel="stylesheet" href="/admin/test.css"/>
+        <!-- Include the styles for the Netlify CMS UI, after your own styles -->
     </head>
     <body>
         <script src="https://unpkg.com/@ncwidgets/netlify-cms@^0.7.0/dist/netlify-cms.js"></script>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <script>
           import CMS from 'netlify-cms-app';
-          import { Widget as FileRelationWidget } from '@ncwidgets/file-relation';
-          cms.registerWidget(FileRelationWidget);
-          cms.init();
-        </script>
-        <script>
           import { fr } from 'netlify-cms-locales';
+          import { Widget as FileRelationWidget } from '@ncwidgets/file-relation';
+          CMS.registerWidget(FileRelationWidget);
           CMS.registerLocale('fr', fr);
+          CMS.init();
         </script>
         <script>
           var AgendaPreview = createClass({
