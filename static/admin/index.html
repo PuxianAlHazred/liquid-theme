@@ -10,22 +10,17 @@
     <body>
         <script src="https://unpkg.com/@ncwidgets/netlify-cms@^0.7.0/dist/netlify-cms.js"></script>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <script>
           import CMS from 'netlify-cms-app';
           import { Widget as FileRelationWidget } from '@ncwidgets/file-relation';
           import { fr } from 'netlify-cms-locales';
           cms.registerWidget(FileRelationWidget);
-          CMS.registerLocale('fr', fr);
+          cms.registerLocale('fr', fr);
           cms.init();
         </script>
-
         <script>
-
           var AgendaPreview = createClass({
             render: function() {
-
-
               const entry = this.props.entry
               // slider
               const img = entry.getIn(['data', 'thumbnail'])
