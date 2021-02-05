@@ -13,10 +13,12 @@
         <script>
           import CMS from 'netlify-cms-app';
           import { Widget as FileRelationWidget } from '@ncwidgets/file-relation';
-          import { fr } from 'netlify-cms-locales';
           cms.registerWidget(FileRelationWidget);
-          cms.registerLocale('fr', fr);
           cms.init();
+        </script>
+        <script>
+          import { fr } from 'netlify-cms-locales';
+          CMS.registerLocale('fr', fr);
         </script>
         <script>
           var AgendaPreview = createClass({
