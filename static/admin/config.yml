@@ -1,44 +1,43 @@
 backend:
-  #name: git-gateway
-  name: test-repo
-  branch: main
+  name: git-gateway
+  proxy_url: http://localhost:8081/api/v1
   repo: PuxianAlHazred/liquid-theme
+  branch: main
+local_backend:
+  # when using a custom proxy server port
+  url: http://localhost:8082/api/v1
+
 media_folder: "static/images/uploads"
 media_folder_relative: true
-public_folder: "/images/uploads"
-display_url: https://liquid-theme.netlify.app/
-site_url: https://liquid-theme.netlify.app/
+public_folder: "images/uploads"
+
 locale: 'fr'
 collections:
   - name: "agenda"
     label: "📚 Agenda"
-    label_singular: "Évenement"
+    label_singular: "📚 Évenement"
     folder: "content/agenda/posts"
     create: true
     editor:
       preview: true
-    summary: '{{title}} crée le {{day}}/{{month}}/{{year}}'
+    summary: '{{title}} crée le {{dateEvent}}'
     slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
     show_preview_links: true
     preview_path: "agenda/{{day}}-{{month}}-{{year}}-{{slug}}"
     format: 'json'
-    sort: 'date'
-    sortable_fields: ['date']
+    sort: 'dateEvent'
+    sortable_fields: ['dateEvent']
     fields:
       - {label: "Titre de l'événement :", name: title, widget: string, required: true, default: 'Nom de mon événement'}
       - {label: "Couverture de l'événement :", name: thumbnail, widget: image, required: true}
-      - label: "Événement"
-        name: "event"
-        widget: "object"
-        summary: "{{fields.dateEvent}}: {{fields.hourEvent}}"
-        fields:
-          - {label: "Date de l'événement :", name: dateEvent, widget: "datetime", format: "YYYY/MM/DD", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true, default: ''}
-          - {label: "Heure de l'événement :", name: hourEvent, widget: string, required: true, default: '20H > 23H'}
-          - {label: "Lien vers la billeterie :", name: ticketLink, widget: string, default: 'https://www.lienversvotrebilleterie.com/' }
+      - {label: "Date de l'événement :", name: dateEvent, picker_utc: false, widget: "datetime", format: "YYYY/MM/DD HH:mm", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true}
+      - {label: "Heure de l'événement :", name: hourEvent, widget: string, required: true, default: '20H > 23H'}
+      - {label: "Lien vers la billeterie :", name: ticketLink, widget: string, default: 'https://www.lienversvotrebilleterie.com/' }
       - label: "Lieu"
         name: "lieu"
         widget: "object"
         summary: "{{fields.titleLieu}}"
+        collapsed: true
         fields:
           - { label: "Nom du lieu :", name: titleLieu, widget: string, default: 'Nom du lieu'}
           - { label: "Photo du lieu :", name: thumbnailLieu, widget: image }
@@ -48,6 +47,7 @@ collections:
       - label: "Artiste"
         name: "artiste"
         widget: "list"
+        collapsed: true
         max: 5
         min: 1
         summary: '{{fields.titleArtiste}}'
@@ -56,37 +56,43 @@ collections:
           - { label: "Photo de l'artiste :", name: thumbnailArtiste, widget: image }
           - { label: "Description de l'artiste :", name: descriptionArtiste, widget: markdown }
           - { label: "Lien utile :", name: linkArtiste, widget: string , default: 'https://www.votrelienutile.com/'}
-      - label: "Tags"
-        name: "tgs"
-        slug: "{{slug}}"
-        widget: "ncw-file-relation"
-        collection: "configurations"
-        file: "agenda"
-        target_field: "tags"
-        id_field: id
-        display_fields: tag
-        multiple: true
-        required: false
-      - label: "Catégories"
-        name: "cts"
-        slug: "{{slug}}"
-        widget: "ncw-file-relation"
-        collection: "configurations"
-        file: "agenda"
-        target_field: "categories"
-        id_field: id
-        display_fields: categorie
-        multiple: false
-        required: false
-      - label: "Theme"
-        name: "theme"
+      - label: "Meta"
+        name: "meta"
         widget: "object"
         collapsed: true
         fields:
-          - {label: Couleur 1, name: color1, widget: string, default: '#FF0000'}
-          - {label: Couleur 2, name: color2, widget: string, default: '#0000FF'}
-          - {label: Dégrader, name: gradientEvent, widget: string, default: '#'}
-      - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD", required: true}
+          - {label: Auteur, name: auteur, widget: "string", required: true, default: 'Auteur'}
+          - label: "Catégories"
+            name: "cts"
+            slug: "{{slug}}"
+            widget: "ncw-file-relation"
+            collection: "configurations"
+            file: "agenda"
+            target_field: "categories"
+            id_field: id
+            display_fields: categorie
+            multiple: false
+            required: false
+          - label: "Tags"
+            name: "tgs"
+            slug: "{{slug}}"
+            widget: "ncw-file-relation"
+            collection: "configurations"
+            file: "agenda"
+            target_field: "tags"
+            id_field: id
+            display_fields: tag
+            multiple: true
+            required: false
+          - label: "Theme"
+            name: "theme"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: Couleur 1, name: color1, widget: string, default: '#FF0000'}
+              - {label: Couleur 2, name: color2, widget: string, default: '#0000FF'}
+              - {label: Dégrader, name: gradientEvent, widget: string, default: 'linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f)'}
+          - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD HH:mm", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true}
   - name: "configurations"
     label: "⚙️ Configurations"
     files:
