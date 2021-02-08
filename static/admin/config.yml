@@ -18,8 +18,7 @@ collections:
     editor:
       preview: true
     summary: '{{title}} crée le {{dateEvent}}'
-    slug: "{{slug}}"
-    path: '{{day}}-{{month}}-{{year}}/{{slug}}'
+    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
     show_preview_links: true
     format: 'json'
     sort: 'dateEvent'
