@@ -1,5 +1,5 @@
 backend:
-  name: test-repo #git-gateway
+  name: git-gateway
   repo: PuxianAlHazred/liquid-theme
   branch: main
 display_url: https://liquid-theme.netlify.app/
@@ -19,7 +19,7 @@ collections:
       preview: true
     summary: '{{title}} crée le {{dateEvent}}'
     slug: "{{slug}}"
-    path: '{{day}}-{{month}}-{{year}}/index'
+    path: '{{day}}-{{month}}-{{year}}/{{slug}}'
     show_preview_links: true
     format: 'json'
     sort: 'dateEvent'
