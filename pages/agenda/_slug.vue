@@ -1,5 +1,5 @@
 <template>
-  <div :style="'--gradient:'+this.theme.gradientEvent">
+  <div :style="'--gradient:'+this.meta.theme.gradientEvent">
     <ClientOnly>
     <section class="ticket-content">
       <div class="grid-content">
@@ -10,7 +10,7 @@
                 <p><span>{{ currentTime ? `${("0" + currentTime.minutes).slice(-2)}` : "" }}</span><span class="text-gradient">Minutes</span></p>
                 <p><span>{{ currentTime ? `${("0" + currentTime.seconds).slice(-2)}` : "" }}</span><span class="text-gradient">Seconds</span></p>
                 <div class="reserv">
-                    <a target="_blank" class="underline glitchy" :href="event.ticketLink">Réserver maintenant votre place</a>
+                    <a target="_blank" class="underline glitchy" :href="this.ticketLink">Réserver maintenant votre place</a>
                 </div>
               </div>
               <p class=" timeto underline glitchy" v-if="!currentTime">Time's Up!</p>
@@ -39,7 +39,7 @@
               <h3>ARTISTES</h3>
               <div class="map">
                 <i class="las la-user-tag"></i>
-                <div class="map-link "><div class="text-gradient "><p class="glitchy">{{cts[0].label}}</p></div></div>
+                <div class="map-link "><div class="text-gradient "><p class="glitchy">{{meta.cat}}</p></div></div>
               </div>
             </div>
             <div v-for="(element, index) in artiste" class="agenda-content">
@@ -58,12 +58,12 @@
           <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
 
           <div class="content-right">
-              <p class="style"><span>{{ element.cts[0].label }}</span> - <span>{{ element.tgs[0].label }}</span></p>
+              <p class="style"><span>{{ element.meta.cat }}</span> - <span>{{ element.meta.tags }}</span></p>
               <ul class="artistes">
                 <small class="title-event">{{ element.title }}</small>
                 <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
               </ul>
-              <p class="date">{{ element.event.dateEvent }}</p>
+              <p class="date">{{ element.dateEvent  | moment("DD/MM/YYYY") }}</p>
               <nuxt-link class="link" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
           </div>
         </article>
@@ -73,12 +73,12 @@
         <article v-for="element in otherPost.slice(1,2)" class="grid-item">
           <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
           <div class="content-right">
-              <p class="style"><span>{{ element.cts[0].label }}</span> - <span>{{ element.tgs[0].label }}</span></p>
+              <p class="style"><span>{{ element.meta.cat }}</span> - <span>{{ element.meta.tag }}</span></p>
               <ul class="artistes">
                 <small class="title-event">{{ element.title }}</small>
                 <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
               </ul>
-              <p class="date">{{ element.event.dateEvent }}</p>
+              <p class="date">{{ element.dateEvent  | moment("DD/MM/YYYY") }}</p>
               <nuxt-link class="link" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
           </div>
         </article>
@@ -106,15 +106,10 @@ export default {
   mounted() {
     setTimeout(this.countdown, 1);
     var allId = this.$store.state.agenda.posts.map((e, i) => {
-
       if(e.title != this.title) {
         this.otherPost.push(e)
-        console.log("IS NOT CURRENT ARTICLE : " + e.title)
       } else {
-        console.log("IS CURRENT ARTICLE : " + e.title)
       }
-      console.log(" ALL ID : " + i + " - TITLE : " + e.title);
-
     }).slice(0,1);
   },
   async asyncData({ params }) {
@@ -123,7 +118,7 @@ export default {
   },
   methods: {
     countdown() {
-      let t = Date.parse(this.event.dateEvent) - Date.parse(new Date());
+      let t = Date.parse(this.dateEvent) - Date.parse(new Date());
       let seconds = Math.floor((t / 1000) % 60);
       let minutes = Math.floor((t / 1000 / 60) % 60);
       let hours = Math.floor((t / (1000 * 60 * 60)) % 24);

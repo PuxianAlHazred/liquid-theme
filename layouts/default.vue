@@ -2,7 +2,7 @@
   <div id="app" :style="cssVars">
     <ui-menu></ui-menu>
     <div class="main">
-      <ui-slider :class="this.$route.name" :filtered="this.filtered"></ui-slider>
+      <ui-slider :class="this.$route.name" :filtered="this.filtered.slice(0,this.highlight)"></ui-slider>
       <transition name="animate__fadeInUp" mode="out-in">
         <nuxt/>
       </transition>
@@ -27,6 +27,7 @@
     data() {
       return {
         filtered: this.$store.state.agenda.posts,
+        highlight: this.$store.state.options.generales.highlight,
       }
     },
     computed: {

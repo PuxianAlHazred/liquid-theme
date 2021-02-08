@@ -17,8 +17,8 @@ collections:
     create: true
     editor:
       preview: true
-    summary: '{{title}} crée le {{dateEvent}}'
-    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
+    summary: '{{title}} le {{dateEvent}}'
+    slug: "{{slug}}"
     show_preview_links: true
     format: 'json'
     sort: 'dateEvent'

@@ -21,15 +21,15 @@
                   <div class="meta">
                     <transition  name="fadeDate">
                       <div v-if="show" class="clipPath">
-                        <p class="One date">{{ e.event.dateEvent }}</p>
+                        <p class="One date">{{ e.dateEvent  | moment("DD/MM/YYYY")  }}</p>
                       </div>
                     </transition>
                     <transition name="fadeOne">
                       <div v-show="show" class="clipPath">
-                        <p class="One hour">{{ e.event.hourEvent }}</p>
+                        <p class="One hour">{{ e.hourEvent }}</p>
                       </div>
                     </transition>
-                    <p class="Two author"><span>author</span> présente :</p>
+                    <p class="Two author"><span>{{ e.meta.auteur }}</span> présente :</p>
                     <transition name="fadeTwo">
                       <div v-show="show" class="clipPath glitchy" >
                           <p class="Two event">{{ e.title }}</p>
@@ -56,8 +56,8 @@
     </div>
     <div class="swiper-thumbs">
       <ul>
-        <li :style="'background:'+e.theme.color1+';color:'+e.theme.color2+';'" v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button glitchy" @click="toSlideTop(i)">
-          {{ e.date }}
+        <li :style="'background:'+e.meta.theme.color1+';color:'+e.meta.theme.color2+';'" v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button glitchy" @click="toSlideTop(i)">
+          {{ e.dateEvent | moment("DD/MM/YYYY") }}
         </li>
       </ul>
     </div>
@@ -202,7 +202,7 @@ export default {
       console.log("Swiper ready !")
       this.show = true
       VanillaTilt.init(document.querySelector(".flyer"), {
-        
+
       });
       /*
       const animateCSS = (element, animation, prefix = 'animate__') =>

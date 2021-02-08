@@ -1,0 +1,45 @@
+{
+  "title": "Moove Party 2",
+  "hourEvent": "18H à 23H",
+  "ticketLink": "https://www.lienversvotrebilleterie.com/",
+  "lieu": {
+    "titleLieu": "Gravity Beat",
+    "linkLieu": "https://www.lienverslelieu.com/",
+    "gmapsLieu": "https://www.liengooglemap.com/",
+    "thumbnailLieu": "/images/uploads/profil.jpg",
+    "descriptionLieu": "Je suis la description du lieu"
+  },
+  "artiste": [
+    {
+      "titleArtiste": "Slow Breeze",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    },
+    {
+      "titleArtiste": "Ancient Rain",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    },
+    {
+      "titleArtiste": "Dream of the Beach",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    }
+  ],
+  "meta": {
+    "auteur": "Asso 3",
+    "cat": "ELECTRO",
+    "theme": {
+      "color1": "#353070",
+      "gradientEvent": "linear-gradient(94deg, rgba(43,38,92,1) 0%, rgba(255,185,0,1) 31%, rgba(255,35,148,1) 64%, rgba(84,0,176,1) 100%)",
+      "color2": "#ffb700"
+    },
+    "date": "2021/03/08 10:40",
+    "tags": "DUBSTEP"
+  },
+  "dateEvent": "2022/02/31 10:40",
+  "thumbnail": "/images/uploads/poster2.gif"
+}

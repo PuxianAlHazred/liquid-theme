@@ -56,11 +56,11 @@ export const actions = {
     const a_posts = context.keys().map(key => ({
       ...context(key),
       _path: `/agenda/${key.replace('.json', '').replace('./', '')}`
-    })).sort( ( a, b) => {return new Date(b.date) - new Date(a.date);});
+    })).sort( ( a, b) => {return new Date(a.dateEvent) - new Date(b.dateEvent);});
       commit("setPosts", a_posts);
-    const a_cat = Array.from(new Set(a_posts.map(e => e.cts[0].label).sort()));
+    const a_cat = Array.from(new Set(a_posts.map(e => e.meta.cat).sort()));
       commit("setCat", a_cat);
-    const a_tag = Array.from(new Set(a_posts.map(e => e.tgs[0].label).sort()));
+    const a_tag = Array.from(new Set(a_posts.map(e => e.meta.tags).sort()));
       commit("setTag", a_tag);
   }
 };
