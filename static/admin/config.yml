@@ -1,75 +1,92 @@
 backend:
-  name: test-repo #git-gateway
-  repo: PuxianAlHazred/liquid-theme
+  #name: git-gateway
+  name: test-repo
   branch: main
-display_url: https://liquid-theme.netlify.app/
-site_url: https://liquid-theme.netlify.app/
-logo_url: https://liquid-theme.netlify.app/images/uploads/liquid-theme-logo.png
+  repo: PuxianAlHazred/liquid-theme
 media_folder: "static/images/uploads"
 media_folder_relative: true
-public_folder: "images/uploads"
+public_folder: "/images/uploads"
+display_url: https://liquid-theme.netlify.app/
+site_url: https://liquid-theme.netlify.app/
 locale: 'fr'
 collections:
   - name: "agenda"
     label: "📚 Agenda"
-    label_singular: "📚 Évenement"
+    label_singular: "Évenement"
     folder: "content/agenda/posts"
     create: true
     editor:
       preview: true
-    summary: '{{title}} crée le {{dateEvent}}'
-    slug: "{{slug}}"
-    path: '{{day}}-{{month}}-{{year}}/index'
+    summary: '{{title}} crée le {{day}}/{{month}}/{{year}}'
+    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
     show_preview_links: true
+    preview_path: "agenda/{{day}}-{{month}}-{{year}}-{{slug}}"
     format: 'json'
-    sort: 'dateEvent'
-    sortable_fields: ['dateEvent']
+    sort: 'date'
+    sortable_fields: ['date']
     fields:
       - {label: "Titre de l'événement :", name: title, widget: string, required: true, default: 'Nom de mon événement'}
-      - {label: "Couverture de l'événement :", name: thumbnail, widget: image, required: false}
-      - {label: "Date de l'événement :", name: dateEvent, picker_utc: false, widget: "datetime", format: "YYYY/MM/DD HH:mm", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true}
-      - {label: "Heure de l'événement :", name: hourEvent, widget: string, required: true, default: '20H > 23H'}
-      - {label: "Lien vers la billeterie :", name: ticketLink, widget: string, default: 'https://www.lienversvotrebilleterie.com/' }
+      - {label: "Couverture de l'événement :", name: thumbnail, widget: image, required: true}
+      - label: "Événement"
+        name: "event"
+        widget: "object"
+        summary: "{{fields.dateEvent}}: {{fields.hourEvent}}"
+        fields:
+          - {label: "Date de l'événement :", name: dateEvent, widget: "datetime", format: "YYYY/MM/DD", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true, default: ''}
+          - {label: "Heure de l'événement :", name: hourEvent, widget: string, required: true, default: '20H > 23H'}
+          - {label: "Lien vers la billeterie :", name: ticketLink, widget: string, default: 'https://www.lienversvotrebilleterie.com/' }
       - label: "Lieu"
         name: "lieu"
         widget: "object"
         summary: "{{fields.titleLieu}}"
-        collapsed: true
         fields:
           - { label: "Nom du lieu :", name: titleLieu, widget: string, default: 'Nom du lieu'}
-          - { label: "Photo du lieu :", name: thumbnailLieu, widget: image, required: false }
-          - { label: "Description du lieu :", name: descriptionLieu, widget: markdown, default: "Description" }
+          - { label: "Photo du lieu :", name: thumbnailLieu, widget: image }
+          - { label: "Description du lieu :", name: descriptionLieu, widget: markdown }
           - { label: "Lien vers le site :", name: linkLieu, widget: string, default: 'https://www.lienverslelieu.com/' }
           - { label: "Lien Google Map :", name: gmapsLieu, widget: string, default: 'https://www.liengooglemap.com/' }
       - label: "Artiste"
         name: "artiste"
         widget: "list"
-        collapsed: true
         max: 5
         min: 1
         summary: '{{fields.titleArtiste}}'
         fields:
           - { label: "Nom de l'artiste :", name: titleArtiste, widget: string, default: "Nom de l'artiste"}
-          - { label: "Photo de l'artiste :", name: thumbnailArtiste, widget: image, required: false }
-          - { label: "Description de l'artiste :", name: descriptionArtiste, widget: markdown, default: "Description" }
+          - { label: "Photo de l'artiste :", name: thumbnailArtiste, widget: image }
+          - { label: "Description de l'artiste :", name: descriptionArtiste, widget: markdown }
           - { label: "Lien utile :", name: linkArtiste, widget: string , default: 'https://www.votrelienutile.com/'}
-      - label: "Meta"
-        name: "meta"
+      - label: "Tags"
+        name: "tgs"
+        slug: "{{slug}}"
+        widget: "ncw-file-relation"
+        collection: "configurations"
+        file: "agenda"
+        target_field: "tags"
+        id_field: id
+        display_fields: tag
+        multiple: true
+        required: false
+      - label: "Catégories"
+        name: "cts"
+        slug: "{{slug}}"
+        widget: "ncw-file-relation"
+        collection: "configurations"
+        file: "agenda"
+        target_field: "categories"
+        id_field: id
+        display_fields: categorie
+        multiple: false
+        required: false
+      - label: "Theme"
+        name: "theme"
         widget: "object"
         collapsed: true
         fields:
-          - {label: Auteur, name: auteur, widget: "string", required: true, default: 'Auteur'}
-          - {label: Catégories, name: cat, widget: "string", required: true, default: 'Catégorie'}
-          - {label: Tags, name: tags, widget: "list", required: true}
-          - label: "Theme"
-            name: "theme"
-            widget: "object"
-            collapsed: true
-            fields:
-              - {label: Couleur 1, name: color1, widget: string, default: '#FF0000'}
-              - {label: Couleur 2, name: color2, widget: string, default: '#0000FF'}
-              - {label: Dégrader, name: gradientEvent, widget: string, default: 'linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f)'}
-          - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD HH:mm", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true}
+          - {label: Couleur 1, name: color1, widget: string, default: '#FF0000'}
+          - {label: Couleur 2, name: color2, widget: string, default: '#0000FF'}
+          - {label: Dégrader, name: gradientEvent, widget: string, default: '#'}
+      - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD", required: true}
   - name: "configurations"
     label: "⚙️ Configurations"
     files:
@@ -86,19 +103,19 @@ collections:
             fields:
               - {label: Nom de la page, name: nomdepage, widget: string, default: "Mon example"}
               - {label: Url, name: url, widget: string, default: "https://votreurl.com/"}
+          - label: "Réseaux sociaux"
+            name: "rs"
+            widget: "ncw-file-relation"
+            collection: "configurations"
+            file: "generales"
+            target_field: "reseauxsociaux"
+            id_field: url
+            display_fields: icons
+            multiple: false
       - label: "Générales"
         name: "generales"
         file: "content/configuration/generales.json"
         fields:
-          - label: "Slider"
-            name: "highlight"
-            widget: "number"
-            default: 2
-            value_type: "int"
-            min: 1
-            max: 5
-            step: 1
-            hint: "Nombre d'article à mettre en avant dans le slider (Maximum 5)"
           - label: "Theme"
             name: "theme"
             widget: "object"
@@ -138,3 +155,30 @@ collections:
             id_field: url
             display_fields: icons
             multiple: true
+      - label: "Agenda"
+        name: "agenda"
+        file: "content/configuration/agenda.json"
+        fields:
+          - label: "Slider"
+            name: "highlight"
+            widget: "number"
+            default: 2
+            value_type: "int"
+            min: 1
+            max: 5
+            step: 1
+            hint: "Nombre d'article à mettre en avant dans le slider (Maximum 5)"
+          - label: "Catégories"
+            name: "categories"
+            allow_add: true
+            widget: "list"
+            fields:
+              - {label: Nom de la catégories, name: categorie, widget: string, default: "Ma catégorie"}
+              - {label: ID, name: id, widget: ncw-id, prefix: "cts"}
+          - label: "Tags"
+            name: "tags"
+            allow_add: true
+            widget: "list"
+            fields:
+              - {label: Nom du tag, name: tag, widget: string, default: "Mon tag"}
+              - {label: ID, name: id, widget: ncw-id, prefix: "tgs"}
