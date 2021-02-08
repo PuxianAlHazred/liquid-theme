@@ -267,14 +267,12 @@
 }
 
 /* EFFET DEGRADER SUR LES INPUT */
-input {
-  background: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 input.css-83wr9v {
-  display:inline-block;
+    background: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 /* TYPO STYLE GLOBAL */
 .css-pcief1-FieldLabel-fieldLabel.e1j7dp4t0 {
@@ -460,6 +458,7 @@ input.css-83wr9v {
     font-weight: normal;
     padding: 0;
     border: none;
+    margin: 0 !important;
 }
 .Pane1 [class*="-button-default-"],
 .Pane1 [class*="-AddButton-"] {
@@ -584,6 +583,12 @@ label::before, label::after {
     border-radius: 0 !important;
     border: none !important;
 }
+[id*="artiste-field-"] [class*="-TopBarContainer"] {
+    background: transparent !important;
+}
 [id*="artiste-field-"] div:nth-child(2) [class*="ListItem-listControlItem-listControlItemCollapsed-ListControl"] div {
     border-radius: 0;
+}
+.css-1yjlc1u-DateTimeControl{
+    right: 13px !important;
 }
