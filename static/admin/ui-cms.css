@@ -530,6 +530,7 @@ label::before, label::after {
 [id*="meta-field-"] div:nth-child(2):not(.css-1lxv15y),
 [id*="theme-field-"] div:nth-child(2):not(.css-1lxv15y) {
     padding: 0 0 15px;
+    margin: 0 13px;
 }
 [id*="lieu-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"],
 [id*="meta-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"],
@@ -549,10 +550,20 @@ label::before, label::after {
 [id*="theme-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"] input {
     padding: 0 13px 13px 13px !important;
 }
+[id*="lieu-field-"] div:nth-child(2)[class*="css-83wr9v"] {
+    margin: 13px 0 0;
+}
+.cms-editor-visual {
+    margin: 0 !important;
+}
 .cms-editor-visual [class*="-ToolbarContainer"] {
     border-radius: 0;
     margin-top: 10px;
 }
 .cms-editor-visual [class*="css-12vfcwo"] {
     border-radius: 0;
+}
+.cms-editor-visual [class*="-EditorControlBar"],
+.cms-editor-visual [class*="css-12vfcwo"] {
+    margin: 0 !important;
 }
