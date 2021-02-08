@@ -432,26 +432,32 @@ input.css-83wr9v {
 }
 /********************************************/
 .Pane1 {
-    width: 30% !important;
+    width:30% !important;
 }
-[class*="-ControlContainer"],
 [id*="lieu-field-"],
 [id*="artiste-field-"],
 [id*="meta-field-"],
 [class*="ListItem-listControlItem-ListControl"] div:nth-child(3),
 [id*="theme-field-"] {
-    background: rgb(223, 223, 227) !important;
+    background: #F2F2F2 !important;
+    border: none !important;
+    border-radius: 0 !important;
 }
 [class*="-ControlContainer"] label {
     background: #fff !important;
     color:#000 !important;
     display: block;
+    font-weight: 700;
+    padding: 10px 0 0;
+    line-height: 20px;
 }
 [class*="-ControlContainer"] input {
     border-radius: 0;
     font-size: 19px;
     font-family: changa;
     font-weight: normal;
+    padding: 0;
+    border: none;
 }
 .Pane1 [class*="-button-default-"],
 .Pane1 [class*="-AddButton-"] {
@@ -461,7 +467,7 @@ input.css-83wr9v {
 }
 .Pane1 [class*="-small-DateTimeControl"] {
     position: absolute;
-    transform: translateY(-7px);
+    transform: translateY(10px);
     right: 0;
     font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -483,4 +489,70 @@ input.css-83wr9v {
 }
 label::before, label::after {
     content: none !important;
+}
+[class*="-StyledToolbarButton-button"] {
+    color: #fff !important;
+}
+.css-83wr9v {
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+[id*="lieu-field-"],
+[id*="meta-field-"],
+[id*="theme-field-"] {
+    padding: 0 !important;
+    height: auto;
+    background: transparent !important;
+}
+[id*="lieu-field-"] [class*="-TopBarContainer"],
+[id*="meta-field-"] [class*="-TopBarContainer"],
+[id*="theme-field-"] [class*="-TopBarContainer"] {
+    background: transparent !important;
+    margin-top: -35px;
+    display: block;
+}
+[id*="lieu-field-"] [class*="-TopBarContainer"] [class*="-ExpandButtonContainer"] button,
+[id*="meta-field-"] [class*="-TopBarContainer"] [class*="-ExpandButtonContainer"] button,
+[id*="theme-field-"] [class*="-TopBarContainer"] [class*="-ExpandButtonContainer"] button {
+    display: block;
+    width: 100%;
+    position: relative;
+    text-align: right;
+}
+[id*="lieu-field-"] div:nth-child(2)[class*="css-83wr9v"],
+[id*="meta-field-"] div:nth-child(2)[class*="css-83wr9v"],
+[id*="theme-field-"] div:nth-child(2)[class*="css-83wr9v"] {
+    background: #f2f2f2;
+    padding: 0 13px !important;
+}
+[id*="lieu-field-"] div:nth-child(2):not(.css-1lxv15y),
+[id*="meta-field-"] div:nth-child(2):not(.css-1lxv15y),
+[id*="theme-field-"] div:nth-child(2):not(.css-1lxv15y) {
+    padding: 0 0 15px;
+}
+[id*="lieu-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"],
+[id*="meta-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"],
+[id*="theme-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"] {
+    margin: 0;
+    background: #f2f2f2;
+    margin-bottom: 15px;
+}
+[id*="lieu-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"] label,
+[id*="meta-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"] label,
+[id*="theme-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"] label {
+    padding: 13px 13px 0 13px;
+    background: #f2f2f2 !important;
+}
+[id*="lieu-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"] input,
+[id*="meta-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"] input,
+[id*="theme-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"] input {
+    padding: 0 13px 13px 13px !important;
+}
+.cms-editor-visual [class*="-ToolbarContainer"] {
+    border-radius: 0;
+    margin-top: 10px;
+}
+.cms-editor-visual [class*="css-12vfcwo"] {
+    border-radius: 0;
 }
