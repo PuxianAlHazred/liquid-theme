@@ -538,6 +538,7 @@ label::before, label::after {
     margin: 0;
     background: #f2f2f2;
     margin-bottom: 15px;
+    padding: 0;
 }
 [id*="lieu-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"] label,
 [id*="meta-field-"] div:nth-child(2):not(.css-1lxv15y) [class*="-ControlContainer"] label,
