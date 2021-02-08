@@ -435,13 +435,15 @@ input.css-83wr9v {
     width:30% !important;
 }
 [id*="lieu-field-"],
-[id*="artiste-field-"],
 [id*="meta-field-"],
 [class*="ListItem-listControlItem-ListControl"] div:nth-child(3),
 [id*="theme-field-"] {
     background: #F2F2F2 !important;
     border: none !important;
     border-radius: 0 !important;
+}
+[id*="artiste-field-"],{
+    border: none;
 }
 [class*="-ControlContainer"] label {
     background: #fff !important;
@@ -481,6 +483,10 @@ input.css-83wr9v {
     line-height: 28px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: initial;
+    text-transform: uppercase;
+}
+.Pane1 [class*="-AddButton-"] span {
+    display: none;
 }
 [id*="artiste-field-"] [class*="-ControlContainer"] label,
 [id*="lieu-field-"] [class*="-ControlContainer"] label,
@@ -497,6 +503,11 @@ label::before, label::after {
     border: none !important;
     border-radius: 0 !important;
     padding: 0 !important;
+    background: transparent !important;
+    margin-top: 13px !important;
+}
+[class*="-ListItem-listControlItem-ListControl"] [class*="-TopBar-StyledListItemTopBar-StyledListItemTopBar"]{
+    border-radius: 5px 5px 0px 0px;
 }
 [id*="lieu-field-"],
 [id*="meta-field-"],
@@ -553,6 +564,7 @@ label::before, label::after {
 }
 [id*="lieu-field-"] div:nth-child(2)[class*="css-83wr9v"] {
     margin: 13px 0 0;
+    padding-bottom: 13px !important;
 }
 .cms-editor-visual {
     margin: 0 !important;
@@ -567,4 +579,11 @@ label::before, label::after {
 .cms-editor-visual [class*="-EditorControlBar"],
 .cms-editor-visual [class*="css-12vfcwo"] {
     margin: 0 !important;
+}
+[id*="artiste-field-"] {
+    border-radius: 0 !important;
+    border: none !important;
+}
+[id*="artiste-field-"] div:nth-child(2) [class*="ListItem-listControlItem-listControlItemCollapsed-ListControl"] div {
+    border-radius: 0;
 }
