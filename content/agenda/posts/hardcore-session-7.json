@@ -32,13 +32,13 @@
   "meta": {
     "auteur": "Asso 1",
     "cat": "ELECTRO",
-    "theme": {
-      "color1": "#2b4fa7",
-      "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
-      "color2": "#80b3ff"
-    },
     "date": "2021/02/08 10:40",
     "tags": "CHIPTUNE"
+  },
+  "theme": {
+    "color1": "#1b0303",
+    "gradientEvent": "linear-gradient(90deg, rgba(27,3,3,1) 0%, rgba(240,0,1,1) 35%, rgba(27,3,3,1) 100%)",
+    "color2": "#FF0000"
   },
   "dateEvent": "2022/01/24 10:40",
   "thumbnail": "/images/uploads/poster4.jpg"

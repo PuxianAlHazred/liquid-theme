@@ -56,7 +56,7 @@
     </div>
     <div class="swiper-thumbs">
       <ul>
-        <li :style="'background:'+e.meta.theme.color1+';color:'+e.meta.theme.color2+';'" v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button glitchy" @click="toSlideTop(i)">
+        <li :style="'background:'+e.theme.color1+';color:'+e.theme.color2+';'" v-for="(e, i) in filtered" :key="i" :class="{ active: indexed === i }" class="swiper-thumbs-button glitchy" @click="toSlideTop(i)">
           {{ e.dateEvent | moment("DD/MM/YYYY") }}
         </li>
       </ul>

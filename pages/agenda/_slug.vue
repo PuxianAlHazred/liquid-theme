@@ -1,5 +1,5 @@
 <template>
-  <div :style="'--gradient:'+this.meta.theme.gradientEvent">
+  <div :style="'--gradient:'+this.theme.gradientEvent">
     <ClientOnly>
     <section class="ticket-content">
       <div class="grid-content">
@@ -54,7 +54,7 @@
     </div>
     <div class="other-event">
       <div class="grid-content">
-        <article v-for="element in otherPost.slice(0,1)" class="grid-item">
+        <article v-for="element in otherPost.slice(0,1)" class="grid-item glitchy">
           <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
 
           <div class="content-right">
@@ -64,13 +64,13 @@
                 <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
               </ul>
               <p class="date">{{ element.dateEvent  | moment("DD/MM/YYYY") }}</p>
-              <nuxt-link class="link" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
+              <nuxt-link class="link glitchy" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
           </div>
         </article>
         <div class="select-other">
             <h4 class="underline">OTHER EVENTS</h4>
         </div>
-        <article v-for="element in otherPost.slice(1,2)" class="grid-item">
+        <article v-for="element in otherPost.slice(1,2)" class="grid-item ">
           <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
           <div class="content-right">
               <p class="style"><span>{{ element.meta.cat }}</span> - <span>{{ element.meta.tag }}</span></p>
@@ -79,7 +79,7 @@
                 <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>
               </ul>
               <p class="date">{{ element.dateEvent  | moment("DD/MM/YYYY") }}</p>
-              <nuxt-link class="link" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
+              <nuxt-link class="link glitchy" :to="element._path+'/'">EN SAVOIR PLUS</nuxt-link>
           </div>
         </article>
       </div>
@@ -88,7 +88,10 @@
   </div>
 </template>
 <style>
-
+.glitchy:hover {
+  -webkit-filter: url("#glitch");
+  filter: url("#glitch");
+}
 
 </style>
 <script>
@@ -104,6 +107,8 @@ export default {
     };
   },
   mounted() {
+    VanillaTilt.init(document.querySelector(".agenda-thumbs"), {
+    });
     setTimeout(this.countdown, 1);
     var allId = this.$store.state.agenda.posts.map((e, i) => {
       if(e.title != this.title) {
@@ -118,6 +123,7 @@ export default {
   },
   methods: {
     countdown() {
+
       let t = Date.parse(this.dateEvent) - Date.parse(new Date());
       let seconds = Math.floor((t / 1000) % 60);
       let minutes = Math.floor((t / 1000 / 60) % 60);

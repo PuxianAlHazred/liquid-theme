@@ -38,13 +38,13 @@
   "meta": {
     "auteur": "Asso 2",
     "cat": "ELECTRO",
-    "theme": {
-      "color1": "#1b0303",
-      "gradientEvent": "linear-gradient(90deg, rgba(27,3,3,1) 0%, rgba(240,0,1,1) 35%, rgba(27,3,3,1) 100%)",
-      "color2": "#FF0000"
-    },
     "date": "2021/01/01 12:20",
     "tags": "DUBSTEP"
+  },
+  "theme": {
+    "color1": "#1b0303",
+    "gradientEvent": "linear-gradient(90deg, rgba(27,3,3,1) 0%, rgba(240,0,1,1) 35%, rgba(27,3,3,1) 100%)",
+    "color2": "#FF0000"
   },
   "dateEvent": "2022/02/08 12:20",
   "thumbnail": "/images/uploads/poster1.jpg"

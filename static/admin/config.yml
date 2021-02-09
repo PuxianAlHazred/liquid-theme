@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: test-repo
   repo: PuxianAlHazred/liquid-theme
   branch: main
 display_url: https://liquid-theme.netlify.app/
@@ -60,15 +60,16 @@ collections:
           - {label: Auteur, name: auteur, widget: "string", required: true, default: 'Auteur'}
           - {label: Catégories, name: cat, widget: "string", required: true, default: 'Catégorie'}
           - {label: Tags, name: tags, widget: "list", required: true}
-          - label: "Theme"
-            name: "theme"
-            widget: "object"
-            collapsed: true
-            fields:
-              - {label: Couleur 1, name: color1, widget: string, default: '#FF0000'}
-              - {label: Couleur 2, name: color2, widget: string, default: '#0000FF'}
-              - {label: Dégrader, name: gradientEvent, widget: string, default: 'linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f)'}
+
           - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD HH:mm", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true}
+      - label: "Theme"
+        name: "theme"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: Couleur 1, name: color1, widget: string, default: '#FF0000'}
+          - {label: Couleur 2, name: color2, widget: string, default: '#0000FF'}
+          - {label: Dégrader, name: gradientEvent, widget: string, default: 'linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f)'}
   - name: "configurations"
     label: "⚙️ Configurations"
     files:

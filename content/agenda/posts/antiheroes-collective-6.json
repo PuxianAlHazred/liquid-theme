@@ -26,13 +26,13 @@
   "meta": {
     "auteur": "Asso 1",
     "cat": "ELECTRO",
-    "theme": {
-      "color1": "#2b4fa7",
-      "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
-      "color2": "#80b3ff"
-    },
     "date": "2021/02/08 10:40",
     "tags": "CHIPTUNE"
+  },
+  "theme": {
+    "color1": "#2b4fa7",
+    "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
+    "color2": "#80b3ff"
   },
   "dateEvent": "2011/04/22 10:40",
   "thumbnail": "/images/uploads/poster5.jpg"
