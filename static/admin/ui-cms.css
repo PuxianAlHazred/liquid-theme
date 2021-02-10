@@ -235,7 +235,7 @@ input.css-188efjc {
     transform: translateY(10px);
     right: 0;
     font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: changa;
     height: 30px;
     text-transform: uppercase;
     padding-bottom: 2px;
@@ -247,14 +247,15 @@ input.css-188efjc {
     padding: 0px 15px 2px;
     font-size: 16px;
     line-height: 28px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: changa;
     font-weight: initial;
     text-transform: uppercase;
 }
 .Pane1 [class*="-AddButton-"] span {
     display: none;
 }
-.css-83wr9v span > div{
+.css-83wr9v span > div,
+.css-1caau9x span > div{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
@@ -304,8 +305,20 @@ label::before, label::after {
     background: transparent !important;
     margin-top: 13px !important;
 }
+.css-1caau9x {
+    border-radius: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 13px 0 !important;
+}
 [class*="-ListItem-listControlItem-ListControl"] [class*="-TopBar-StyledListItemTopBar-StyledListItemTopBar"]{
     border-radius: 5px 5px 0px 0px;
+}
+[class*="-ListItem-listControlItem-ListControl"] [class*="-ControlContainer"]:first-of-type {
+    margin-top: 0 !important;
+}
+[id*="title-field-"] {
+    font-size: 25px !important;
 }
 [id*="lieu-field-"],
 [id*="meta-field-"],
@@ -384,6 +397,7 @@ label::before, label::after {
 .cms-editor-visual [class*="css-12vfcwo"] {
     margin: 0 !important;
 }
+
 [id*="artiste-field-"],
 [id*="planDuSite-field-"],
 [id*="reseauxsociaux-field-"],
@@ -413,4 +427,14 @@ label::before, label::after {
 }
 [class*="-StyledToolbarButton-button"] {
     color: #000 !important;
+}
+[class*="-ListItem-listControlItem-listControlItemCollapsed-ListControl"] {
+    margin-top: 0 !important;
+}
+[class*="-ControlErrorsList"] {
+    margin: 0;
+    padding: 30px 0 0;
+    display: block;
+    top: 0 !important;
+    text-align: left !important;
 }
