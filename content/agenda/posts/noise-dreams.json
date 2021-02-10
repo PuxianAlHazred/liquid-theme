@@ -1,0 +1,45 @@
+{
+  "title": "Noise Dreams",
+  "hourEvent": "20H > MINUIT",
+  "ticketLink": "https://www.lienversvotrebilleterie.com/",
+  "lieu": {
+    "titleLieu": "The Green Hills",
+    "linkLieu": "https://www.lienverslelieu.com/",
+    "gmapsLieu": "https://www.liengooglemap.com/",
+    "thumbnailLieu": "/images/uploads/profil.jpg",
+    "descriptionLieu": "Je suis la description du lieu"
+  },
+  "artiste": [
+    {
+      "titleArtiste": "Storybook Atmosphere",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    },
+    {
+      "titleArtiste": "Unreal Surroundings",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    },
+    {
+      "titleArtiste": "David'Shore",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    }
+  ],
+  "meta": {
+    "auteur": "VXL",
+    "cat": "ELECTRO",
+    "date": "2021/02/08 10:40",
+    "tags": "IDM"
+  },
+  "theme": {
+    "color1": "#231f20",
+    "gradientEvent": "linear-gradient(90deg, rgba(27,3,3,1) 0%, rgba(240,0,1,1) 35%, rgba(27,3,3,1) 100%)",
+    "color2": "#fbb040"
+  },
+  "dateEvent": "2021/07/24 08:00",
+  "thumbnail": "/images/uploads/poster2.jpg"
+}
