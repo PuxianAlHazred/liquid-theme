@@ -1,9 +1,9 @@
 {
-  "title": "Parasite Tour",
-  "hourEvent": "23H",
+  "title": "Shintoyu EU TOUR",
+  "hourEvent": "START 10H",
   "ticketLink": "https://www.lienversvotrebilleterie.com/",
   "lieu": {
-    "titleLieu": "L'ELEKTRO",
+    "titleLieu": "TWITCH",
     "linkLieu": "https://www.lienverslelieu.com/",
     "gmapsLieu": "https://www.liengooglemap.com/",
     "thumbnailLieu": "/images/uploads/profil.jpg",
@@ -11,35 +11,35 @@
   },
   "artiste": [
     {
-      "titleArtiste": "Storybook Atmosphere",
+      "titleArtiste": "Shintoryu",
       "thumbnailArtiste": "/images/uploads/profil.jpg",
       "descriptionArtiste": "Je suis une description",
       "linkArtiste": "#"
     },
     {
-      "titleArtiste": "David'Shore",
+      "titleArtiste": "Matsu Baki",
       "thumbnailArtiste": "/images/uploads/profil.jpg",
       "descriptionArtiste": "Je suis une description",
       "linkArtiste": "#"
     },
     {
-      "titleArtiste": "Unreal Surroundings",
+      "titleArtiste": "Guest",
       "thumbnailArtiste": "/images/uploads/profil.jpg",
       "descriptionArtiste": "Je suis une description",
       "linkArtiste": "#"
     }
   ],
   "meta": {
-    "auteur": "Asso 1",
+    "auteur": "VXL",
     "cat": "ELECTRO",
-    "date": "2011/02/08 10:40",
-    "tags": "CHIPTUNE"
+    "date": "2021/02/08 10:40",
+    "tags": "LOFI"
   },
   "theme": {
-    "color1": "#2b4fa7",
+    "color1": "#070707",
     "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
-    "color2": "#80b3ff"
+    "color2": "#8f0808"
   },
-  "dateEvent": "2011/01/15 10:40",
-  "thumbnail": "/images/uploads/poster6.jpg"
+  "dateEvent": "2024/05/24 22:00",
+  "thumbnail": "/images/uploads/poster4.jpg"
 }
