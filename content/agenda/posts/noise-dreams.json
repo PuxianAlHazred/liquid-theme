@@ -37,7 +37,7 @@
   },
   "theme": {
     "color1": "#fbb040",
-    "gradientEvent": "linear-gradient(90deg, rgba(27,3,3,1) 0%, rgba(240,0,1,1) 35%, rgba(27,3,3,1) 100%)",
+    "gradientEvent": "linear-gradient(45deg, rgba(251,176,63,1) 0%, rgba(251,176,63,1) 32%, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 32%, rgba(251,176,63,1) 33%, rgba(35,31,32,1) 33%, rgba(251,176,63,1) 100%)",
     "color2": "#231f20"
   },
   "dateEvent": "2021/07/24 08:00",

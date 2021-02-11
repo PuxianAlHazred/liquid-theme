@@ -1,6 +1,6 @@
 {
   "title": "Destruct The Rules",
-  "hourEvent": "START 8PM",
+  "hourEvent": "20H > 01H",
   "ticketLink": "https://www.lienversvotrebilleterie.com/",
   "lieu": {
     "titleLieu": "TWITCH",
@@ -43,7 +43,7 @@
   },
   "theme": {
     "color1": "#FF0000",
-    "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
+    "gradientEvent": "linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(111,0,0,1) 31%, rgba(32,0,0,1) 59%, rgba(8,0,0,1) 84%)",
     "color2": "#FFFFFF"
   },
   "dateEvent": "2022/08/24 20:00",
