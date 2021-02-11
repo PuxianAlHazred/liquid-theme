@@ -15,7 +15,7 @@ NOMADS CMS
   --swiper-theme-color:#007aff;
   --swiper-navigation-size:44px;
 
-  --gradient: #cecece;
+  --gradient: linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
 }
 
 html {
@@ -24,7 +24,7 @@ html {
 
 body {
     margin: 0;
-    background: #cecece;
+    background: #fff;
 }
 input[type="text"] {
     width: calc(100% - 30px);
@@ -38,18 +38,19 @@ button {
 }
 
 .main {
-    background:#cecece;
-    display: grid;
+    background: #fff;
+    display: block;
     min-height: 100vh;
     padding: 0;
+    position: relative;
 }
 .grid-content{
     max-width: 1080px;
     width:100%;
     padding: 0 50px;
+    margin: 0 auto;
 }
 .container {
-
     margin: 0 auto;
     background: #fff;
     width: 100%;
@@ -73,6 +74,70 @@ h6, .h6{ font-size: 20px; }
 /*
 AGENDA Slug
 */
+/*
+AGENDA Slug
+*/
+.slug-content {
+    position: relative;
+    z-index: 1;
+}
+.ticket-content {
+    background: #000;
+    padding:25px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.countdown {
+    color: white;
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+}
+.current-time {
+    display: inline-flex;
+    justify-content: space-between;
+    width:100%;
+}
+.current-time p {
+    margin: 0 15px;
+    text-align:center;
+}
+.current-time p span {
+    width: 100%;
+    display: block;
+    line-height: initial;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.current-time p span:first-child {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 50px;
+    line-height: 50px;
+}
+.reserv {
+    text-align: right;
+    padding: 20px;
+}
+.ticket-content .underline {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: changa;
+    font-size: 25px;
+    top: 50%;
+    transform: translateY(calc(-50% - 7px));
+    position: relative;
+    display: inline-block;
+}
+.ticket-content .timeto {
+    top: -7px;
+    transform: translate(-50% , 0);
+    text-align: center;
+    left: 50%;
+}
+
+
 .content-slug  {
     position: relative;
     padding-bottom: 30px;
@@ -106,6 +171,7 @@ AGENDA Slug
     padding-right: 20px;
     background: #fff;
     z-index: 1;
+    text-transform: uppercase;
 }
 .map {
     float: right;
@@ -144,6 +210,7 @@ AGENDA Slug
     padding: 4px 5px;
     position: relative;
     font-size: 40px;
+    background: inherit;
 }
 .artistes .map-link p:before {
     content:'';
@@ -220,6 +287,12 @@ AGENDA Slug
     font-weight: bold;
     margin-top: 20px;
     display: block;
+}
+.title-event {
+    font-weight: 300;
+    color: gray;
+    font-size: 13px;
+    text-transform: uppercase;
 }
 /****************SLIDER*****************/
 .swiper {
@@ -302,8 +375,6 @@ AGENDA Slug
 .swiper-slide .grid-content p.hour {
     font-size: 34px;
     padding-bottom: 15px;
-    display: inline-block;
-    border-bottom: 8px solid #fff;
 }
 .swiper-slide .grid-content p.date {
     margin-bottom: -10px;
@@ -312,6 +383,9 @@ AGENDA Slug
     font-size: 16px;
     text-transform: uppercase;
     margin: 10px 0 0;
+    border-top: 8px solid #fff;
+    padding-top: 15px;
+    display: inline-block;
 }
 .swiper-slide .grid-content p.author span{
     font-weight: bold;
@@ -339,7 +413,6 @@ AGENDA Slug
 }
 .swiper-slide .artistes li:hover {
     font-weight: 600;
-    padding-right: 50px;
 }
 .swiper-slide .artistes li::after {
     content: "<";

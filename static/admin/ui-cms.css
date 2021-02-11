@@ -2,6 +2,9 @@
     font-family: "Changa";
     src: url(../_nuxt/assets/font/changaOne/ChangaOne-Regular.ttf) format("truetype");
 }
+iframe {
+    border-radius: 0 !important;
+}
 /*menu collections*/
 [class*="-AppMainContainer"] [class*="-CollectionContainer"]{
     margin:0;
