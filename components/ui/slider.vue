@@ -150,6 +150,7 @@
     transition:1s all ease;
     overflow: hidden;
     position: relative;
+    z-index:2;
   }
   /* INDEX */
   .swiper {
@@ -170,13 +171,12 @@
       right:-50px;
   }
   .agenda-slug .swiper-back {
-      position: absolute;
-      top: 20px;
+      position: fixed;
+      top: 57px;
       left: 100px;
-
       z-index: 1;
       cursor: pointer;
-      display:block;
+      display: block;
   }
   .agenda-slug .swiper-back i{
     color: white!important;

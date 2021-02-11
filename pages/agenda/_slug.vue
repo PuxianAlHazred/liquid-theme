@@ -1,5 +1,5 @@
 <template>
-  <div :style="'--gradient:'+this.theme.gradientEvent">
+  <div :style="'--gradient:'+this.theme.gradientEvent" class="slug-content">
     <ClientOnly>
     <section class="ticket-content">
       <div class="grid-content">
@@ -88,11 +88,10 @@
   </div>
 </template>
 <style>
-.glitchy:hover {
-  -webkit-filter: url("#glitch");
-  filter: url("#glitch");
-}
-
+    .glitchy:hover {
+      -webkit-filter: url("#glitch");
+      filter: url("#glitch");
+    }
 </style>
 <script>
 export default {
