@@ -319,7 +319,6 @@ nav a {
 }
 .swiper-slide .artistes li:hover {
     font-weight: 600;
-    padding-right: 50px;
 }
 .swiper-slide .artistes li::after {
     content: "<";
