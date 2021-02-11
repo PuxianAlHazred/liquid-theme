@@ -25,7 +25,7 @@ collections:
     sortable_fields: ['dateEvent']
     fields:
       - {label: "Titre de l'événement :", name: title, widget: string, required: true, default: 'Nom de mon événement'}
-      - {label: "Couverture de l'événement :", name: thumbnail, widget: image, required: true}
+      - {label: "Couverture de l'événement :", name: thumbnail, widget: image, required: true, default: '/images/uploads/poster1.jpg'}
       - {label: "Date de l'événement :", name: dateEvent, picker_utc: false, widget: "datetime", format: "YYYY/MM/DD HH:mm", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true}
       - {label: "Heure de l'événement :", name: hourEvent, widget: string, required: true, default: '20H > 23H'}
       - {label: "Lien vers la billeterie :", name: ticketLink, widget: string, default: 'https://www.lienversvotrebilleterie.com/' }
@@ -36,8 +36,8 @@ collections:
         collapsed: true
         fields:
           - { label: "Nom du lieu :", name: titleLieu, widget: string, default: 'Nom du lieu'}
-          - { label: "Photo du lieu :", name: thumbnailLieu, widget: image }
-          - { label: "Description du lieu :", name: descriptionLieu, widget: markdown }
+          - { label: "Photo du lieu :", name: thumbnailLieu, widget: image, default: '/images/uploads/profil.jpg' }
+          - { label: "Description du lieu :", name: descriptionLieu, widget: markdown, default: 'Je suis une courte description du lieu.' }
           - { label: "Lien vers le site :", name: linkLieu, widget: string, default: 'https://www.lienverslelieu.com/' }
           - { label: "Lien Google Map :", name: gmapsLieu, widget: string, default: 'https://www.liengooglemap.com/' }
       - label: "Artiste"
@@ -49,8 +49,8 @@ collections:
         summary: '{{fields.titleArtiste}}'
         fields:
           - { label: "Nom de l'artiste :", name: titleArtiste, widget: string, default: "Nom de l'artiste"}
-          - { label: "Photo de l'artiste :", name: thumbnailArtiste, widget: image }
-          - { label: "Description de l'artiste :", name: descriptionArtiste, widget: markdown }
+          - { label: "Photo de l'artiste :", name: thumbnailArtiste, widget: image, default: '/images/uploads/profil.jpg' }
+          - { label: "Description de l'artiste :", name: descriptionArtiste, widget: markdown, default: "Je suis une courte description de l'artiste." }
           - { label: "Lien utile :", name: linkArtiste, widget: string , default: 'https://www.votrelienutile.com/'}
       - label: "Meta"
         name: "meta"
@@ -59,8 +59,7 @@ collections:
         fields:
           - {label: Auteur, name: auteur, widget: "string", required: true, default: 'Auteur'}
           - {label: Catégories, name: cat, widget: "string", required: true, default: 'Catégorie'}
-          - {label: Tags, name: tags, widget: "list", required: true}
-
+          - {label: Tags, name: tags, widget: "string", required: true, default: 'Tags'}
           - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD HH:mm", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true}
       - label: "Theme"
         name: "theme"
@@ -77,8 +76,8 @@ collections:
         name: "menu"
         file: "content/configuration/menu.json"
         fields:
-          - {label: Logo, name: logo, widget: image, hint: "Votre logo en image"}
-          - {label: Billeterie, name: ticketLink, widget: string, hint: "Lien vers votre billeterie"}
+          - {label: Logo, name: logo, widget: image, hint: "Votre logo en image", default: '/images/uploads/liquid-theme-logo.png'}
+          - {label: Billeterie, name: ticketLink, widget: string, hint: "Lien vers votre billeterie", default: '#'}
           - label: "Liste des pages dans le menu"
             name: "menuList"
             allow_add: true
@@ -86,15 +85,6 @@ collections:
             fields:
               - {label: Nom de la page, name: nomdepage, widget: string, default: "Mon example"}
               - {label: Url, name: url, widget: string, default: "https://votreurl.com/"}
-          - label: "Réseaux sociaux"
-            name: "rs"
-            widget: "ncw-file-relation"
-            collection: "configurations"
-            file: "generales"
-            target_field: "reseauxsociaux"
-            id_field: url
-            display_fields: icons
-            multiple: false
       - label: "Générales"
         name: "generales"
         file: "content/configuration/generales.json"
@@ -113,10 +103,10 @@ collections:
             widget: "object"
             collapsed: true
             fields:
-              - {label: Titre du projet, name: title, widget: string, required: true}
-              - {label: Logo du projet, name: thumbnail, widget: image, required: true}
-              - {label: Favicon, name: favicon, widget: image}
-              - {label: Dégrader, name: gradient, widget: string}
+              - {label: Titre du projet, name: title, widget: string, required: true, default: 'LIQUID-THEME by PIKS-L.FR'}
+              - {label: Logo du projet, name: thumbnail, widget: image, required: true, default: '/images/uploads/liquid-theme-logo.png'}
+              - {label: Favicon, name: favicon, widget: image, default: '/images/uploads/favicon.png'}
+              - {label: Dégrader, name: gradient, widget: string, default: 'linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f)' }
           - label: "Réseaux sociaux"
             name: "reseauxsociaux"
             allow_add: true
@@ -125,7 +115,6 @@ collections:
               - {label: Nom, name: name, widget: string, default: "Github"}
               - {label: Icones ( line-awesome ), name: icons, widget: string, default: "las la-bookmark"}
               - {label: Url, name: url, widget: string, default: "https://votreurl.com/"}
-              - {label: ID, name: id, widget: ncw-id, prefix: "rs"}
       - label: "Footer"
         name: "footer"
         file: "content/configuration/footer.json"
@@ -137,13 +126,4 @@ collections:
             fields:
               - {label: Nom de la page, name: nomdepage, widget: string, default: "Mon example"}
               - {label: Url, name: url, widget: string, default: "https://votreurl.com/"}
-          - {label: Copyright, name: copyright, widget: string}
-          - label: "Réseaux sociaux"
-            name: "rs"
-            widget: "ncw-file-relation"
-            collection: "configurations"
-            file: "generales"
-            target_field: "reseauxsociaux"
-            id_field: url
-            display_fields: icons
-            multiple: true
+          - {label: Copyright, name: copyright, widget: string, default: 'COPYRIGHT AND DESIGN BY PIKS-L.FR'}
