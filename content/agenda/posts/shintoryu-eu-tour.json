@@ -1,0 +1,45 @@
+{
+  "title": "Shintoyu EU TOUR",
+  "hourEvent": "START 10H",
+  "ticketLink": "https://www.lienversvotrebilleterie.com/",
+  "lieu": {
+    "titleLieu": "TWITCH",
+    "linkLieu": "https://www.lienverslelieu.com/",
+    "gmapsLieu": "https://www.liengooglemap.com/",
+    "thumbnailLieu": "/images/uploads/profil.jpg",
+    "descriptionLieu": "Je suis la description du lieu"
+  },
+  "artiste": [
+    {
+      "titleArtiste": "Shintoryu",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    },
+    {
+      "titleArtiste": "Matsu Baki",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    },
+    {
+      "titleArtiste": "Guest",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    }
+  ],
+  "meta": {
+    "auteur": "VXL",
+    "cat": "ELECTRO",
+    "date": "2021/02/08 10:40",
+    "tags": "LOFI"
+  },
+  "theme": {
+    "color1": "#0f0f0f",
+    "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
+    "color2": "#8f0808"
+  },
+  "dateEvent": "2024/05/24 22:00",
+  "thumbnail": "/images/uploads/poster4.jpg"
+}

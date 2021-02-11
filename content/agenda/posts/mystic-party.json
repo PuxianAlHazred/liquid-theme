@@ -1,0 +1,45 @@
+{
+  "title": "Mystic Party",
+  "hourEvent": "Start : 20H",
+  "ticketLink": "https://www.lienversvotrebilleterie.com/",
+  "lieu": {
+    "titleLieu": "Twitch",
+    "linkLieu": "https://www.lienverslelieu.com/",
+    "gmapsLieu": "https://www.liengooglemap.com/",
+    "thumbnailLieu": "/images/uploads/profil.jpg",
+    "descriptionLieu": "Je suis la description du lieu"
+  },
+  "artiste": [
+    {
+      "titleArtiste": "Ancient Rain",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    },
+    {
+      "titleArtiste": "Dream of the Beach",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    },
+    {
+      "titleArtiste": "Slow Breeze",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    }
+  ],
+  "meta": {
+    "auteur": "PXL",
+    "cat": "ELECTRO",
+    "date": "2021/03/08 10:40",
+    "tags": "MINIMAL"
+  },
+  "theme": {
+    "color1": "#042aed",
+    "gradientEvent": "linear-gradient(94deg, rgba(43,38,92,1) 0%, rgba(255,185,0,1) 31%, rgba(255,35,148,1) 64%, rgba(84,0,176,1) 100%)",
+    "color2": "#ffffff"
+  },
+  "dateEvent": "2022/03/24 20:00",
+  "thumbnail": "/images/uploads/poster3.jpg"
+}

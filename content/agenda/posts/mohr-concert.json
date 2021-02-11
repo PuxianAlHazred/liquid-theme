@@ -1,0 +1,39 @@
+{
+  "title": "MOHR",
+  "hourEvent": "20H30",
+  "ticketLink": "https://www.lienversvotrebilleterie.com/",
+  "lieu": {
+    "titleLieu": "TWITCH",
+    "linkLieu": "https://www.lienverslelieu.com/",
+    "gmapsLieu": "https://www.liengooglemap.com/",
+    "thumbnailLieu": "/images/uploads/profil.jpg",
+    "descriptionLieu": "Je suis la description du lieu"
+  },
+  "artiste": [
+    {
+      "titleArtiste": "MOHR",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    },
+    {
+      "titleArtiste": "GUEST",
+      "thumbnailArtiste": "/images/uploads/profil.jpg",
+      "descriptionArtiste": "Je suis une description",
+      "linkArtiste": "#"
+    }
+  ],
+  "meta": {
+    "auteur": "PXL",
+    "cat": "ELECTRO",
+    "date": "2021/02/08 10:40",
+    "tags": "DRONE"
+  },
+  "theme": {
+    "color1": "#FFFFFF",
+    "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
+    "color2": "#3bfe00"
+  },
+  "dateEvent": "2022/08/13 20:00",
+  "thumbnail": "/images/uploads/poster5.jpg"
+}
