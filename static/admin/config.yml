@@ -1,5 +1,5 @@
 backend:
-  name: test-repo
+  name: git-gateway
   repo: PuxianAlHazred/liquid-theme
   branch: main
 display_url: https://liquid-theme.netlify.app/
