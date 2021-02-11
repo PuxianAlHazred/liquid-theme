@@ -1,6 +1,6 @@
 {
   "title": "MOHR",
-  "hourEvent": "20H30",
+  "hourEvent": "20H30 > 23H",
   "ticketLink": "https://www.lienversvotrebilleterie.com/",
   "lieu": {
     "titleLieu": "TWITCH",
@@ -31,7 +31,7 @@
   },
   "theme": {
     "color1": "#FFFFFF",
-    "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
+    "gradientEvent": "linear-gradient(45deg, rgba(59,254,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 50%, rgba(59,254,0,1) 100%)",
     "color2": "#3bfe00"
   },
   "dateEvent": "2022/08/13 20:00",

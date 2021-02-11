@@ -54,7 +54,7 @@
     </div>
     <div class="other-event">
       <div class="grid-content">
-        <article v-for="element in otherPost.slice(0,1)" class="grid-item glitchy">
+        <article v-for="element in otherPost.slice(0,1)" class="grid-item">
           <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
 
           <div class="content-right">
@@ -73,7 +73,7 @@
         <article v-for="element in otherPost.slice(1,2)" class="grid-item ">
           <div class="agenda-thumbs" :lazy-background="element.thumbnail"></div>
           <div class="content-right">
-              <p class="style"><span>{{ element.meta.cat }}</span> - <span>{{ element.meta.tag }}</span></p>
+              <p class="style"><span>{{ element.meta.cat }}</span> - <span>{{ element.meta.tags }}</span></p>
               <ul class="artistes">
                 <small class="title-event">{{ element.title }}</small>
                 <li v-for="(a, i) in element.artiste" :key="i" >{{ a.titleArtiste }}</li>

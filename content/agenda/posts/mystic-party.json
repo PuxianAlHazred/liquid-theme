@@ -1,6 +1,6 @@
 {
   "title": "Mystic Party",
-  "hourEvent": "Start : 20H",
+  "hourEvent": "20H > MINUIT",
   "ticketLink": "https://www.lienversvotrebilleterie.com/",
   "lieu": {
     "titleLieu": "Twitch",
@@ -37,7 +37,7 @@
   },
   "theme": {
     "color1": "#042aed",
-    "gradientEvent": "linear-gradient(94deg, rgba(43,38,92,1) 0%, rgba(255,185,0,1) 31%, rgba(255,35,148,1) 64%, rgba(84,0,176,1) 100%)",
+    "gradientEvent": "linear-gradient(45deg, rgba(5,42,231,1) 0%, rgba(0,0,0,1) 100%)",
     "color2": "#ffffff"
   },
   "dateEvent": "2022/03/24 20:00",
