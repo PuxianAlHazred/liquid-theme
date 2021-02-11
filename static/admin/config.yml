@@ -71,6 +71,8 @@ collections:
           - {label: Dégrader, name: gradientEvent, widget: string, default: 'linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f)'}
   - name: "configurations"
     label: "⚙️ Configurations"
+    editor:
+      preview: false
     files:
       - label: "Menu"
         name: "menu"

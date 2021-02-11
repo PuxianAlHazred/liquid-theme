@@ -23,35 +23,38 @@
           var AgendaPreview = createClass({
             render: function() {
               const entry = this.props.entry
-              // slider
-              const img = entry.getIn(['data', 'thumbnail'])
-              const featured_img = this.props.getAsset(img) || ''
+              // String
               const title = entry.getIn(['data', 'title'])
-              const date = entry.getIn(['data', 'date'])
-              const lieu_obj = entry.getIn(['data', 'lieu'])
-              const event_obj = entry.getIn(['data', 'event'])
-              const imgLieu = lieu_obj.getIn(['thumbnailLieu'])
-              const mdLieu = lieu_obj.getIn(['descriptionLieu'])
-              const featured_img_lieu = this.props.getAsset(imgLieu) || ''
-              const artiste_obj = entry.getIn(['data', 'artiste']) || []
+              const dateEvent = entry.getIn(['data', 'dateEvent'])
+              const hourEvent = entry.getIn(['data', 'hourEvent'])
+              const ticketLink = entry.getIn(['data', 'ticketLink'])
+              const thumbnail = entry.getIn(['data', 'thumbnail'])
+              const featured_img_cover = this.props.getAsset(thumbnail) || ''
+              // Array
+              const artisteArray = entry.getIn(['data', 'artiste']) || []
+              // Object
+              const lieuOject = entry.getIn(['data', 'lieu'])
+                const thumbnailLieu = lieuOject.getIn(['thumbnailLieu'])
+                const featured_img_lieu = this.props.getAsset(thumbnailLieu) || ''
+              const MetaOject = entry.getIn(['data', 'meta'])
               return h('div', {class: 'main' },
                 h('div', { class: 'slider agenda-slug' },
                   h('div',  {class: 'swiper' },
                     h('div',  {class: 'swiper-wrapper' },
                       h('div',  {class: 'swiper-slide' },
-                        h('div', { className: 'fontblur', style: { backgroundImage: `url(${featured_img.toString()})` } }),
+                        h('div', { className: 'fontblur', style: { backgroundImage: `url(${featured_img_cover.toString()})` } }),
                         h('div',  {class: 'grid-content' },
                           h('div',  {class: 'slider-content' },
-                            h('div', { className: 'flyer', style: { backgroundImage: `url(${featured_img.toString()})` } }),
+                            h('div', { className: 'flyer', style: { backgroundImage: `url(${featured_img_cover.toString()})` } }),
                             h('div',  {class: 'content-right' },
                               h('div',  {class: 'meta' },
-                                h('p',  {class: 'date' }, event_obj.getIn(['dateEvent'])),
-                                h('p',  {class: 'hour' }, event_obj.getIn(['hourEvent'])),
-                                h('p',  {class: 'author' }, 'Author présente :'),
+                                h('p',  {class: 'date' }, dateEvent),
+                                h('p',  {class: 'hour' }, hourEvent),
+                                h('p',  {class: 'author' }, MetaOject.getIn(['auteur'])+' présente :' ),
                                 h('p',  {class: 'event' }, title),
                               ),
                               h('ul',  {class: 'artistes' },
-                                artiste_obj.map(art  => h('li', {}, `${art.getIn(['titleArtiste'])}`))
+                                artisteArray.map(art  => h('li', {}, `${art.getIn(['titleArtiste'])}`))
                               )
                             )
                           )
@@ -70,7 +73,7 @@
                 h('div',  {class: 'container grid-content' },
                   h('section',  {class: 'content-slug place' },
                     h('div',  {class: 'agenda-header' },
-                      h('h3', {}, lieu_obj.getIn(['titleLieu'])),
+                      h('h3', {}, lieuOject.getIn(['titleLieu'])),
                       h('a',  {class: 'map' },
                         h('i',  {class: 'las la-map-marked-alt' }),
                         h('div',  {class: 'triangle' }),
@@ -83,7 +86,7 @@
                     ),
                     h('div',  {class: 'agenda-content' },
                       h('div', { className: 'agenda-thumbs', style: { backgroundImage: `url(${featured_img_lieu.toString()})` } }),
-                      h('div',  {class: 'content-markdown' }, lieu_obj.getIn(['descriptionLieu']) )
+                      h('div',  {class: 'content-markdown' }, lieuOject.getIn(['descriptionLieu']) )
                     )
                   ),
                   h('section',  {class: 'content-slug artistes' },
@@ -93,17 +96,13 @@
                         h('i',  {class: 'las la-user-tag' }),
                         h('div',  {class: 'map-link' },
                           h('div',  {class: 'text-gradient' },
-                            h('p',  {}, 'VOTRE TAG')
+                            h('p',  {}, MetaOject.getIn(['cat']))
                           )
                         )
                       )
                     ),
-                    h('div',  {class: 'agenda-content' },
-                      h('div', { className: 'agenda-thumbs', style: { backgroundImage: `url(${featured_img_lieu.toString()})` } }),
-                      h('div',  {class: 'content-markdown' }, lieu_obj.getIn(['descriptionLieu']) )
-                    ),
                     h('div',  {},
-                      artiste_obj.map(art  =>
+                      artisteArray.map(art  =>
                         h('div',  {class: 'agenda-content' },
                           h('div', { className: 'agenda-thumbs', style: { backgroundImage: `url(${art.getIn(['thumbnailArtiste'])})` } }),
                           h('div',  {class: 'content-markdown' },
