@@ -201,6 +201,8 @@ AGENDA Slug
 }
 .current-time {
     display: inline-flex;
+    justify-content: space-between;
+    width:100%;
 }
 .current-time p {
     margin: 0 15px;
