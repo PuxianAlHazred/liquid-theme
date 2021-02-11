@@ -42,9 +42,9 @@
     "tags": "DARKSYNTH"
   },
   "theme": {
-    "color1": "#160000",
+    "color1": "#FF0000",
     "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
-    "color2": "#ff0000"
+    "color2": "#FFFFFF"
   },
   "dateEvent": "2022/08/24 20:00",
   "thumbnail": "/images/uploads/poster1.jpg"

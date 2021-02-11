@@ -1,9 +1,9 @@
 {
-  "title": "Mystic Party",
-  "hourEvent": "Start : 20H",
+  "title": "MOHR",
+  "hourEvent": "20H30",
   "ticketLink": "https://www.lienversvotrebilleterie.com/",
   "lieu": {
-    "titleLieu": "Twitch",
+    "titleLieu": "TWITCH",
     "linkLieu": "https://www.lienverslelieu.com/",
     "gmapsLieu": "https://www.liengooglemap.com/",
     "thumbnailLieu": "/images/uploads/profil.jpg",
@@ -11,19 +11,13 @@
   },
   "artiste": [
     {
-      "titleArtiste": "Ancient Rain",
+      "titleArtiste": "MOHR",
       "thumbnailArtiste": "/images/uploads/profil.jpg",
       "descriptionArtiste": "Je suis une description",
       "linkArtiste": "#"
     },
     {
-      "titleArtiste": "Dream of the Beach",
-      "thumbnailArtiste": "/images/uploads/profil.jpg",
-      "descriptionArtiste": "Je suis une description",
-      "linkArtiste": "#"
-    },
-    {
-      "titleArtiste": "Slow Breeze",
+      "titleArtiste": "GUEST",
       "thumbnailArtiste": "/images/uploads/profil.jpg",
       "descriptionArtiste": "Je suis une description",
       "linkArtiste": "#"
@@ -32,14 +26,14 @@
   "meta": {
     "auteur": "PXL",
     "cat": "ELECTRO",
-    "date": "2021/03/08 10:40",
-    "tags": "MINIMAL"
+    "date": "2021/02/08 10:40",
+    "tags": "DRONE"
   },
   "theme": {
-    "color1": "#042aed",
-    "gradientEvent": "linear-gradient(94deg, rgba(43,38,92,1) 0%, rgba(255,185,0,1) 31%, rgba(255,35,148,1) 64%, rgba(84,0,176,1) 100%)",
-    "color2": "#ffffff"
+    "color1": "#FFFFFF",
+    "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
+    "color2": "#3bfe00"
   },
-  "dateEvent": "2022/03/24 20:00",
-  "thumbnail": "/images/uploads/poster3.jpg"
+  "dateEvent": "2022/08/13 20:00",
+  "thumbnail": "/images/uploads/poster5.jpg"
 }

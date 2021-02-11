@@ -36,7 +36,7 @@
     "tags": "LOFI"
   },
   "theme": {
-    "color1": "#070707",
+    "color1": "#0f0f0f",
     "gradientEvent": "linear-gradient(90deg, rgba(27,52,109,1) 0%, rgba(64,115,206,1) 33%, rgba(27,52,109,1) 68%, rgba(64,115,206,1) 100%)",
     "color2": "#8f0808"
   },

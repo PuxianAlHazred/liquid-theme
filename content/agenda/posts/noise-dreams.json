@@ -36,9 +36,9 @@
     "tags": "IDM"
   },
   "theme": {
-    "color1": "#231f20",
+    "color1": "#fbb040",
     "gradientEvent": "linear-gradient(90deg, rgba(27,3,3,1) 0%, rgba(240,0,1,1) 35%, rgba(27,3,3,1) 100%)",
-    "color2": "#fbb040"
+    "color2": "#231f20"
   },
   "dateEvent": "2021/07/24 08:00",
   "thumbnail": "/images/uploads/poster2.jpg"
