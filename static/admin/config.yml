@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: test-repo
   repo: PuxianAlHazred/liquid-theme
   branch: main
 display_url: https://liquid-theme.netlify.app/
@@ -78,20 +78,22 @@ collections:
         name: "menu"
         file: "content/configuration/menu.json"
         fields:
-          - {label: Logo, name: logo, widget: image, hint: "Votre logo en image", default: '/images/uploads/liquid-theme-logo.png'}
-          - {label: Billeterie, name: ticketLink, widget: string, hint: "Lien vers votre billeterie", default: '#'}
-          - label: "Liste des pages dans le menu"
+          - {label: Logo grand format, name: logo, widget: image, hint: "└ Votre logo grand format ( Visible une fois le menu ouvert )", default: '/images/uploads/liquid-theme-logo.png'}
+          - {label: Logo petit format, name: ico, widget: image, hint: "└ Votre logo petit format ( Visible une fois le menu fermé )", default: '/images/uploads/liquid-theme-logo.png'}
+          - {label: Billeterie, name: ticketLink, widget: string, hint: "└ Lien vers votre billeterie", default: '#'}
+          - label: "Liens du menu"
+            label_singular: "Lien"
             name: "menuList"
             allow_add: true
             widget: "list"
             fields:
-              - {label: Nom de la page, name: nomdepage, widget: string, default: "Mon example"}
-              - {label: Url, name: url, widget: string, default: "https://votreurl.com/"}
+              - {label: Nom de la page, name: nomdepage, widget: string, default: "Mon example", hint: "└ Nom visible dans votre menu latéral"}
+              - {label: Url, name: url, widget: string, default: "https://votreurl.com/" , hint: "└ Url interne ( ex : /nom-de-ma-page/ ) uniquement"}
       - label: "Générales"
         name: "generales"
         file: "content/configuration/generales.json"
         fields:
-          - label: "Slider"
+          - label: "Slider principale (Agenda)"
             name: "highlight"
             widget: "number"
             default: 2
@@ -99,24 +101,26 @@ collections:
             min: 1
             max: 5
             step: 1
-            hint: "Nombre d'article à mettre en avant dans le slider (Maximum 5)"
+            hint: "└ Nombre d'article(s) à mettre en avant dans le slider (Maximum 5)"
           - label: "Theme"
             name: "theme"
             widget: "object"
-            collapsed: true
+            collapsed: false
             fields:
               - {label: Titre du projet, name: title, widget: string, required: true, default: 'LIQUID-THEME by PIKS-L.FR'}
-              - {label: Logo du projet, name: thumbnail, widget: image, required: true, default: '/images/uploads/liquid-theme-logo.png'}
+              - {label: Logo du projet, name: logo, widget: image, required: true, default: '/images/uploads/liquid-theme-logo.png'}
+              - {label: Image de couverture, name: thumbnail, widget: image, required: true, default: '/images/uploads/liquid-theme-logo.png'}
               - {label: Favicon, name: favicon, widget: image, default: '/images/uploads/favicon.png'}
               - {label: Dégrader, name: gradient, widget: string, default: 'linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f)' }
           - label: "Réseaux sociaux"
             name: "reseauxsociaux"
+            label_singular: "Réseau social"
             allow_add: true
             widget: "list"
             fields:
-              - {label: Nom, name: name, widget: string, default: "Github"}
-              - {label: Icones ( line-awesome ), name: icons, widget: string, default: "las la-bookmark"}
-              - {label: Url, name: url, widget: string, default: "https://votreurl.com/"}
+              - {label: Nom, name: name, widget: string, default: "Github", hint: "└ Nom du site"}
+              - {label: Icones ( line-awesome ), name: icons, widget: string, default: "las la-bookmark", hint: "└ Icone Line-awesome ( https://icons8.com/line-awesome ) uniquement"}
+              - {label: Url, name: url, widget: string, default: "https://votreurl.com/", hint: "└ Url externe ( https://votreurl.com ) uniquement"}
       - label: "Footer"
         name: "footer"
         file: "content/configuration/footer.json"
@@ -129,3 +133,4 @@ collections:
               - {label: Nom de la page, name: nomdepage, widget: string, default: "Mon example"}
               - {label: Url, name: url, widget: string, default: "https://votreurl.com/"}
           - {label: Copyright, name: copyright, widget: string, default: 'COPYRIGHT AND DESIGN BY PIKS-L.FR'}
+          - {label: Scroll to top ?, name: scrollTop, widget: boolean, default: 'true'}
