@@ -67,13 +67,8 @@ button {
   -webkit-filter: url("#glitch");
   filter: url("#glitch");
 }
-#footer svg {
+svg {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    display: block;
-    width: 0px;
-    height: 0px;
 }
 /*
 Tricks & Snippets css
