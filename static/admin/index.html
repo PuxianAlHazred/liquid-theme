@@ -6,9 +6,11 @@
         <title>Content Manager</title>
         <link rel="stylesheet" href="/admin/ui-cms.css"/>
         <link rel="stylesheet" href="/admin/test.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"/>
         <!-- Include the styles for the Netlify CMS UI, after your own styles -->
     </head>
     <body>
+
         <script src="https://unpkg.com/@ncwidgets/netlify-cms@^0.7.0/dist/netlify-cms.js"></script>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <script>
@@ -37,6 +39,7 @@
                 const thumbnailLieu = lieuOject.getIn(['thumbnailLieu'])
                 const featured_img_lieu = this.props.getAsset(thumbnailLieu) || ''
               const MetaOject = entry.getIn(['data', 'meta'])
+
               return h('div', {class: 'main' },
                 h('div', { class: 'slider agenda-slug' },
                   h('div',  {class: 'swiper' },
@@ -45,16 +48,29 @@
                         h('div', { className: 'fontblur', style: { backgroundImage: `url(${featured_img_cover.toString()})` } }),
                         h('div',  {class: 'grid-content' },
                           h('div',  {class: 'slider-content' },
-                            h('div', { className: 'flyer', style: { backgroundImage: `url(${featured_img_cover.toString()})` } }),
+                            h('div', { className: 'clipPath flyer glitchy', style: { backgroundImage: `url(${featured_img_cover.toString()})` } }),
                             h('div',  {class: 'content-right' },
                               h('div',  {class: 'meta' },
-                                h('p',  {class: 'date' }, dateEvent),
-                                h('p',  {class: 'hour' }, hourEvent),
-                                h('p',  {class: 'author' }, MetaOject.getIn(['auteur'])+' présente :' ),
-                                h('p',  {class: 'event' }, title),
+                                h('div',  {class: 'clipPath' },
+                                  h('p',  {class: 'date' }, dateEvent),
+                                ),
+                                h('div',  {class: 'clipPath' },
+                                  h('p',  {class: 'hour' }, hourEvent),
+                                ),
+                                h('p',  {class: 'author' },
+                                  h('span', {}, MetaOject.getIn(['auteur']) ),
+                                  ' présente :'
+                                ),
+                                h('div',  {class: 'clipPath glitchy' },
+                                  h('p',  {class: 'event' }, title),
+                                ),
                               ),
                               h('ul',  {class: 'artistes' },
-                                artisteArray.map(art  => h('li', {}, `${art.getIn(['titleArtiste'])}`))
+                                artisteArray.map(art  =>
+                                  h('li', {},
+                                    h('div',  {class: 'clipPath glitchy' },`${art.getIn(['titleArtiste'])}`),
+                                  )
+                                )
                               )
                             )
                           )
@@ -63,11 +79,31 @@
                     )
                   )
                 ),
-                h('section',  {class: 'ticket' },
+                h('section',  {class: 'ticket-content' },
                   h('div',  {class: 'grid-content' },
-                    h('i',  {class: 'las la-info-circle' }),
-                    h('div',  {class: 'countdown' }),
-                    h('a',  {class: 'countdown' }, 'Réserver maintenant votre place'),
+                    h('div',  {class: 'countdown' },
+                      h('div',  {class: 'current-time' },
+                        h('p', {},
+                          h('span', {}, '0'),
+                          h('span', {class: 'text-gradient'}, 'Days'),
+                        ),
+                        h('p', {},
+                          h('span', {}, '0'),
+                          h('span', {class: 'text-gradient'}, 'Hours'),
+                        ),
+                        h('p', {},
+                          h('span', {}, '0'),
+                          h('span', {class: 'text-gradient'}, 'Minutes'),
+                        ),
+                        h('p', {},
+                          h('span', {}, '0'),
+                          h('span', {class: 'text-gradient'}, 'Seconds'),
+                        ),
+                        h('div', {class: 'reserv'},
+                          h('p', {class: 'underline glitchy'}, 'Réserver maintenant votre place'),
+                        )
+                      )
+                    )
                   )
                 ),
                 h('div',  {class: 'container grid-content' },
@@ -114,11 +150,13 @@
                       )
                     )
                   )
-                )
+                ),
+                h('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js' })
               );
             }
           });
-          CMS.registerPreviewStyle("https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css");
+          CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+          CMS.registerPreviewStyle("https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css");
           CMS.registerPreviewTemplate("agenda", AgendaPreview);
           CMS.registerPreviewStyle("/admin/ui-panel.css");
         </script>

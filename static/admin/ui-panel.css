@@ -4,8 +4,7 @@ NOMADS CMS
 
 @font-face {
     font-family: "Changa";
-    src: local("Changa"),
-    url(~assets/font/changaOne/ChangaOne-Regular.ttf) format("truetype");
+    src: url(../_nuxt/assets/font/changaOne/ChangaOne-Regular.ttf) format("truetype");
 }
 
 :root {
@@ -55,6 +54,26 @@ button {
     background: #fff;
     width: 100%;
     padding: 50px;
+}
+.clipPath {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.directGlitch {
+  -webkit-filter: url("#glitch");
+  filter: url("#glitch");
+
+}
+.glitchy:hover {
+  -webkit-filter: url("#glitch");
+  filter: url("#glitch");
+}
+#footer svg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 0px;
+    height: 0px;
 }
 /*
 Tricks & Snippets css
