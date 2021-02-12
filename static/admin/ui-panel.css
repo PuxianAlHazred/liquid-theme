@@ -90,9 +90,40 @@ h6, .h6{ font-size: 20px; }
 .text-justify{ text-align: justify; }
 .sticky{ position: sticky; }
 .saturate{ filter: saturate(0); }
-/*
-AGENDA Slug
-*/
+.underline {
+    position: relative;
+}
+.underline::after {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background: var(--gradient);
+}
+.text-gradient{
+    position:relative;
+}
+.text-gradient::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(-45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f);
+    background-clip: border-box;
+    width: 100%;
+    height: 100%;
+    -webkit-background-clip: inherit;
+    -webkit-text-fill-color: transparent;
+    line-height: 50px;
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+.text-gradient:hover::before {
+    opacity: 1;
+}
+
 /*
 AGENDA Slug
 */
@@ -314,9 +345,17 @@ AGENDA Slug
     text-transform: uppercase;
 }
 /****************SLIDER*****************/
+.slider {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
 .swiper {
   height: 80vh;
   width: 100%;
+}
+.swiper-wrapper {
+    height: 100%;
 }
 .swiper-slide {
   text-align: right;
@@ -327,8 +366,7 @@ AGENDA Slug
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  height: 80vh;
-  position: relative;
+  height:100%;
 }
 .swiper-pagination > .swiper-pagination-bullet {
   background: white!important;
@@ -346,6 +384,7 @@ AGENDA Slug
     height: 100%;
     position: absolute;
     opacity: 0.5;
+    filter: blur(5px);
 }
 .agenda-slug .fontblur{
     filter: blur(50px);
@@ -378,6 +417,14 @@ AGENDA Slug
 }
 .content-right {
     position: relative;
+    display: block;
+    width: 60%;
+    left: 40%;
+    transition: all .5s ease;
+    top: 0%;
+    transform: translateY(0);
+}
+.agenda-slug .content-right {
     top: 50%;
     transform: translateY(-50%);
 }

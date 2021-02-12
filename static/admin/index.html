@@ -100,7 +100,7 @@
                           h('span', {class: 'text-gradient'}, 'Seconds'),
                         ),
                         h('div', {class: 'reserv'},
-                          h('p', {class: 'underline glitchy'}, 'Réserver maintenant votre place'),
+                          h('a', {class: 'underline glitchy'}, 'Réserver maintenant votre place'),
                         )
                       )
                     )
@@ -114,15 +114,17 @@
                         h('i',  {class: 'las la-map-marked-alt' }),
                         h('div',  {class: 'triangle' }),
                         h('div',  {class: 'map-link' },
-                          h('div',  {class: 'text-gradient' },
+                          h('div',  {class: "text-gradient", "data-text":"S`Y RENDRE" },
                             h('p',  {}, 'S`Y RENDRE')
                           )
                         )
                       )
                     ),
                     h('div',  {class: 'agenda-content' },
-                      h('div', { className: 'agenda-thumbs', style: { backgroundImage: `url(${featured_img_lieu.toString()})` } }),
-                      h('div',  {class: 'content-markdown' }, lieuOject.getIn(['descriptionLieu']) )
+                      h('div', { className: 'agenda-thumbs glitchy', style: { backgroundImage: `url(${featured_img_lieu.toString()})` } }),
+                      h('div',  {class: 'content-markdown' },
+                        h('p', {}, lieuOject.getIn(['descriptionLieu']))
+                      )
                     )
                   ),
                   h('section',  {class: 'content-slug artistes' },
@@ -132,7 +134,7 @@
                         h('i',  {class: 'las la-user-tag' }),
                         h('div',  {class: 'map-link' },
                           h('div',  {class: 'text-gradient' },
-                            h('p',  {}, MetaOject.getIn(['cat']))
+                            h('p',  {class: 'glitchy' }, MetaOject.getIn(['cat']))
                           )
                         )
                       )
@@ -140,18 +142,38 @@
                     h('div',  {},
                       artisteArray.map(art  =>
                         h('div',  {class: 'agenda-content' },
-                          h('div', { className: 'agenda-thumbs', style: { backgroundImage: `url(${art.getIn(['thumbnailArtiste'])})` } }),
+                          h('div', { className: 'agenda-thumbs glitchy', style: { backgroundImage: `url(${art.getIn(['thumbnailArtiste'])})` } }),
                           h('div',  {class: 'content-markdown' },
                             h('h4', {}, `${art.getIn(['titleArtiste'])}`),
                             h('p', {}, `${art.getIn(['descriptionArtiste'])}`),
-                            h('a', {}, `${art.getIn(['linkArtiste'])}`),
+                            h('a', {class: 'artiste-link'}, `${art.getIn(['linkArtiste'])}`),
                           )
                         )
                       )
                     )
                   )
                 ),
-                h('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js' })
+
+                h('svg', { xmlns: 'http://www.w3.org/2000/svg', version: '1.1' },
+                  h('defs', {},
+                    h('filter', {id:"glitch", x:"0", y:"0"},
+                      h('feColorMatrix', {in:"SourceGraphic", mode:"matrix", values:"1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0", result:"r"}),
+                      h('feOffset', {id:"r", result:"r", dx:"-5"},
+                        h('animate', {attributeName:"dx", attributeType:"XML", values:"0; -5; 0; -5; -2; -4; 0 ;-3; 0", dur:"1s", repeatCount:"indefinite"})
+                      ),
+                      h('feColorMatrix', {in:"SourceGraphic", mode:"matrix", values:"0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0", result:"g"}),
+                      h('feOffset', {id:"g", result:"g", dx:"0", dy:"0"},
+                        h('animate', {attributeName:"dx", attributeType:"XML", values:"0; 0; 0; -3; 0; 8; 0 ;-1; 0", dur:"1s", repeatCount:"indefinite"})
+                      ),
+                      h('feColorMatrix', {in:"SourceGraphic", mode:"matrix", values:"0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0", result:"b"}),
+                      h('feOffset', {id:"b", result:"b", dx:"0", dy:"0"},
+                        h('animate', {attributeName:"dx", attributeType:"XML", values:"0; 3; -1; 4; 0; 2; 0 ;5; 0", dur:"1s", repeatCount:"indefinite"})
+                      ),
+                      h('feBlend', {in:"r", in2:"g", mode:"screen", result:"blend"}),
+                      h('feBlend', {in:"blend", in2:"b", mode:"screen", result:"blend"})
+                    )
+                  )
+                )
               );
             }
           });
