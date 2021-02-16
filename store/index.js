@@ -12,6 +12,8 @@ export const state = () => ({
     menu: menu,
     generales: generales,
     footer: footer,
+    agenda: true,
+    blog: true,
     plugins: {
       markdown: {
         markdownIt: {
@@ -51,17 +53,22 @@ export const state = () => ({
   }
 });
 export const actions = {
-  async nuxtServerInit({ commit }) {
-    const context = require.context('~/content/agenda/posts/', false, /\.json$/);
-    const a_posts = context.keys().map(key => ({
-      ...context(key),
-      _path: `/agenda/${key.replace('.json', '').replace('./', '')}`
-    })).sort( ( a, b) => {return new Date(a.dateEvent) - new Date(b.dateEvent);});
-      commit("setPosts", a_posts);
-    const a_cat = Array.from(new Set(a_posts.map(e => e.meta.cat).sort()));
-      commit("setCat", a_cat);
-    const a_tag = Array.from(new Set(a_posts.map(e => e.meta.tags).sort()));
-      commit("setTag", a_tag);
+  async nuxtServerInit({ commit }, { state }) {
+
+    if ( state.options.agenda === true ) {
+      const context = require.context('~/content/agenda/posts/', false, /\.json$/);
+      const a_posts = context.keys().map(key => ({
+        ...context(key),
+        _path: `/agenda/${key.replace('.json', '').replace('./', '')}`
+      })).sort( ( a, b) => {return new Date(a.dateEvent) - new Date(b.dateEvent);});
+        commit("setPosts", a_posts);
+      const a_cat = Array.from(new Set(a_posts.map(e => e.meta.cat).sort()));
+        commit("setCat", a_cat);
+      const a_tag = Array.from(new Set(a_posts.map(e => e.meta.tags).sort()));
+        commit("setTag", a_tag);
+    } else { console.log("fail");}
+
+
   }
 };
 export const mutations = {
