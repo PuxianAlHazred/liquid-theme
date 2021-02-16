@@ -8,6 +8,10 @@
     {
       "nomdepage": "Agenda",
       "url": "/agenda/"
+    },
+    {
+      "nomdepage": "Blog",
+      "url": "/blog/"
     }
   ],
   "rs": [

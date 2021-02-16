@@ -23,6 +23,12 @@
         </script>
         <script>
           var AgendaPreview = createClass({
+            componentDidMount() {
+              const { document } = this.props;
+              const script = document.createElement('script');
+              script.src = 'https://unpkg.com/alpinejs@2.5.0/dist/alpine.js';
+              document.head.appendChild(script);
+            },
             render: function() {
               const entry = this.props.entry
               // String

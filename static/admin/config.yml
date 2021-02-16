@@ -15,6 +15,7 @@ collections:
     label_singular: "📚 Évenement"
     folder: "content/agenda/posts"
     create: true
+    delete: true
     editor:
       preview: true
     summary: '{{title}} le {{dateEvent}}'
@@ -69,6 +70,33 @@ collections:
           - {label: Couleur 1, name: color1, widget: string, default: '#FF0000'}
           - {label: Couleur 2, name: color2, widget: string, default: '#0000FF'}
           - {label: Dégrader, name: gradientEvent, widget: string, default: 'linear-gradient(45deg,#3bade3,#576fe6 25%,#9844b7 51%,#ff357f)'}
+  - name: "blog"
+    label: "📰 Blog"
+    label_singular: "📰 Article"
+    folder: "content/blog/posts"
+    create: true
+    delete: true
+    editor:
+      preview: true
+    summary: '{{title}}'
+    slug: "{{slug}}"
+    show_preview_links: true
+    preview_path: "blog/{{slug}}"
+    format: 'json'
+    fields:
+      - {label: Titre, name: title, widget: string, required: true}
+      - {label: Description, name: description, widget: text, required: true}
+      - {label: Couverture, name: thumbnail, widget: image, required: true}
+      - {label: Article, name: body, widget: "markdown", required: true}
+      - label: "Meta"
+        name: "meta"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: Auteur, name: auteur, widget: "string", required: true, default: 'Auteur'}
+          - {label: Catégories, name: cat, widget: "string", required: true, default: 'Catégorie'}
+          - {label: Tags, name: tags, widget: "string", required: true, default: 'Tags'}
+          - {label: Date de publication, name: date, widget: "datetime", format: "YYYY/MM/DD HH:mm", date_format: "MM/DD/YYYY", time_format: "HH:mm", required: true}
   - name: "configurations"
     label: "⚙️ Configurations"
     editor:
