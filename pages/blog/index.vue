@@ -12,7 +12,7 @@
 export default {
   head: {
     htmlAttrs: {
-      lang: 'fr',
+      lang: 'fr'
     },
     title: "Blog - My Website",
     meta: [
@@ -28,7 +28,7 @@ export default {
   layout: 'blog',
   data() {
     return {
-      filtered: []
+      filtered: this.$store.state.blogg.posts
     }
   },
   methods: {

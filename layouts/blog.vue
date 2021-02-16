@@ -19,6 +19,12 @@
         uiMenu,
         uiFooter
     },
+    data() {
+      return {
+        filtered: this.$store.state.blogg.posts,
+        highlight: this.$store.state.options.generales.highlight,
+      }
+    },
     computed: {
       cssVars() {
           return {
@@ -29,6 +35,25 @@
           return {
             "--gradient": this.$store.state.options.generales.theme.gradient,
           }
+      },
+    },
+    beforeUpdate() {
+      if ( this.$route.name === "blog" ) {
+        console.log("beforeUpdate if")
+
+        this.filtered = this.$store.state.blogg.posts.filter(a => {return a._path+'/' === this.$route.path});
+      } else {
+        console.log("beforeUpdate else")
+        this.filtered = this.$store.state.blogg.posts
+      }
+    },
+    async created() {
+      if ( this.$route.name === "blog" ) {
+        console.log("created else")
+        this.filtered = this.$store.state.blogg.posts.filter(a => {return a._path+'/' === this.$route.path});
+      } else {
+        console.log("created else")
+        this.filtered = this.$store.state.blogg.posts
       }
     }
   }

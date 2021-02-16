@@ -25,7 +25,7 @@
 export default {
   data() {
     return {
-      filtered: this.$store.state.agenda.posts,
+      filtered: this.$store.state.agenda.posts
     }
   },
   methods: {

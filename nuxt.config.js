@@ -3,7 +3,7 @@ var glob = require('glob');
 var path = require('path');
 var dynamicRoutes = getDynamicPaths({
   '/agenda': 'agenda/posts/*.json',
-  '/blog': 'blog/posts/*.json',
+  '/blog': 'blog/posts/*.json'
 });
 module.exports = {
   env: { BASE_URL: process.env.BASE_URL || 'http://localhost:3000' },

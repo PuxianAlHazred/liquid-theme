@@ -22,7 +22,7 @@ export const actions = {
 
 export const mutations = {
   // Blog
-  setPostsB(state, b_posts) {state.blog.posts = b_posts;},
-  setCatB(state, b_cat) {state.blog.cat = b_cat;},
-  setTagB(state, b_tag) {state.blog.tag = b_tag;}
+  setPostsB(state, b_posts) {state.posts = b_posts;},
+  setCatB(state, b_cat) {state.cat = b_cat;},
+  setTagB(state, b_tag) {state.tag = b_tag;}
 };
