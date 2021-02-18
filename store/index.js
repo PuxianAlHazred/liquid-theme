@@ -8,11 +8,16 @@ export const state = () => ({
     cat: [],
     tag: [],
   },
+  blog: {
+    posts: [],
+    cat: [],
+    tag: [],
+  },
   options: {
     menu: menu,
     generales: generales,
     footer: footer,
-    agenda: true,
+    agenda: false,
     blog: true,
     plugins: {
       markdown: {
@@ -53,32 +58,47 @@ export const state = () => ({
   }
 });
 export const actions = {
-  async nuxtServerInit({ commit }, { state }) {
-
-    if ( state.options.agenda === true ) {
+  async nuxtServerInit({ commit }) {
+    const a_boolean = true;
+      commit("setBooleanA", a_boolean);
+    if (a_boolean === true) {
+      // Agenda
       const context = require.context('~/content/agenda/posts/', false, /\.json$/);
       const a_posts = context.keys().map(key => ({
         ...context(key),
         _path: `/agenda/${key.replace('.json', '').replace('./', '')}`
       })).sort( ( a, b) => {return new Date(a.dateEvent) - new Date(b.dateEvent);});
-        commit("setPosts", a_posts);
+        commit("setPostsA", a_posts);
       const a_cat = Array.from(new Set(a_posts.map(e => e.meta.cat).sort()));
-        commit("setCat", a_cat);
+        commit("setCatA", a_cat);
       const a_tag = Array.from(new Set(a_posts.map(e => e.meta.tags).sort()));
-        commit("setTag", a_tag);
-    } else { console.log("fail");}
-
-
+        commit("setTagA", a_tag);
+    }
+    const b_boolean = true;
+      commit("setBooleanB", b_boolean);
+    if (b_boolean === true) {
+      // Blog
+      const context = require.context('~/content/blog/posts/', false, /\.json$/);
+      const b_posts = context.keys().map(key => ({
+        ...context(key),
+        _path: `/blog/${key.replace('.json', '').replace('./', '')}`
+      })).sort( ( a, b) => {return new Date(b.meta.date) - new Date(a.meta.date);});
+      commit("setPostsB", b_posts);
+      const b_cat = Array.from(new Set(b_posts.map(e => e.meta.cat).sort()));
+      commit("setCatB", b_cat);
+      const b_tag = Array.from(new Set(b_posts.map(e => e.meta.tags).sort()));
+      commit("setTagB", b_tag);
+    }
   }
 };
 export const mutations = {
-  setPosts(state, a_posts) {
-    state.agenda.posts = a_posts;
-  },
-  setCat(state, a_cat) {
-    state.agenda.cat = a_cat;
-  },
-  setTag(state, a_tag) {
-    state.agenda.tag = a_tag;
-  }
+  setPostsA(state, a_posts) {state.agenda.posts = a_posts;},
+  setCatA(state, a_cat) {state.agenda.cat = a_cat;},
+  setTagA(state, a_tag) {state.agenda.tag = a_tag;},
+  setBooleanA(state, a_boolean) {state.options.agenda = a_boolean;},
+  // Blog
+  setPostsB(state, b_posts) {state.blog.posts = b_posts;},
+  setCatB(state, b_cat) {state.blog.cat = b_cat;},
+  setTagB(state, b_tag) {state.blog.tag = b_tag;},
+  setBooleanB(state, b_boolean) {state.options.blog = b_boolean;}
 };

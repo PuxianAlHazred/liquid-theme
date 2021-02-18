@@ -21,7 +21,7 @@
     },
     data() {
       return {
-        filtered: this.$store.state.blogg.posts,
+        filtered: this.$store.state.blog.posts,
         highlight: this.$store.state.options.generales.highlight,
       }
     },
@@ -41,19 +41,19 @@
       if ( this.$route.name === "blog" ) {
         console.log("beforeUpdate if")
 
-        this.filtered = this.$store.state.blogg.posts.filter(a => {return a._path+'/' === this.$route.path});
+        this.filtered = this.$store.state.blog.posts.filter(a => {return a._path+'/' === this.$route.path});
       } else {
         console.log("beforeUpdate else")
-        this.filtered = this.$store.state.blogg.posts
+        this.filtered = this.$store.state.blog.posts
       }
     },
     async created() {
       if ( this.$route.name === "blog" ) {
         console.log("created else")
-        this.filtered = this.$store.state.blogg.posts.filter(a => {return a._path+'/' === this.$route.path});
+        this.filtered = this.$store.state.blog.posts.filter(a => {return a._path+'/' === this.$route.path});
       } else {
         console.log("created else")
-        this.filtered = this.$store.state.blogg.posts
+        this.filtered = this.$store.state.blog.posts
       }
     }
   }
