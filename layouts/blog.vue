@@ -2,6 +2,7 @@
   <div id="app" :style="cssVars">
     <ui-menu></ui-menu>
     <div class="main">
+      <blog-slider :class="this.$route.name" :filtered="this.filtered.slice(0,this.highlight)"></blog-slider>
       <transition name="animate__fadeInUp" mode="out-in">
         <nuxt/>
       </transition>
@@ -13,10 +14,12 @@
 </style>
 <script>
   import uiMenu from '~/components/ui/menu.vue'
+  import blogSlider from '~/components/blog/slider.vue'
   import uiFooter from '~/components/ui/footer.vue'
   export default {
     components: {
         uiMenu,
+        blogSlider,
         uiFooter
     },
     data() {
@@ -38,9 +41,8 @@
       },
     },
     beforeUpdate() {
-      if ( this.$route.name === "blog" ) {
+      if ( this.$route.name === "blog-slug" ) {
         console.log("beforeUpdate if")
-
         this.filtered = this.$store.state.blog.posts.filter(a => {return a._path+'/' === this.$route.path});
       } else {
         console.log("beforeUpdate else")
@@ -48,7 +50,7 @@
       }
     },
     async created() {
-      if ( this.$route.name === "blog" ) {
+      if ( this.$route.name === "blog-slug" ) {
         console.log("created else")
         this.filtered = this.$store.state.blog.posts.filter(a => {return a._path+'/' === this.$route.path});
       } else {

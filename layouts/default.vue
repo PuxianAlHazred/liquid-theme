@@ -2,7 +2,7 @@
   <div id="app" :style="cssVars">
     <ui-menu></ui-menu>
     <div class="main">
-      <ui-slider :class="this.$route.name" :filtered="this.filtered.slice(0,this.highlight)"></ui-slider>
+      <agenda-slider :class="this.$route.name" :filtered="this.filtered.slice(0,this.highlight)"></agenda-slider>
       <transition name="animate__fadeInUp" mode="out-in">
         <nuxt/>
       </transition>
@@ -16,12 +16,12 @@
 </style>
 <script>
   import uiMenu from '~/components/ui/menu.vue'
-  import uiSlider from '~/components/ui/slider.vue'
+  import agendaSlider from '~/components/agenda/slider.vue'
   import uiFooter from '~/components/ui/footer.vue'
   export default {
     components: {
         uiMenu,
-        uiSlider,
+        agendaSlider,
         uiFooter
     },
     data() {

@@ -39,7 +39,18 @@ module.exports = {
       { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" },
     ]
   },
-  /*** loading: '~/components/ui/loading.vue', */
+  loading: '~/components/ui/loading.vue',
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    beforeEnter (el) {
+      console.log('Before enter...');
+    }
+  },
+  layoutTransition: {
+    name: 'layout',
+    mode: 'out-in'
+  },
   /*** Modules call */
   modules: [
     '@nuxtjs/pwa',

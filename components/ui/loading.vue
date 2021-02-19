@@ -3,7 +3,6 @@
     <p>Loading ...</p>
   </div>
 </template>
-
 <script>
   export default {
     data: () => ({
@@ -14,13 +13,15 @@
         this.loading = true
       },
       finish() {
-
-        this.loading = false
+        setTimeout(function(){
+          this.loading = false
+          console.log('Fini')
+        }, 0);
       }
     }
   }
 </script>
-<style scoped>
+<style>
 .loading-page {
   position: fixed;
   top: 0;

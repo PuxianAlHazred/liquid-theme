@@ -2,32 +2,22 @@
 Transition du blog
 pages > blog > index.vue
 */
-.grid-enter-active,
-.grid-leave-active {
+.page-enter-active,
+.page-leave-active {
   transition: opacity 2s ease-in-out, transform 2s ease-in-out;
 }
-.grid-enter,
-.grid-leave-active {
+.page-enter,
+.page-leave-active {
   opacity: 0;
   transform: translate3d(0, 15px, 0);
 }
 
-.fade-up-enter-active,
-.fade-up-leave-active {
-  transition: all 1s ease-in-out;
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
 }
-.fade-up-enter,
-.fade-up-leave-active {
-  height: 0; transform: translateY(30px); opacity: 0;
-}
-
-.lol-enter-active,
-.lol-leave-active {
-  opacity: 1;
-  transition: all 2s ease;
-}
-.lol-enter,
-.lol-leave-active {
+.layout-enter,
+.layout-leave-active {
   opacity: 0;
-  transition: all 2s ease;
+  transform: translate3d(0, 15px, 0);
 }

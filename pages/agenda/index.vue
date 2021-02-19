@@ -23,6 +23,7 @@
 </template>
 <script>
 export default {
+  layout: 'default',
   data() {
     return {
       filtered: this.$store.state.agenda.posts
